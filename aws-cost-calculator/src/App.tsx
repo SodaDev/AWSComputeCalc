@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PriceChart from "./components/PriceChart";
+import Provider from './components/Provider'
+
+import Grid from '@mui/material/Grid';
+import LambdaTraffic from "./components/LambdaTraffic";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Provider>
+            <Grid container spacing={2} style={{height: "100vh"}}>
+                <Grid item xs={12}>
+                    <LambdaTraffic/>
+                </Grid>
+                <Grid item xs={12} style={{height: "100%"}}>
+                    <PriceChart/>
+                </Grid>
+            </Grid>
+        </Provider>
+    );
 }
 
 export default App;
