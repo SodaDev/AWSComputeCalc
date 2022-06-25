@@ -21,6 +21,19 @@ export default function LambdaParameters() {
             noValidate autoComplete="off">
             <div>
                 <TextField
+                    label="Average response time in ms"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    value={state.lambdaParams.avgResponseTimeInMs}
+                    onChange={event => dispatch({
+                        type: "LAMBDA_SET_AVG_RESPONSE_TIME",
+                        amount: parseInt(event.target.value)
+                    })}
+                    variant="standard"
+                />
+                <TextField
                     label="Requests per minute"
                     type="number"
                     InputLabelProps={{

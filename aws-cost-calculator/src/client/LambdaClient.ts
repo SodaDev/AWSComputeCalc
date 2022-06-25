@@ -58,7 +58,7 @@ export type LambdaPricing = {
     x86: LambdaPriceComponents
 }
 
-type LambdaPriceComponents = {
+export type LambdaPriceComponents = {
     lambdaGbSecond?: string
     requests?: string
 }

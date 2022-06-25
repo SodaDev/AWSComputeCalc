@@ -5,6 +5,7 @@ type Action =
     | {type: "LAMBDA_SET_DAILY", amount: number}
     | {type: "LAMBDA_SET_MONTHLY", amount: number}
     | {type: "LAMBDA_SET_SIZE", amount: number}
+    | {type: "LAMBDA_SET_AVG_RESPONSE_TIME", amount: number}
     | {type: "LAMBDA_SET_PRICING", pricing: LambdaRegionalPricing}
 
 export type { Action };

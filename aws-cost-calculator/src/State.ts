@@ -1,6 +1,7 @@
-import {LambdaRegionalPricing} from "./client/LambdaClient";
+import {LambdaPricing, LambdaRegionalPricing} from "./client/LambdaClient";
 
 type LambdaParams = {
+    avgResponseTimeInMs: number
     minuteReq: number
     dailyReq: number
     monthlyReq: number
@@ -10,6 +11,7 @@ type State = {
     region: string
     lambdaParams: LambdaParams
     lambdaPricing: LambdaRegionalPricing
+    lambdaRegionalPricing: LambdaPricing
 }
 
 export type {LambdaParams, State}
