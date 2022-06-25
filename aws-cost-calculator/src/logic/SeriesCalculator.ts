@@ -2,7 +2,7 @@ import {LambdaParams} from "../State";
 import {LambdaPriceComponents, LambdaPricing} from "../client/LambdaClient";
 import {Serie} from "@nivo/line";
 
-const dataPoints = 10
+const dataPoints = 25
 
 export function generateSeries(pricing: LambdaPricing, lambdaParams: LambdaParams): Serie[] {
     const series = []

@@ -4,7 +4,7 @@ import {AppContext} from "../state/context";
 import {generateSeries} from "../logic/SeriesCalculator";
 
 function PriceChart() {
-    const {state, dispatch} =  React.useContext(AppContext);
+    const {state, dispatch} = React.useContext(AppContext);
     const chartData = generateSeries(state.lambdaRegionalPricing, state.lambdaParams)
     window.dispatchEvent(new Event('resize'));
     return (
@@ -13,21 +13,27 @@ function PriceChart() {
             animate={true}
             enableSlices={"x"}
             margin={{top: 50, right: 110, bottom: 50, left: 60}}
-            xScale={{type: 'linear'}}
+            xScale={{
+                type: 'linear',
+                nice: true
+            }}
             yScale={{
                 type: 'linear',
                 min: "auto",
                 max: "auto",
                 stacked: false,
-                reverse: false
+                reverse: false,
+                nice: true
             }}
-            yFormat=" >-.2f"
+            xFormat= " >-0~f"
+            yFormat=" >-$.2f"
             axisTop={null}
             axisRight={null}
             axisBottom={{
                 tickSize: 5,
                 tickPadding: 5,
-                tickRotation: 0,
+                tickRotation: 45,
+                format: ' >-0~s',
                 legend: 'invocations',
                 legendOffset: 36
             }}
