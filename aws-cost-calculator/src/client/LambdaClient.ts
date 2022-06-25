@@ -36,7 +36,7 @@ type AWSLambdaPriceDimension = {
     rateCode: string
     unit: string
     pricePerUnit: {
-        USD: number
+        USD: string
     }
 }
 
@@ -46,21 +46,21 @@ type LambdaPriceDimension = {
 
     group: string
     region: string
-    priceUSD: number
+    priceUSD: string
 }
 
-type LambdaPricingResponse = {
-    regionPrices: Map<String, LambdaPricing>
+export type LambdaRegionalPricing = {
+    regionPrices: Record<string, LambdaPricing>
 }
 
-type LambdaPricing = {
+export type LambdaPricing = {
     arm: LambdaPriceComponents
     x86: LambdaPriceComponents
 }
 
 type LambdaPriceComponents = {
-    lambdaGbSecond?: number
-    requests?: number
+    lambdaGbSecond?: string
+    requests?: string
 }
 
 async function downloadLambdaPrice(): Promise<AWSLambdaPricingResponse> {
@@ -83,7 +83,7 @@ function buildLambdaPricing(product: AWSLambdaProduct, onDemand: Record<string, 
 }
 
 function getPriceDimensionsByRegion(responseBody: AWSLambdaPricingResponse) {
-    const regionPrices = new Map<String, Map<String, LambdaPriceDimension>>();
+    const regionPrices = new Map<string, Map<string, LambdaPriceDimension>>();
     for (const [, product] of Object.entries(responseBody.products)) {
         if (groupsOfInterest.has(product.attributes.group)) {
             const region = product.attributes.regionCode
@@ -101,11 +101,11 @@ function getPriceDimensionsByRegion(responseBody: AWSLambdaPricingResponse) {
     return regionPrices;
 }
 
-function buildLambdaPricingResponse(regionPrices: Map<String, Map<String, LambdaPriceDimension>>): LambdaPricingResponse {
-    const result = new Map<String, LambdaPricing>();
+function buildLambdaPricingResponse(regionPrices: Map<string, Map<string, LambdaPriceDimension>>): LambdaRegionalPricing {
+    const result: Record<string, LambdaPricing> = {}
 
     for (let [region, dimensions] of Array.from(regionPrices.entries())) {
-        result.set(region, {
+        result[region] = {
             x86: {
                 lambdaGbSecond: dimensions.get("AWS-Lambda-Duration")?.priceUSD,
                 requests: dimensions.get("AWS-Lambda-Requests")?.priceUSD
@@ -114,20 +114,20 @@ function buildLambdaPricingResponse(regionPrices: Map<String, Map<String, Lambda
                 lambdaGbSecond: dimensions.get("AWS-Lambda-Duration-ARM")?.priceUSD,
                 requests: dimensions.get("AWS-Lambda-Requests-ARM")?.priceUSD
             }
-        })
+        }
     }
     return {
         regionPrices: result
     };
 }
 
-export async function getLambdaPrice() {
+export async function getLambdaPrice(): Promise<LambdaRegionalPricing> {
     try {
         const responseBody: AWSLambdaPricingResponse = await downloadLambdaPrice()
         const regionPrices = getPriceDimensionsByRegion(responseBody);
         return buildLambdaPricingResponse(regionPrices)
     } catch (e) {
         console.error(`Loading Lambda prices failed with ${e}`)
-        return lambdaFallback
+        return Promise.resolve(lambdaFallback)
     }
 }
