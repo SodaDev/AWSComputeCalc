@@ -6,17 +6,19 @@ import {generateSeries} from "../logic/SeriesCalculator";
 function PriceChart() {
     const {state, dispatch} =  React.useContext(AppContext);
     const chartData = generateSeries(state.lambdaRegionalPricing, state.lambdaParams)
-
+    window.dispatchEvent(new Event('resize'));
     return (
         <ResponsiveLine
             data={chartData}
+            animate={true}
+            enableSlices={"x"}
             margin={{top: 50, right: 110, bottom: 50, left: 60}}
             xScale={{type: 'linear'}}
             yScale={{
                 type: 'linear',
                 min: "auto",
-                max: 'auto',
-                stacked: true,
+                max: "auto",
+                stacked: false,
                 reverse: false
             }}
             yFormat=" >-.2f"
@@ -26,21 +28,16 @@ function PriceChart() {
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'transportation',
+                legend: 'invocations',
                 legendOffset: 36
             }}
             axisLeft={{
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'count',
+                legend: 'Cost [$]',
                 legendOffset: -40
             }}
-            pointSize={10}
-            pointColor={{theme: 'background'}}
-            pointBorderWidth={2}
-            pointBorderColor={{from: 'serieColor'}}
-            pointLabelYOffset={-12}
             useMesh={true}
             legends={[
                 {

@@ -11,7 +11,7 @@ export function reducer(state: State, action: Action): State {
                 ...state,
                 lambdaParams: {
                     ...state.lambdaParams,
-                    avgResponseTimeInMs: action.amount
+                    avgResponseTimeInMs: Math.min(action.amount, 900000)
                 },
             }
         case 'LAMBDA_SET_RPM':
