@@ -1,4 +1,4 @@
-import {State} from "../State";
+import {State} from "./State";
 import {Action} from "./actions";
 
 const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
@@ -63,6 +63,12 @@ export function reducer(state: State, action: Action): State {
                 ...state,
                 fargateSpotPricing: action.pricing,
                 fargateSpotRegionalPricing: action.pricing.regionPrices[state.region]
+            }
+        case "FARGATE_SET_PRICING":
+            return {
+                ...state,
+                fargatePricing: action.pricing,
+                fargateRegionalPricing: action.pricing.regionPrices[state.region]
             }
         default:
             throw new Error();

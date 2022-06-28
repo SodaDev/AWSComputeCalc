@@ -1,7 +1,7 @@
 import {Action} from "../state/actions";
 import {reducer} from "../state/reducer";
 import {AppContext, initialState} from "../state/context";
-import {State} from "../State";
+import {State} from "../state/State";
 import {useReducer} from "react";
 
 export default function Provider(props: React.PropsWithChildren<{}>) {

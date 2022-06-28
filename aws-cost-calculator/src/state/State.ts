@@ -1,5 +1,6 @@
-import {LambdaPricing, LambdaRegionalPricing} from "./client/LambdaClient";
-import {FargateSpotPricing, FargateSpotRegionalPricing} from "./client/FargateSpotClient";
+import {LambdaPricing, LambdaRegionalPricing} from "../client/LambdaClient";
+import {FargateSpotPricing, FargateSpotRegionalPricing} from "../client/FargateSpotClient";
+import {FargatePricing, FargateRegionalPricing} from "../client/FargateClient";
 
 type LambdaParams = {
     avgResponseTimeInMs: number
@@ -15,6 +16,8 @@ type State = {
     lambdaRegionalPricing: LambdaPricing
     fargateSpotPricing: FargateSpotRegionalPricing
     fargateSpotRegionalPricing: FargateSpotPricing
+    fargatePricing: FargateRegionalPricing
+    fargateRegionalPricing: FargatePricing
 }
 
 export type {LambdaParams, State}

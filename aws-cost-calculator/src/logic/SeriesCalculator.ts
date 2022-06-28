@@ -1,4 +1,4 @@
-import {LambdaParams} from "../State";
+import {LambdaParams} from "../state/State";
 import {LambdaPriceComponents, LambdaPricing} from "../client/LambdaClient";
 import {Serie} from "@nivo/line";
 
