@@ -73,15 +73,14 @@ export default function LambdaParameters() {
                     variant="standard"
                 />
                 <TextField
-                    // id="outlined-select-currency"
                     select
-                    label="Select"
+                    label="Please select your currency"
                     value={state.lambdaParams.lambdaSize}
                     onChange={event => dispatch({
                         type: "LAMBDA_SET_SIZE",
                         amount: parseInt(event.target.value)
                     })}
-                    helperText="Please select your currency"
+                    variant="standard"
                 >
                     {lambdaSizes.map((option) => (
                         <MenuItem key={option} value={option}>

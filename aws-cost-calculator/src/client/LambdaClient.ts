@@ -2,11 +2,11 @@ import * as lambdaFallback from "../fallback/lambda.json";
 import {paths} from "./urls";
 import {api} from "./TypedFetch";
 
-const groupsOfInterest: Map<string, Function> = new Map([
-    ["AWS-Lambda-Duration", (x: LambdaPricing) => x],
-    ["AWS-Lambda-Requests", (x: LambdaPricing) => x],
-    ["AWS-Lambda-Duration-ARM", (x: LambdaPricing) => x],
-    ["AWS-Lambda-Requests-ARM", (x: LambdaPricing) => x]
+const groupsOfInterest: Set<string> = new Set([
+    "AWS-Lambda-Duration",
+    "AWS-Lambda-Requests",
+    "AWS-Lambda-Duration-ARM",
+    "AWS-Lambda-Requests-ARM"
 ]);
 
 type AWSLambdaPricingResponse = {

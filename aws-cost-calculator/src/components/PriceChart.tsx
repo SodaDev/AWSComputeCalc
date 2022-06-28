@@ -44,6 +44,9 @@ function PriceChart() {
                 legend: 'Cost [$]',
                 legendOffset: -40
             }}
+            pointSize={5}
+            pointBorderColor={{from: 'serieColor'}}
+            pointLabelYOffset={-12}
             useMesh={true}
             legends={[
                 {

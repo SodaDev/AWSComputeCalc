@@ -2,6 +2,7 @@ import React from "react";
 import {State} from "../State";
 import {Action} from "./actions";
 import lambdaFallback from "../fallback/lambda.json";
+import {getFargateSpotFallback} from "../client/FargateSpotClient";
 
 const defaultRegion = "eu-west-1"
 const initialState: State = {
@@ -14,7 +15,9 @@ const initialState: State = {
         lambdaSize: 128
     },
     lambdaPricing: lambdaFallback,
-    lambdaRegionalPricing: lambdaFallback.regionPrices[defaultRegion]
+    lambdaRegionalPricing: lambdaFallback.regionPrices[defaultRegion],
+    fargateSpotPricing: getFargateSpotFallback(),
+    fargateSpotRegionalPricing: getFargateSpotFallback().regionPrices[defaultRegion],
 };
 
 const defaultDispatch: React.Dispatch<Action> = () => initialState

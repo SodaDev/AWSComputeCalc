@@ -10,10 +10,17 @@ import {Action} from "./state/actions";
 import {reducer} from "./state/reducer";
 import {initialState} from "./state/context";
 import {getLambdaPrice} from "./client/LambdaClient";
+import {getFargateSpotPrice} from "./client/FargateSpotClient";
 
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
     useEffect(() => {
+        getFargateSpotPrice()
+            .then(response => dispatch({
+                type: "FARGATE_SPOT_SET_PRICING",
+                pricing: response
+            }))
+            .catch(console.error)
         getLambdaPrice()
             .then(response => dispatch({
                 type: "LAMBDA_SET_PRICING",

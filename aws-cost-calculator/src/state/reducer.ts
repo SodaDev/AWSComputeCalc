@@ -58,6 +58,12 @@ export function reducer(state: State, action: Action): State {
                 lambdaPricing: action.pricing,
                 lambdaRegionalPricing: action.pricing.regionPrices[state.region]
             }
+        case "FARGATE_SPOT_SET_PRICING":
+            return {
+                ...state,
+                fargateSpotPricing: action.pricing,
+                fargateSpotRegionalPricing: action.pricing.regionPrices[state.region]
+            }
         default:
             throw new Error();
     }
