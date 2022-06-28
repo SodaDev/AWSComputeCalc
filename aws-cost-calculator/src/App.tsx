@@ -12,10 +12,17 @@ import {initialState} from "./state/context";
 import {getLambdaPrice} from "./client/LambdaClient";
 import {getFargateSpotPrice} from "./client/FargateSpotClient";
 import {getFargatePrice} from "./client/FargateClient";
+import {getEc2Price} from "./client/Ec2Client";
 
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
     useEffect(() => {
+        getEc2Price()
+            .then(response => dispatch({
+                type: "EC2_SET_PRICING",
+                pricing: response
+            }))
+            .catch(console.error)
         getFargatePrice()
             .then(response => dispatch({
                 type: "FARGATE_SET_PRICING",

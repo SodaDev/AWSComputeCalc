@@ -70,6 +70,11 @@ export function reducer(state: State, action: Action): State {
                 fargatePricing: action.pricing,
                 fargateRegionalPricing: action.pricing.regionPrices[state.region]
             }
+        case "EC2_SET_PRICING":
+            return {
+                ...state,
+                ec2Pricing: action.pricing
+            }
         default:
             throw new Error();
     }

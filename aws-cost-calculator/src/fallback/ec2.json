@@ -1,0 +1,4294 @@
+{
+  "Prices": [
+    {
+      "InstanceType": "c6gn.16xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 2.7648,
+      "MonthlyPrice": 2018.304,
+      "SpotPrice": "1.0882"
+    },
+    {
+      "InstanceType": "c6g.medium",
+      "Memory": "2 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.034,
+      "MonthlyPrice": 24.82,
+      "SpotPrice": "0.0170"
+    },
+    {
+      "InstanceType": "m6i.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.384,
+      "MonthlyPrice": 280.32,
+      "SpotPrice": "0.1727"
+    },
+    {
+      "InstanceType": "c5d.9xlarge",
+      "Memory": "72 GiB",
+      "VCPUS": 36,
+      "Storage": "1 x 900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 1.728,
+      "MonthlyPrice": 1261.44,
+      "SpotPrice": "0.6962"
+    },
+    {
+      "InstanceType": "m5a.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.376,
+      "MonthlyPrice": 1004.4799999999999,
+      "SpotPrice": "0.5585"
+    },
+    {
+      "InstanceType": "m5dn.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 6.528,
+      "MonthlyPrice": 4765.44,
+      "SpotPrice": "1.6323"
+    },
+    {
+      "InstanceType": "m5d.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.904,
+      "MonthlyPrice": 659.9200000000001,
+      "SpotPrice": "0.3569"
+    },
+    {
+      "InstanceType": "r6g.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 2.4192,
+      "MonthlyPrice": 1766.016,
+      "SpotPrice": "0.8991"
+    },
+    {
+      "InstanceType": "inf1.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.228,
+      "MonthlyPrice": 166.44,
+      "SpotPrice": "0.0684"
+    },
+    {
+      "InstanceType": "m6g.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.077,
+      "MonthlyPrice": 56.21,
+      "SpotPrice": "0.0357"
+    },
+    {
+      "InstanceType": "r6gd.metal",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 3.6864,
+      "MonthlyPrice": 2691.072,
+      "SpotPrice": "1.1970"
+    },
+    {
+      "InstanceType": "r6gd.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "1 x 1900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 1.8432,
+      "MonthlyPrice": 1345.536,
+      "SpotPrice": "0.5985"
+    },
+    {
+      "InstanceType": "m6gd.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 237 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.1808,
+      "MonthlyPrice": 131.98399999999998,
+      "SpotPrice": "0.0714"
+    },
+    {
+      "InstanceType": "c5d.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 50 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.096,
+      "MonthlyPrice": 70.08,
+      "SpotPrice": "0.0324"
+    },
+    {
+      "InstanceType": "d3.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "24 x 2000 HDD",
+      "Network": "25 Gigabit",
+      "Cost": 3.99552,
+      "MonthlyPrice": 2916.7296,
+      "SpotPrice": "1.1987"
+    },
+    {
+      "InstanceType": "m5ad.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 600 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.648,
+      "MonthlyPrice": 1203.04,
+      "SpotPrice": "0.5441"
+    },
+    {
+      "InstanceType": "m5d.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.226,
+      "MonthlyPrice": 164.98000000000002,
+      "SpotPrice": "0.0808"
+    },
+    {
+      "InstanceType": "r5ad.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 600 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 2.096,
+      "MonthlyPrice": 1530.0800000000002,
+      "SpotPrice": "0.5796"
+    },
+    {
+      "InstanceType": "m5.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.192,
+      "MonthlyPrice": 140.16,
+      "SpotPrice": "0.0680"
+    },
+    {
+      "InstanceType": "c6gn.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.1728,
+      "MonthlyPrice": 126.144,
+      "SpotPrice": "0.0680"
+    },
+    {
+      "InstanceType": "m6gd.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 1425 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 2.1696,
+      "MonthlyPrice": 1583.808,
+      "SpotPrice": "0.8570"
+    },
+    {
+      "InstanceType": "c6i.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.17,
+      "MonthlyPrice": 124.10000000000001,
+      "SpotPrice": "0.0680"
+    },
+    {
+      "InstanceType": "r5d.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.576,
+      "MonthlyPrice": 420.47999999999996,
+      "SpotPrice": "0.2123"
+    },
+    {
+      "InstanceType": "m5d.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.113,
+      "MonthlyPrice": 82.49000000000001,
+      "SpotPrice": "0.0372"
+    },
+    {
+      "InstanceType": "d3.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "6 x 2000 HDD",
+      "Network": "Up to 15 Gigabit",
+      "Cost": 0.999,
+      "MonthlyPrice": 729.27,
+      "SpotPrice": "0.2997"
+    },
+    {
+      "InstanceType": "m5n.metal",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 5.712,
+      "MonthlyPrice": 4169.76,
+      "SpotPrice": "2.2264"
+    },
+    {
+      "InstanceType": "i3.4xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.248,
+      "MonthlyPrice": 911.04,
+      "SpotPrice": "0.4987"
+    },
+    {
+      "InstanceType": "a1.metal",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.408,
+      "MonthlyPrice": 297.84,
+      "SpotPrice": "0.1343"
+    },
+    {
+      "InstanceType": "c5n.2xlarge",
+      "Memory": "21 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.432,
+      "MonthlyPrice": 315.36,
+      "SpotPrice": "0.1682"
+    },
+    {
+      "InstanceType": "r5d.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "4 x 600 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 4.608,
+      "MonthlyPrice": 3363.8399999999997,
+      "SpotPrice": "1.2053"
+    },
+    {
+      "InstanceType": "m6g.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.616,
+      "MonthlyPrice": 449.68,
+      "SpotPrice": "0.2857"
+    },
+    {
+      "InstanceType": "d2.4xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 16,
+      "Storage": "12 x 2000 HDD",
+      "Network": "High",
+      "Cost": 2.76,
+      "MonthlyPrice": 2014.8,
+      "SpotPrice": "0.8280"
+    },
+    {
+      "InstanceType": "r5ad.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "4 x 600 NVMe SSD",
+      "Network": "12 Gigabit",
+      "Cost": 4.192,
+      "MonthlyPrice": 3060.1600000000003,
+      "SpotPrice": "1.1400"
+    },
+    {
+      "InstanceType": "p3dn.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 31.212,
+      "MonthlyPrice": 22784.76,
+      "SpotPrice": "9.3636"
+    },
+    {
+      "InstanceType": "x2gd.2xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 474 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.668,
+      "MonthlyPrice": 487.64000000000004,
+      "SpotPrice": "0.2004"
+    },
+    {
+      "InstanceType": "m6i.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.096,
+      "MonthlyPrice": 70.08,
+      "SpotPrice": "0.0358"
+    },
+    {
+      "InstanceType": "m5n.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.119,
+      "MonthlyPrice": 86.86999999999999,
+      "SpotPrice": "0.0340"
+    },
+    {
+      "InstanceType": "c6i.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.68,
+      "MonthlyPrice": 496.40000000000003,
+      "SpotPrice": "0.3156"
+    },
+    {
+      "InstanceType": "i3.16xlarge",
+      "Memory": "488 GiB",
+      "VCPUS": 64,
+      "Storage": "8 x 1900 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 4.992,
+      "MonthlyPrice": 3644.16,
+      "SpotPrice": "1.6260"
+    },
+    {
+      "InstanceType": "x2gd.4xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 950 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.336,
+      "MonthlyPrice": 975.2800000000001,
+      "SpotPrice": "0.4008"
+    },
+    {
+      "InstanceType": "c6gn.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.3456,
+      "MonthlyPrice": 252.288,
+      "SpotPrice": "0.1360"
+    },
+    {
+      "InstanceType": "r5b.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.596,
+      "MonthlyPrice": 435.08,
+      "SpotPrice": "0.1764"
+    },
+    {
+      "InstanceType": "t3.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0832,
+      "MonthlyPrice": 60.736,
+      "SpotPrice": "0.0286"
+    },
+    {
+      "InstanceType": "c6i.8xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "12500 Megabit",
+      "Cost": 1.36,
+      "MonthlyPrice": 992.8000000000001,
+      "SpotPrice": "0.6480"
+    },
+    {
+      "InstanceType": "c6gd.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 950 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.6144,
+      "MonthlyPrice": 448.51199999999994,
+      "SpotPrice": "0.2900"
+    },
+    {
+      "InstanceType": "r6gd.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 3.6864,
+      "MonthlyPrice": 2691.072,
+      "SpotPrice": "1.1970"
+    },
+    {
+      "InstanceType": "m5zn.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 3.9641,
+      "MonthlyPrice": 2893.793,
+      "SpotPrice": "1.0666"
+    },
+    {
+      "InstanceType": "g3.16xlarge",
+      "Memory": "488 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 4.56,
+      "MonthlyPrice": 3328.7999999999997,
+      "SpotPrice": "1.3680"
+    },
+    {
+      "InstanceType": "c6gd.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 475 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.3072,
+      "MonthlyPrice": 224.25599999999997,
+      "SpotPrice": "0.1360"
+    },
+    {
+      "InstanceType": "t3a.nano",
+      "Memory": "0.5 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0047,
+      "MonthlyPrice": 3.431,
+      "SpotPrice": "0.0019"
+    },
+    {
+      "InstanceType": "inf1.6xlarge",
+      "Memory": "48 GiB",
+      "VCPUS": 24,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 1.18,
+      "MonthlyPrice": 861.4,
+      "SpotPrice": "0.3540"
+    },
+    {
+      "InstanceType": "h1.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 2000 HDD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.936,
+      "MonthlyPrice": 683.2800000000001,
+      "SpotPrice": "0.3224"
+    },
+    {
+      "InstanceType": "m5a.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 4.128,
+      "MonthlyPrice": 3013.44,
+      "SpotPrice": "1.7448"
+    },
+    {
+      "InstanceType": "r6g.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.4032,
+      "MonthlyPrice": 294.336,
+      "SpotPrice": "0.1538"
+    },
+    {
+      "InstanceType": "c6gn.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 0.6912,
+      "MonthlyPrice": 504.576,
+      "SpotPrice": "0.2721"
+    },
+    {
+      "InstanceType": "m5.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 3.072,
+      "MonthlyPrice": 2242.56,
+      "SpotPrice": "1.3534"
+    },
+    {
+      "InstanceType": "x1e.4xlarge",
+      "Memory": "488 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 480 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 3.336,
+      "MonthlyPrice": 2435.2799999999997,
+      "SpotPrice": "1.0008"
+    },
+    {
+      "InstanceType": "x2gd.large",
+      "Memory": "32 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 118 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.167,
+      "MonthlyPrice": 121.91000000000001,
+      "SpotPrice": "0.0501"
+    },
+    {
+      "InstanceType": "m5dn.metal",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 6.528,
+      "MonthlyPrice": 4765.44,
+      "SpotPrice": "1.6323"
+    },
+    {
+      "InstanceType": "r5dn.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.167,
+      "MonthlyPrice": 121.91000000000001,
+      "SpotPrice": "0.0356"
+    },
+    {
+      "InstanceType": "m6g.medium",
+      "Memory": "4 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0385,
+      "MonthlyPrice": 28.105,
+      "SpotPrice": "0.0179"
+    },
+    {
+      "InstanceType": "c5a.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.154,
+      "MonthlyPrice": 112.42,
+      "SpotPrice": "0.0648"
+    },
+    {
+      "InstanceType": "r4.16xlarge",
+      "Memory": "488 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 4.256,
+      "MonthlyPrice": 3106.88,
+      "SpotPrice": "1.1292"
+    },
+    {
+      "InstanceType": "m6i.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.192,
+      "MonthlyPrice": 140.16,
+      "SpotPrice": "0.0714"
+    },
+    {
+      "InstanceType": "c6g.metal",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 2.176,
+      "MonthlyPrice": 1588.48,
+      "SpotPrice": "1.0882"
+    },
+    {
+      "InstanceType": "g5.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "1 x 3800 GB NVMe SSD",
+      "Network": "40 Gigabit",
+      "Cost": 5.672,
+      "MonthlyPrice": 4140.5599999999995,
+      "SpotPrice": "1.7349"
+    },
+    {
+      "InstanceType": "c6g.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.136,
+      "MonthlyPrice": 99.28,
+      "SpotPrice": "0.0680"
+    },
+    {
+      "InstanceType": "c5n.9xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 36,
+      "Storage": "EBS only",
+      "Network": "50 Gigabit",
+      "Cost": 1.944,
+      "MonthlyPrice": 1419.12,
+      "SpotPrice": "0.6523"
+    },
+    {
+      "InstanceType": "m5ad.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 4.944,
+      "MonthlyPrice": 3609.12,
+      "SpotPrice": "1.6323"
+    },
+    {
+      "InstanceType": "r5a.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.904,
+      "MonthlyPrice": 659.9200000000001,
+      "SpotPrice": "0.3106"
+    },
+    {
+      "InstanceType": "m4.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Moderate",
+      "Cost": 0.1,
+      "MonthlyPrice": 73,
+      "SpotPrice": "0.0378"
+    },
+    {
+      "InstanceType": "t2.micro",
+      "Memory": "1 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Low to Moderate",
+      "Cost": 0.0116,
+      "MonthlyPrice": 8.468,
+      "SpotPrice": "0.0035"
+    },
+    {
+      "InstanceType": "r5n.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.596,
+      "MonthlyPrice": 435.08,
+      "SpotPrice": "0.1793"
+    },
+    {
+      "InstanceType": "c6gd.16xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.4576,
+      "MonthlyPrice": 1794.0479999999998,
+      "SpotPrice": "1.0882"
+    },
+    {
+      "InstanceType": "x2gd.8xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 32,
+      "Storage": "1 x 1900 SSD",
+      "Network": "12 Gigabit",
+      "Cost": 2.672,
+      "MonthlyPrice": 1950.5600000000002,
+      "SpotPrice": "0.8016"
+    },
+    {
+      "InstanceType": "m5d.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 5.424,
+      "MonthlyPrice": 3959.5200000000004,
+      "SpotPrice": "1.6714"
+    },
+    {
+      "InstanceType": "m5.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.096,
+      "MonthlyPrice": 70.08,
+      "SpotPrice": "0.0394"
+    },
+    {
+      "InstanceType": "r6g.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.2016,
+      "MonthlyPrice": 147.168,
+      "SpotPrice": "0.0748"
+    },
+    {
+      "InstanceType": "d2.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 36,
+      "Storage": "24 x 2000 HDD",
+      "Network": "10 Gigabit",
+      "Cost": 5.52,
+      "MonthlyPrice": 4029.6,
+      "SpotPrice": "1.6560"
+    },
+    {
+      "InstanceType": "r5n.metal",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 7.152,
+      "MonthlyPrice": 5220.96,
+      "SpotPrice": "1.7121"
+    },
+    {
+      "InstanceType": "m5a.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.688,
+      "MonthlyPrice": 502.23999999999995,
+      "SpotPrice": "0.3533"
+    },
+    {
+      "InstanceType": "m5a.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2.064,
+      "MonthlyPrice": 1506.72,
+      "SpotPrice": "0.8978"
+    },
+    {
+      "InstanceType": "g4dn.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "125 GB NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.526,
+      "MonthlyPrice": 383.98,
+      "SpotPrice": "0.1578"
+    },
+    {
+      "InstanceType": "x1e.8xlarge",
+      "Memory": "976 GiB",
+      "VCPUS": 32,
+      "Storage": "1 x 960 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 6.672,
+      "MonthlyPrice": 4870.5599999999995,
+      "SpotPrice": "2.0016"
+    },
+    {
+      "InstanceType": "r5b.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 4.768,
+      "MonthlyPrice": 3480.64,
+      "SpotPrice": "1.3033"
+    },
+    {
+      "InstanceType": "m5a.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.086,
+      "MonthlyPrice": 62.779999999999994,
+      "SpotPrice": "0.0408"
+    },
+    {
+      "InstanceType": "c6gd.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 118 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0768,
+      "MonthlyPrice": 56.06399999999999,
+      "SpotPrice": "0.0340"
+    },
+    {
+      "InstanceType": "c5.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "12 Gigabit",
+      "Cost": 2.04,
+      "MonthlyPrice": 1489.2,
+      "SpotPrice": "0.9678"
+    },
+    {
+      "InstanceType": "p2.16xlarge",
+      "Memory": "732 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 14.4,
+      "MonthlyPrice": 10512,
+      "SpotPrice": "4.3200"
+    },
+    {
+      "InstanceType": "d3en.6xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 24,
+      "Storage": "12 x 14000 HDD",
+      "Network": "40 Gigabit",
+      "Cost": 3.154,
+      "MonthlyPrice": 2302.42,
+      "SpotPrice": "0.9462"
+    },
+    {
+      "InstanceType": "t4g.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.2688,
+      "MonthlyPrice": 196.224,
+      "SpotPrice": "0.0806"
+    },
+    {
+      "InstanceType": "m5.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.768,
+      "MonthlyPrice": 560.64,
+      "SpotPrice": "0.3306"
+    },
+    {
+      "InstanceType": "r5d.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 3.456,
+      "MonthlyPrice": 2522.88,
+      "SpotPrice": "1.0715"
+    },
+    {
+      "InstanceType": "c5.18xlarge",
+      "Memory": "144 GiB",
+      "VCPUS": 72,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 3.06,
+      "MonthlyPrice": 2233.8,
+      "SpotPrice": "1.1824"
+    },
+    {
+      "InstanceType": "c6i.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "18750 Megabit",
+      "Cost": 2.04,
+      "MonthlyPrice": 1489.2,
+      "SpotPrice": "1.0617"
+    },
+    {
+      "InstanceType": "m5zn.metal",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 3.9641,
+      "MonthlyPrice": 2893.793,
+      "SpotPrice": "1.0061"
+    },
+    {
+      "InstanceType": "i3.2xlarge",
+      "Memory": "61 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 1900 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.624,
+      "MonthlyPrice": 455.52,
+      "SpotPrice": "0.2383"
+    },
+    {
+      "InstanceType": "m4.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 3.2,
+      "MonthlyPrice": 2336,
+      "SpotPrice": "1.0596"
+    },
+    {
+      "InstanceType": "vt1.24xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25000 Megabit",
+      "Cost": 5.2,
+      "MonthlyPrice": 3796,
+      "SpotPrice": "1.5600"
+    },
+    {
+      "InstanceType": "r5b.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.192,
+      "MonthlyPrice": 870.16,
+      "SpotPrice": "0.4150"
+    },
+    {
+      "InstanceType": "m5dn.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 300 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 1.088,
+      "MonthlyPrice": 794.24,
+      "SpotPrice": "0.4935"
+    },
+    {
+      "InstanceType": "m5d.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 2.712,
+      "MonthlyPrice": 1979.7600000000002,
+      "SpotPrice": "1.4680"
+    },
+    {
+      "InstanceType": "c5.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.34,
+      "MonthlyPrice": 248.20000000000002,
+      "SpotPrice": "0.1777"
+    },
+    {
+      "InstanceType": "r6gd.medium",
+      "Memory": "8 GiB",
+      "VCPUS": 1,
+      "Storage": "1 x 59 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0576,
+      "MonthlyPrice": 42.048,
+      "SpotPrice": "0.0187"
+    },
+    {
+      "InstanceType": "m6g.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 1.232,
+      "MonthlyPrice": 899.36,
+      "SpotPrice": "0.5713"
+    },
+    {
+      "InstanceType": "c5n.xlarge",
+      "Memory": "10.5 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.216,
+      "MonthlyPrice": 157.68,
+      "SpotPrice": "0.0661"
+    },
+    {
+      "InstanceType": "m5zn.6xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 24,
+      "Storage": "EBS only",
+      "Network": "50 Gigabit",
+      "Cost": 1.982,
+      "MonthlyPrice": 1446.86,
+      "SpotPrice": "0.4137"
+    },
+    {
+      "InstanceType": "i3en.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 1250 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.226,
+      "MonthlyPrice": 164.98000000000002,
+      "SpotPrice": "0.0678"
+    },
+    {
+      "InstanceType": "f1.4xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 940 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 3.3,
+      "MonthlyPrice": 2409,
+      "SpotPrice": "0.9900"
+    },
+    {
+      "InstanceType": "r6g.medium",
+      "Memory": "8 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0504,
+      "MonthlyPrice": 36.792,
+      "SpotPrice": "0.0187"
+    },
+    {
+      "InstanceType": "r5.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.252,
+      "MonthlyPrice": 183.96,
+      "SpotPrice": "0.0736"
+    },
+    {
+      "InstanceType": "r5b.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 7.152,
+      "MonthlyPrice": 5220.96,
+      "SpotPrice": "2.2444"
+    },
+    {
+      "InstanceType": "c6i.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.34,
+      "MonthlyPrice": 248.20000000000002,
+      "SpotPrice": "0.1451"
+    },
+    {
+      "InstanceType": "m5n.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.476,
+      "MonthlyPrice": 347.47999999999996,
+      "SpotPrice": "0.1921"
+    },
+    {
+      "InstanceType": "g5.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "1 x 900 GB NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.448,
+      "MonthlyPrice": 1787.04,
+      "SpotPrice": "0.7437"
+    },
+    {
+      "InstanceType": "r5dn.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 8.016,
+      "MonthlyPrice": 5851.68,
+      "SpotPrice": "1.8686"
+    },
+    {
+      "InstanceType": "m5zn.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.1652,
+      "MonthlyPrice": 120.596,
+      "SpotPrice": "0.0340"
+    },
+    {
+      "InstanceType": "c5n.large",
+      "Memory": "5.25 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.108,
+      "MonthlyPrice": 78.84,
+      "SpotPrice": "0.0324"
+    },
+    {
+      "InstanceType": "m5ad.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "4 x 600 NVMe SSD",
+      "Network": "12 Gigabit",
+      "Cost": 3.296,
+      "MonthlyPrice": 2406.08,
+      "SpotPrice": "1.0882"
+    },
+    {
+      "InstanceType": "c6gd.8xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 32,
+      "Storage": "1 x 1900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 1.2288,
+      "MonthlyPrice": 897.0239999999999,
+      "SpotPrice": "0.5441"
+    },
+    {
+      "InstanceType": "m5n.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "75 Gigabit",
+      "Cost": 3.808,
+      "MonthlyPrice": 2779.8399999999997,
+      "SpotPrice": "2.3432"
+    },
+    {
+      "InstanceType": "c6i.24xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "37500 Megabit",
+      "Cost": 4.08,
+      "MonthlyPrice": 2978.4,
+      "SpotPrice": "1.6323"
+    },
+    {
+      "InstanceType": "r5ad.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.524,
+      "MonthlyPrice": 382.52000000000004,
+      "SpotPrice": "0.1936"
+    },
+    {
+      "InstanceType": "m5zn.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.6607,
+      "MonthlyPrice": 482.311,
+      "SpotPrice": "0.1743"
+    },
+    {
+      "InstanceType": "m5dn.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 600 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.176,
+      "MonthlyPrice": 1588.48,
+      "SpotPrice": "0.6908"
+    },
+    {
+      "InstanceType": "m5ad.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.824,
+      "MonthlyPrice": 601.52,
+      "SpotPrice": "0.3869"
+    },
+    {
+      "InstanceType": "m5d.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.452,
+      "MonthlyPrice": 329.96000000000004,
+      "SpotPrice": "0.2486"
+    },
+    {
+      "InstanceType": "m6i.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "37500 Megabit",
+      "Cost": 4.608,
+      "MonthlyPrice": 3363.8399999999997,
+      "SpotPrice": "2.0640"
+    },
+    {
+      "InstanceType": "t3a.small",
+      "Memory": "2 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0188,
+      "MonthlyPrice": 13.724,
+      "SpotPrice": "0.0069"
+    },
+    {
+      "InstanceType": "c6i.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.085,
+      "MonthlyPrice": 62.050000000000004,
+      "SpotPrice": "0.0340"
+    },
+    {
+      "InstanceType": "m6g.metal",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 2.464,
+      "MonthlyPrice": 1798.72,
+      "SpotPrice": "1.1426"
+    },
+    {
+      "InstanceType": "c6gd.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 237 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.1536,
+      "MonthlyPrice": 112.12799999999999,
+      "SpotPrice": "0.0680"
+    },
+    {
+      "InstanceType": "m6i.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "18750 Megabit",
+      "Cost": 2.304,
+      "MonthlyPrice": 1681.9199999999998,
+      "SpotPrice": "1.4012"
+    },
+    {
+      "InstanceType": "m5ad.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.206,
+      "MonthlyPrice": 150.38,
+      "SpotPrice": "0.0817"
+    },
+    {
+      "InstanceType": "x2gd.16xlarge",
+      "Memory": "1024 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 SSD",
+      "Network": "25 Gigabit",
+      "Cost": 5.344,
+      "MonthlyPrice": 3901.1200000000003,
+      "SpotPrice": "1.6032"
+    },
+    {
+      "InstanceType": "m5.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 4.608,
+      "MonthlyPrice": 3363.8399999999997,
+      "SpotPrice": "1.6755"
+    },
+    {
+      "InstanceType": "z1d.metal",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 4.464,
+      "MonthlyPrice": 3258.7200000000003,
+      "SpotPrice": "1.3392"
+    },
+    {
+      "InstanceType": "c6g.8xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.088,
+      "MonthlyPrice": 794.24,
+      "SpotPrice": "0.5441"
+    },
+    {
+      "InstanceType": "z1d.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.744,
+      "MonthlyPrice": 543.12,
+      "SpotPrice": "0.2232"
+    },
+    {
+      "InstanceType": "r5n.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 1.192,
+      "MonthlyPrice": 870.16,
+      "SpotPrice": "0.3469"
+    },
+    {
+      "InstanceType": "r5.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2.016,
+      "MonthlyPrice": 1471.68,
+      "SpotPrice": "0.5766"
+    },
+    {
+      "InstanceType": "x2gd.medium",
+      "Memory": "16 GiB",
+      "VCPUS": 1,
+      "Storage": "1 x 59 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0835,
+      "MonthlyPrice": 60.955000000000005,
+      "SpotPrice": "0.0251"
+    },
+    {
+      "InstanceType": "m5.metal",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 4.608,
+      "MonthlyPrice": 3363.8399999999997,
+      "SpotPrice": "1.6323"
+    },
+    {
+      "InstanceType": "r5dn.metal",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 8.016,
+      "MonthlyPrice": 5851.68,
+      "SpotPrice": "1.7253"
+    },
+    {
+      "InstanceType": "r4.large",
+      "Memory": "15.25 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.133,
+      "MonthlyPrice": 97.09,
+      "SpotPrice": "0.0345"
+    },
+    {
+      "InstanceType": "r6gd.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 237 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.2304,
+      "MonthlyPrice": 168.192,
+      "SpotPrice": "0.0748"
+    },
+    {
+      "InstanceType": "r5n.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "50 Gigabit",
+      "Cost": 3.576,
+      "MonthlyPrice": 2610.48,
+      "SpotPrice": "1.1906"
+    },
+    {
+      "InstanceType": "t2.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Moderate",
+      "Cost": 0.3712,
+      "MonthlyPrice": 270.976,
+      "SpotPrice": "0.1114"
+    },
+    {
+      "InstanceType": "r5d.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.288,
+      "MonthlyPrice": 210.23999999999998,
+      "SpotPrice": "0.0910"
+    },
+    {
+      "InstanceType": "c5ad.8xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 600 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 1.376,
+      "MonthlyPrice": 1004.4799999999999,
+      "SpotPrice": "0.6864"
+    },
+    {
+      "InstanceType": "m4.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "High",
+      "Cost": 0.2,
+      "MonthlyPrice": 146,
+      "SpotPrice": "0.0868"
+    },
+    {
+      "InstanceType": "g4dn.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "225 GB NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 1.204,
+      "MonthlyPrice": 878.92,
+      "SpotPrice": "0.3612"
+    },
+    {
+      "InstanceType": "m5n.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "50 Gigabit",
+      "Cost": 2.856,
+      "MonthlyPrice": 2084.88,
+      "SpotPrice": "1.1339"
+    },
+    {
+      "InstanceType": "r5a.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2.712,
+      "MonthlyPrice": 1979.7600000000002,
+      "SpotPrice": "0.9042"
+    },
+    {
+      "InstanceType": "c4.xlarge",
+      "Memory": "7.5 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "High",
+      "Cost": 0.199,
+      "MonthlyPrice": 145.27,
+      "SpotPrice": "0.0727"
+    },
+    {
+      "InstanceType": "x1e.32xlarge",
+      "Memory": "3904 GiB",
+      "VCPUS": 128,
+      "Storage": "2 x 1920 SSD",
+      "Network": "25 Gigabit",
+      "Cost": 26.688,
+      "MonthlyPrice": 19482.239999999998,
+      "SpotPrice": "8.0064"
+    },
+    {
+      "InstanceType": "c4.large",
+      "Memory": "3.75 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Moderate",
+      "Cost": 0.1,
+      "MonthlyPrice": 73,
+      "SpotPrice": "0.0308"
+    },
+    {
+      "InstanceType": "t4g.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0672,
+      "MonthlyPrice": 49.056,
+      "SpotPrice": "0.0202"
+    },
+    {
+      "InstanceType": "a1.medium",
+      "Memory": "2 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0255,
+      "MonthlyPrice": 18.615,
+      "SpotPrice": "0.0084"
+    },
+    {
+      "InstanceType": "r5b.metal",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 7.152,
+      "MonthlyPrice": 5220.96,
+      "SpotPrice": "1.7474"
+    },
+    {
+      "InstanceType": "t3a.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0752,
+      "MonthlyPrice": 54.896,
+      "SpotPrice": "0.0266"
+    },
+    {
+      "InstanceType": "r6gd.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 1425 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 2.7648,
+      "MonthlyPrice": 2018.304,
+      "SpotPrice": "0.8978"
+    },
+    {
+      "InstanceType": "g4dn.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "900 GB NVMe SSD",
+      "Network": "50 Gigabit",
+      "Cost": 2.176,
+      "MonthlyPrice": 1588.48,
+      "SpotPrice": "0.6528"
+    },
+    {
+      "InstanceType": "x2gd.xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 237 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.334,
+      "MonthlyPrice": 243.82000000000002,
+      "SpotPrice": "0.1002"
+    },
+    {
+      "InstanceType": "m6g.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 2.464,
+      "MonthlyPrice": 1798.72,
+      "SpotPrice": "1.1426"
+    },
+    {
+      "InstanceType": "c5a.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.308,
+      "MonthlyPrice": 224.84,
+      "SpotPrice": "0.1810"
+    },
+    {
+      "InstanceType": "m5n.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 5.712,
+      "MonthlyPrice": 4169.76,
+      "SpotPrice": "2.1830"
+    },
+    {
+      "InstanceType": "r5a.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 5.424,
+      "MonthlyPrice": 3959.5200000000004,
+      "SpotPrice": "1.8670"
+    },
+    {
+      "InstanceType": "m6i.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "12500 Megabit",
+      "Cost": 1.536,
+      "MonthlyPrice": 1121.28,
+      "SpotPrice": "0.7165"
+    },
+    {
+      "InstanceType": "g4dn.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "900 GB NVMe SSD",
+      "Network": "50 Gigabit",
+      "Cost": 3.912,
+      "MonthlyPrice": 2855.7599999999998,
+      "SpotPrice": "1.2939"
+    },
+    {
+      "InstanceType": "m6gd.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "1 x 1900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 1.4464,
+      "MonthlyPrice": 1055.8719999999998,
+      "SpotPrice": "0.5713"
+    },
+    {
+      "InstanceType": "g4ad.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "150 GB NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.37853,
+      "MonthlyPrice": 276.32689999999997,
+      "SpotPrice": "0.2216"
+    },
+    {
+      "InstanceType": "r5b.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 3.576,
+      "MonthlyPrice": 2610.48,
+      "SpotPrice": "1.3084"
+    },
+    {
+      "InstanceType": "m5.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2.304,
+      "MonthlyPrice": 1681.9199999999998,
+      "SpotPrice": "0.9427"
+    },
+    {
+      "InstanceType": "m6gd.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.8928,
+      "MonthlyPrice": 2111.7439999999997,
+      "SpotPrice": "1.1426"
+    },
+    {
+      "InstanceType": "r5a.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "12 Gigabit",
+      "Cost": 3.616,
+      "MonthlyPrice": 2639.6800000000003,
+      "SpotPrice": "1.1534"
+    },
+    {
+      "InstanceType": "r6g.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 1.6128,
+      "MonthlyPrice": 1177.344,
+      "SpotPrice": "0.5985"
+    },
+    {
+      "InstanceType": "r5.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.504,
+      "MonthlyPrice": 367.92,
+      "SpotPrice": "0.2094"
+    },
+    {
+      "InstanceType": "z1d.6xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 24,
+      "Storage": "1 x 900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 2.232,
+      "MonthlyPrice": 1629.3600000000001,
+      "SpotPrice": "0.6696"
+    },
+    {
+      "InstanceType": "i3.metal",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "8 x 1900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 4.992,
+      "MonthlyPrice": 3644.16,
+      "SpotPrice": "1.4976"
+    },
+    {
+      "InstanceType": "m5zn.3xlarge",
+      "Memory": "48 GiB",
+      "VCPUS": 12,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.991,
+      "MonthlyPrice": 723.43,
+      "SpotPrice": "0.2539"
+    },
+    {
+      "InstanceType": "c5n.18xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 72,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 3.888,
+      "MonthlyPrice": 2838.24,
+      "SpotPrice": "1.2421"
+    },
+    {
+      "InstanceType": "t3.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.3328,
+      "MonthlyPrice": 242.944,
+      "SpotPrice": "0.0998"
+    },
+    {
+      "InstanceType": "c5d.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 100 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.192,
+      "MonthlyPrice": 140.16,
+      "SpotPrice": "0.0792"
+    },
+    {
+      "InstanceType": "d3.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "12 x 2000 HDD",
+      "Network": "Up to 15 Gigabit",
+      "Cost": 1.998,
+      "MonthlyPrice": 1458.54,
+      "SpotPrice": "0.5994"
+    },
+    {
+      "InstanceType": "m6i.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25000 Megabit",
+      "Cost": 3.072,
+      "MonthlyPrice": 2242.56,
+      "SpotPrice": "1.3919"
+    },
+    {
+      "InstanceType": "r5a.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.808,
+      "MonthlyPrice": 1319.8400000000001,
+      "SpotPrice": "0.5700"
+    },
+    {
+      "InstanceType": "r5ad.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.048,
+      "MonthlyPrice": 765.0400000000001,
+      "SpotPrice": "0.3751"
+    },
+    {
+      "InstanceType": "r5d.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 600 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 2.304,
+      "MonthlyPrice": 1681.9199999999998,
+      "SpotPrice": "0.6361"
+    },
+    {
+      "InstanceType": "d3en.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "8 x 14000 HDD",
+      "Network": "25 Gigabit",
+      "Cost": 2.103,
+      "MonthlyPrice": 1535.19,
+      "SpotPrice": "0.6309"
+    },
+    {
+      "InstanceType": "c5ad.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.688,
+      "MonthlyPrice": 502.23999999999995,
+      "SpotPrice": "0.3632"
+    },
+    {
+      "InstanceType": "t2.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Low to Moderate",
+      "Cost": 0.0928,
+      "MonthlyPrice": 67.744,
+      "SpotPrice": "0.0278"
+    },
+    {
+      "InstanceType": "m4.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "High",
+      "Cost": 0.8,
+      "MonthlyPrice": 584,
+      "SpotPrice": "0.3136"
+    },
+    {
+      "InstanceType": "m5dn.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.272,
+      "MonthlyPrice": 198.56,
+      "SpotPrice": "0.0775"
+    },
+    {
+      "InstanceType": "d3en.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "4 x 14000 HDD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 1.051,
+      "MonthlyPrice": 767.2299999999999,
+      "SpotPrice": "0.3153"
+    },
+    {
+      "InstanceType": "t4g.nano",
+      "Memory": "0.5 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0042,
+      "MonthlyPrice": 3.066,
+      "SpotPrice": "0.0013"
+    },
+    {
+      "InstanceType": "r5n.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.298,
+      "MonthlyPrice": 217.54,
+      "SpotPrice": "0.0964"
+    },
+    {
+      "InstanceType": "r4.2xlarge",
+      "Memory": "61 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.532,
+      "MonthlyPrice": 388.36,
+      "SpotPrice": "0.2360"
+    },
+    {
+      "InstanceType": "g5.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 250 GB NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.006,
+      "MonthlyPrice": 734.38,
+      "SpotPrice": "0.3032"
+    },
+    {
+      "InstanceType": "t4g.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.1344,
+      "MonthlyPrice": 98.112,
+      "SpotPrice": "0.0403"
+    },
+    {
+      "InstanceType": "g5.24xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "1 x 3800 GB NVMe SSD",
+      "Network": "50 Gigabit",
+      "Cost": 8.144,
+      "MonthlyPrice": 5945.12,
+      "SpotPrice": "2.4432"
+    },
+    {
+      "InstanceType": "i3.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 32,
+      "Storage": "4 x 1900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 2.496,
+      "MonthlyPrice": 1822.08,
+      "SpotPrice": "0.7488"
+    },
+    {
+      "InstanceType": "r6g.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 3.2256,
+      "MonthlyPrice": 2354.688,
+      "SpotPrice": "1.2265"
+    },
+    {
+      "InstanceType": "m6gd.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 118 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0904,
+      "MonthlyPrice": 65.99199999999999,
+      "SpotPrice": "0.0357"
+    },
+    {
+      "InstanceType": "g4ad.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "300 GB NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.54117,
+      "MonthlyPrice": 395.0541,
+      "SpotPrice": "0.3105"
+    },
+    {
+      "InstanceType": "inf1.24xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 4.721,
+      "MonthlyPrice": 3446.33,
+      "SpotPrice": "1.4163"
+    },
+    {
+      "InstanceType": "c4.4xlarge",
+      "Memory": "30 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "High",
+      "Cost": 0.796,
+      "MonthlyPrice": 581.08,
+      "SpotPrice": "0.2549"
+    },
+    {
+      "InstanceType": "r5n.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 7.152,
+      "MonthlyPrice": 5220.96,
+      "SpotPrice": "2.3621"
+    },
+    {
+      "InstanceType": "x1e.2xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 240 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.668,
+      "MonthlyPrice": 1217.6399999999999,
+      "SpotPrice": "0.5004"
+    },
+    {
+      "InstanceType": "vt1.3xlarge",
+      "Memory": "24 GiB",
+      "VCPUS": 12,
+      "Storage": "EBS only",
+      "Network": "3125 Megabit",
+      "Cost": 0.65,
+      "MonthlyPrice": 474.5,
+      "SpotPrice": "0.1950"
+    },
+    {
+      "InstanceType": "t2.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Moderate",
+      "Cost": 0.1856,
+      "MonthlyPrice": 135.488,
+      "SpotPrice": "0.0557"
+    },
+    {
+      "InstanceType": "a1.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.102,
+      "MonthlyPrice": 74.46,
+      "SpotPrice": "0.0569"
+    },
+    {
+      "InstanceType": "t3a.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.3008,
+      "MonthlyPrice": 219.584,
+      "SpotPrice": "0.0902"
+    },
+    {
+      "InstanceType": "c6gd.medium",
+      "Memory": "2 GiB",
+      "VCPUS": 1,
+      "Storage": "1 x 59 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0384,
+      "MonthlyPrice": 28.031999999999996,
+      "SpotPrice": "0.0170"
+    },
+    {
+      "InstanceType": "m5a.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.172,
+      "MonthlyPrice": 125.55999999999999,
+      "SpotPrice": "0.0866"
+    },
+    {
+      "InstanceType": "p3.16xlarge",
+      "Memory": "488 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 24.48,
+      "MonthlyPrice": 17870.4,
+      "SpotPrice": "7.3440"
+    },
+    {
+      "InstanceType": "c5d.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 400 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.768,
+      "MonthlyPrice": 560.64,
+      "SpotPrice": "0.3009"
+    },
+    {
+      "InstanceType": "c4.2xlarge",
+      "Memory": "15 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "High",
+      "Cost": 0.398,
+      "MonthlyPrice": 290.54,
+      "SpotPrice": "0.1986"
+    },
+    {
+      "InstanceType": "m6i.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 12500 Megabit",
+      "Cost": 0.768,
+      "MonthlyPrice": 560.64,
+      "SpotPrice": "0.3662"
+    },
+    {
+      "InstanceType": "c5.24xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 4.08,
+      "MonthlyPrice": 2978.4,
+      "SpotPrice": "1.5802"
+    },
+    {
+      "InstanceType": "c5d.24xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 4.608,
+      "MonthlyPrice": 3363.8399999999997,
+      "SpotPrice": "1.6250"
+    },
+    {
+      "InstanceType": "r5ad.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 3.144,
+      "MonthlyPrice": 2295.12,
+      "SpotPrice": "0.8550"
+    },
+    {
+      "InstanceType": "r5a.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.452,
+      "MonthlyPrice": 329.96000000000004,
+      "SpotPrice": "0.1816"
+    },
+    {
+      "InstanceType": "c6g.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.272,
+      "MonthlyPrice": 198.56,
+      "SpotPrice": "0.1367"
+    },
+    {
+      "InstanceType": "m6g.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "12 Gigabit",
+      "Cost": 1.848,
+      "MonthlyPrice": 1349.04,
+      "SpotPrice": "0.8570"
+    },
+    {
+      "InstanceType": "r6gd.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 118 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.1152,
+      "MonthlyPrice": 84.096,
+      "SpotPrice": "0.0374"
+    },
+    {
+      "InstanceType": "r5n.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "75 Gigabit",
+      "Cost": 4.768,
+      "MonthlyPrice": 3480.64,
+      "SpotPrice": "2.8323"
+    },
+    {
+      "InstanceType": "c5.metal",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 4.08,
+      "MonthlyPrice": 2978.4,
+      "SpotPrice": "1.5918"
+    },
+    {
+      "InstanceType": "z1d.3xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 12,
+      "Storage": "1 x 450 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.116,
+      "MonthlyPrice": 814.6800000000001,
+      "SpotPrice": "0.3348"
+    },
+    {
+      "InstanceType": "r5d.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 6.912,
+      "MonthlyPrice": 5045.76,
+      "SpotPrice": "1.9236"
+    },
+    {
+      "InstanceType": "p3.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 12.24,
+      "MonthlyPrice": 8935.2,
+      "SpotPrice": "3.6720"
+    },
+    {
+      "InstanceType": "z1d.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.186,
+      "MonthlyPrice": 135.78,
+      "SpotPrice": "0.0558"
+    },
+    {
+      "InstanceType": "a1.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.204,
+      "MonthlyPrice": 148.92,
+      "SpotPrice": "0.0729"
+    },
+    {
+      "InstanceType": "m5d.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 600 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 1.808,
+      "MonthlyPrice": 1319.8400000000001,
+      "SpotPrice": "0.6054"
+    },
+    {
+      "InstanceType": "g5.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 450 GB NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.212,
+      "MonthlyPrice": 884.76,
+      "SpotPrice": "0.3636"
+    },
+    {
+      "InstanceType": "t3.micro",
+      "Memory": "1 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0104,
+      "MonthlyPrice": 7.592,
+      "SpotPrice": "0.0031"
+    },
+    {
+      "InstanceType": "r5.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 6.048,
+      "MonthlyPrice": 4415.04,
+      "SpotPrice": "1.7431"
+    },
+    {
+      "InstanceType": "g3.4xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.14,
+      "MonthlyPrice": 832.1999999999999,
+      "SpotPrice": "0.3420"
+    },
+    {
+      "InstanceType": "c5a.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.077,
+      "MonthlyPrice": 56.21,
+      "SpotPrice": "0.0324"
+    },
+    {
+      "InstanceType": "u-9tb1.112xlarge",
+      "Memory": "9216 GiB",
+      "VCPUS": 448,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 81.9,
+      "MonthlyPrice": 59787.00000000001,
+      "SpotPrice": "NA"
+    },
+    {
+      "InstanceType": "c5ad.24xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 4.128,
+      "MonthlyPrice": 3013.44,
+      "SpotPrice": "1.5546"
+    },
+    {
+      "InstanceType": "t3.nano",
+      "Memory": "0.5 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0052,
+      "MonthlyPrice": 3.796,
+      "SpotPrice": "0.0016"
+    },
+    {
+      "InstanceType": "c5a.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "12 Gigabit",
+      "Cost": 1.848,
+      "MonthlyPrice": 1349.04,
+      "SpotPrice": "0.7778"
+    },
+    {
+      "InstanceType": "r5ad.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.262,
+      "MonthlyPrice": 191.26000000000002,
+      "SpotPrice": "0.0723"
+    },
+    {
+      "InstanceType": "r5d.metal",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 6.912,
+      "MonthlyPrice": 5045.76,
+      "SpotPrice": "1.7100"
+    },
+    {
+      "InstanceType": "m5zn.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.3303,
+      "MonthlyPrice": 241.119,
+      "SpotPrice": "0.0805"
+    },
+    {
+      "InstanceType": "t4g.small",
+      "Memory": "2 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0168,
+      "MonthlyPrice": 12.264,
+      "SpotPrice": "0.0050"
+    },
+    {
+      "InstanceType": "r6gd.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 475 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.4608,
+      "MonthlyPrice": 336.384,
+      "SpotPrice": "0.1743"
+    },
+    {
+      "InstanceType": "r6g.metal",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 3.2256,
+      "MonthlyPrice": 2354.688,
+      "SpotPrice": "1.1970"
+    },
+    {
+      "InstanceType": "r5n.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 2.384,
+      "MonthlyPrice": 1740.32,
+      "SpotPrice": "0.8163"
+    },
+    {
+      "InstanceType": "c5.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.17,
+      "MonthlyPrice": 124.10000000000001,
+      "SpotPrice": "0.0812"
+    },
+    {
+      "InstanceType": "vt1.6xlarge",
+      "Memory": "48 GiB",
+      "VCPUS": 24,
+      "Storage": "EBS only",
+      "Network": "6250 Megabit",
+      "Cost": 1.3,
+      "MonthlyPrice": 949,
+      "SpotPrice": "0.3900"
+    },
+    {
+      "InstanceType": "r5dn.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.668,
+      "MonthlyPrice": 487.64000000000004,
+      "SpotPrice": "0.1960"
+    },
+    {
+      "InstanceType": "x1.16xlarge",
+      "Memory": "976 GiB",
+      "VCPUS": 64,
+      "Storage": "1 x 1920 SSD",
+      "Network": "High",
+      "Cost": 6.669,
+      "MonthlyPrice": 4868.37,
+      "SpotPrice": "2.0007"
+    },
+    {
+      "InstanceType": "g5.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "1 x 1900 GB NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 4.096,
+      "MonthlyPrice": 2990.08,
+      "SpotPrice": "1.2467"
+    },
+    {
+      "InstanceType": "r6g.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.8064,
+      "MonthlyPrice": 588.672,
+      "SpotPrice": "0.3121"
+    },
+    {
+      "InstanceType": "m5n.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.238,
+      "MonthlyPrice": 173.73999999999998,
+      "SpotPrice": "0.0680"
+    },
+    {
+      "InstanceType": "dl1.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 1000 GB NVMe SSD",
+      "Network": "400 Gigabit",
+      "Cost": 13.10904,
+      "MonthlyPrice": 9569.5992,
+      "SpotPrice": "3.9327"
+    },
+    {
+      "InstanceType": "h1.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 2000 HDD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.468,
+      "MonthlyPrice": 341.64000000000004,
+      "SpotPrice": "0.1404"
+    },
+    {
+      "InstanceType": "t3a.micro",
+      "Memory": "1 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0094,
+      "MonthlyPrice": 6.862,
+      "SpotPrice": "0.0029"
+    },
+    {
+      "InstanceType": "c5ad.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.086,
+      "MonthlyPrice": 62.779999999999994,
+      "SpotPrice": "0.0324"
+    },
+    {
+      "InstanceType": "i3en.metal",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "8 x 7500 NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 10.848,
+      "MonthlyPrice": 7919.040000000001,
+      "SpotPrice": "3.2544"
+    },
+    {
+      "InstanceType": "p3.2xlarge",
+      "Memory": "61 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 3.06,
+      "MonthlyPrice": 2233.8,
+      "SpotPrice": "0.9180"
+    },
+    {
+      "InstanceType": "t2.nano",
+      "Memory": "0.5 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Low",
+      "Cost": 0.0058,
+      "MonthlyPrice": 4.234,
+      "SpotPrice": "NA"
+    },
+    {
+      "InstanceType": "i3en.3xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 12,
+      "Storage": "1 x 7500 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 1.356,
+      "MonthlyPrice": 989.8800000000001,
+      "SpotPrice": "0.4639"
+    },
+    {
+      "InstanceType": "x1e.16xlarge",
+      "Memory": "1952 GiB",
+      "VCPUS": 64,
+      "Storage": "1 x 1920 SSD",
+      "Network": "10 Gigabit",
+      "Cost": 13.344,
+      "MonthlyPrice": 9741.119999999999,
+      "SpotPrice": "4.0032"
+    },
+    {
+      "InstanceType": "c5ad.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.344,
+      "MonthlyPrice": 251.11999999999998,
+      "SpotPrice": "0.1737"
+    },
+    {
+      "InstanceType": "m6g.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.154,
+      "MonthlyPrice": 112.42,
+      "SpotPrice": "0.0714"
+    },
+    {
+      "InstanceType": "r5b.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.298,
+      "MonthlyPrice": 217.54,
+      "SpotPrice": "0.0936"
+    },
+    {
+      "InstanceType": "f1.16xlarge",
+      "Memory": "976 GiB",
+      "VCPUS": 64,
+      "Storage": "4 x 940 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 13.2,
+      "MonthlyPrice": 9636,
+      "SpotPrice": "3.9600"
+    },
+    {
+      "InstanceType": "r5n.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.149,
+      "MonthlyPrice": 108.77,
+      "SpotPrice": "0.0356"
+    },
+    {
+      "InstanceType": "i3en.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "4 x 7500 NVMe SSD",
+      "Network": "50 Gigabit",
+      "Cost": 5.424,
+      "MonthlyPrice": 3959.5200000000004,
+      "SpotPrice": "1.6272"
+    },
+    {
+      "InstanceType": "g3s.xlarge",
+      "Memory": "30.5 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 0.75,
+      "MonthlyPrice": 547.5,
+      "SpotPrice": "0.2250"
+    },
+    {
+      "InstanceType": "p4d.24xlarge",
+      "Memory": "1152 GiB",
+      "VCPUS": 96,
+      "Storage": "8 x 1000 SSD",
+      "Network": "400 Gigabit",
+      "Cost": 32.7726,
+      "MonthlyPrice": 23923.998,
+      "SpotPrice": "9.8318"
+    },
+    {
+      "InstanceType": "m6gd.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 475 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.3616,
+      "MonthlyPrice": 263.96799999999996,
+      "SpotPrice": "0.1447"
+    },
+    {
+      "InstanceType": "inf1.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.362,
+      "MonthlyPrice": 264.26,
+      "SpotPrice": "0.1086"
+    },
+    {
+      "InstanceType": "g4dn.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "900 GB NVMe SSD",
+      "Network": "50 Gigabit",
+      "Cost": 4.352,
+      "MonthlyPrice": 3176.96,
+      "SpotPrice": "1.3056"
+    },
+    {
+      "InstanceType": "p2.8xlarge",
+      "Memory": "488 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 7.2,
+      "MonthlyPrice": 5256,
+      "SpotPrice": "2.1600"
+    },
+    {
+      "InstanceType": "m5d.metal",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 5.424,
+      "MonthlyPrice": 3959.5200000000004,
+      "SpotPrice": "1.6691"
+    },
+    {
+      "InstanceType": "a1.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.051,
+      "MonthlyPrice": 37.23,
+      "SpotPrice": "0.0207"
+    },
+    {
+      "InstanceType": "m5ad.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.412,
+      "MonthlyPrice": 300.76,
+      "SpotPrice": "0.2492"
+    },
+    {
+      "InstanceType": "r5dn.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "4 x 600 NVMe SSD",
+      "Network": "75 Gigabit",
+      "Cost": 5.344,
+      "MonthlyPrice": 3901.1200000000003,
+      "SpotPrice": "1.5975"
+    },
+    {
+      "InstanceType": "r6gd.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 950 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.9216,
+      "MonthlyPrice": 672.768,
+      "SpotPrice": "0.2997"
+    },
+    {
+      "InstanceType": "r5.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.008,
+      "MonthlyPrice": 735.84,
+      "SpotPrice": "0.4241"
+    },
+    {
+      "InstanceType": "m5a.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.344,
+      "MonthlyPrice": 251.11999999999998,
+      "SpotPrice": "0.1821"
+    },
+    {
+      "InstanceType": "x2gd.12xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 1425 SSD",
+      "Network": "20 Gigabit",
+      "Cost": 4.008,
+      "MonthlyPrice": 2925.84,
+      "SpotPrice": "1.2024"
+    },
+    {
+      "InstanceType": "r5dn.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 300 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 1.336,
+      "MonthlyPrice": 975.2800000000001,
+      "SpotPrice": "0.3145"
+    },
+    {
+      "InstanceType": "x2gd.metal",
+      "Memory": "1024 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 SSD",
+      "Network": "25 Gigabit",
+      "Cost": 5.344,
+      "MonthlyPrice": 3901.1200000000003,
+      "SpotPrice": "1.6032"
+    },
+    {
+      "InstanceType": "m5dn.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "4 x 600 NVMe SSD",
+      "Network": "75 Gigabit",
+      "Cost": 4.352,
+      "MonthlyPrice": 3176.96,
+      "SpotPrice": "1.0882"
+    },
+    {
+      "InstanceType": "m5.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 1.536,
+      "MonthlyPrice": 1121.28,
+      "SpotPrice": "0.6187"
+    },
+    {
+      "InstanceType": "i3.large",
+      "Memory": "15.25 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 475 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.156,
+      "MonthlyPrice": 113.88,
+      "SpotPrice": "0.0468"
+    },
+    {
+      "InstanceType": "r5ad.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.131,
+      "MonthlyPrice": 95.63000000000001,
+      "SpotPrice": "0.0356"
+    },
+    {
+      "InstanceType": "t3.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.1664,
+      "MonthlyPrice": 121.472,
+      "SpotPrice": "0.0499"
+    },
+    {
+      "InstanceType": "c5d.18xlarge",
+      "Memory": "144 GiB",
+      "VCPUS": 72,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 3.456,
+      "MonthlyPrice": 2522.88,
+      "SpotPrice": "1.1735"
+    },
+    {
+      "InstanceType": "d3.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "3 x 2000 HDD",
+      "Network": "Up to 15 Gigabit",
+      "Cost": 0.499,
+      "MonthlyPrice": 364.27,
+      "SpotPrice": "0.1497"
+    },
+    {
+      "InstanceType": "r4.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2.128,
+      "MonthlyPrice": 1553.44,
+      "SpotPrice": "0.5429"
+    },
+    {
+      "InstanceType": "g4ad.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "2400 GB NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 3.468,
+      "MonthlyPrice": 2531.64,
+      "SpotPrice": "1.0404"
+    },
+    {
+      "InstanceType": "c6i.16xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25000 Megabit",
+      "Cost": 2.72,
+      "MonthlyPrice": 1985.6000000000001,
+      "SpotPrice": "1.3260"
+    },
+    {
+      "InstanceType": "c6i.32xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 128,
+      "Storage": "EBS only",
+      "Network": "50000 Megabit",
+      "Cost": 5.44,
+      "MonthlyPrice": 3971.2000000000003,
+      "SpotPrice": "2.1764"
+    },
+    {
+      "InstanceType": "x1.32xlarge",
+      "Memory": "1952 GiB",
+      "VCPUS": 128,
+      "Storage": "2 x 1920 SSD",
+      "Network": "High",
+      "Cost": 13.338,
+      "MonthlyPrice": 9736.74,
+      "SpotPrice": "4.0014"
+    },
+    {
+      "InstanceType": "a1.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.408,
+      "MonthlyPrice": 297.84,
+      "SpotPrice": "0.1343"
+    },
+    {
+      "InstanceType": "i3en.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 2500 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.452,
+      "MonthlyPrice": 329.96000000000004,
+      "SpotPrice": "0.1356"
+    },
+    {
+      "InstanceType": "r4.4xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.064,
+      "MonthlyPrice": 776.72,
+      "SpotPrice": "0.3254"
+    },
+    {
+      "InstanceType": "t3a.medium",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0376,
+      "MonthlyPrice": 27.448,
+      "SpotPrice": "0.0113"
+    },
+    {
+      "InstanceType": "m5dn.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.136,
+      "MonthlyPrice": 99.28,
+      "SpotPrice": "0.0340"
+    },
+    {
+      "InstanceType": "c5d.2xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 200 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.384,
+      "MonthlyPrice": 280.32,
+      "SpotPrice": "0.1295"
+    },
+    {
+      "InstanceType": "c6g.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.544,
+      "MonthlyPrice": 397.12,
+      "SpotPrice": "0.2721"
+    },
+    {
+      "InstanceType": "m5n.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 1.904,
+      "MonthlyPrice": 1389.9199999999998,
+      "SpotPrice": "1.1220"
+    },
+    {
+      "InstanceType": "f1.2xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 470 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.65,
+      "MonthlyPrice": 1204.5,
+      "SpotPrice": "0.4950"
+    },
+    {
+      "InstanceType": "m5ad.large",
+      "Memory": "8 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.103,
+      "MonthlyPrice": 75.19,
+      "SpotPrice": "0.0341"
+    },
+    {
+      "InstanceType": "c4.8xlarge",
+      "Memory": "60 GiB",
+      "VCPUS": 36,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 1.591,
+      "MonthlyPrice": 1161.43,
+      "SpotPrice": "0.5316"
+    },
+    {
+      "InstanceType": "i3en.6xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 24,
+      "Storage": "2 x 7500 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.712,
+      "MonthlyPrice": 1979.7600000000002,
+      "SpotPrice": "0.8136"
+    },
+    {
+      "InstanceType": "c6gd.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 1425 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 1.8432,
+      "MonthlyPrice": 1345.536,
+      "SpotPrice": "0.8162"
+    },
+    {
+      "InstanceType": "x1e.xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 120 SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.834,
+      "MonthlyPrice": 608.8199999999999,
+      "SpotPrice": "0.2502"
+    },
+    {
+      "InstanceType": "g3.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2.28,
+      "MonthlyPrice": 1664.3999999999999,
+      "SpotPrice": "0.6840"
+    },
+    {
+      "InstanceType": "m5n.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.952,
+      "MonthlyPrice": 694.9599999999999,
+      "SpotPrice": "0.6222"
+    },
+    {
+      "InstanceType": "r5.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 3.024,
+      "MonthlyPrice": 2207.52,
+      "SpotPrice": "0.9517"
+    },
+    {
+      "InstanceType": "c5n.metal",
+      "Memory": "192 GiB",
+      "VCPUS": 72,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 3.888,
+      "MonthlyPrice": 2838.24,
+      "SpotPrice": "1.2333"
+    },
+    {
+      "InstanceType": "g5.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 600 GB NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 1.624,
+      "MonthlyPrice": 1185.52,
+      "SpotPrice": "0.4872"
+    },
+    {
+      "InstanceType": "m6g.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.308,
+      "MonthlyPrice": 224.84,
+      "SpotPrice": "0.1574"
+    },
+    {
+      "InstanceType": "r5dn.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 600 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.672,
+      "MonthlyPrice": 1950.5600000000002,
+      "SpotPrice": "0.8927"
+    },
+    {
+      "InstanceType": "u-6tb1.56xlarge",
+      "Memory": "6144 GiB",
+      "VCPUS": 224,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 46.40391,
+      "MonthlyPrice": 33874.8543,
+      "SpotPrice": "NA"
+    },
+    {
+      "InstanceType": "c5a.16xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 2.464,
+      "MonthlyPrice": 1798.72,
+      "SpotPrice": "1.0364"
+    },
+    {
+      "InstanceType": "c5.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.68,
+      "MonthlyPrice": 496.40000000000003,
+      "SpotPrice": "0.2632"
+    },
+    {
+      "InstanceType": "r6g.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.1008,
+      "MonthlyPrice": 73.584,
+      "SpotPrice": "0.0374"
+    },
+    {
+      "InstanceType": "c6g.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.068,
+      "MonthlyPrice": 49.64,
+      "SpotPrice": "0.0340"
+    },
+    {
+      "InstanceType": "r5d.4xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 300 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 1.152,
+      "MonthlyPrice": 840.9599999999999,
+      "SpotPrice": "0.3425"
+    },
+    {
+      "InstanceType": "m4.10xlarge",
+      "Memory": "160 GiB",
+      "VCPUS": 40,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2,
+      "MonthlyPrice": 1460,
+      "SpotPrice": "0.6706"
+    },
+    {
+      "InstanceType": "t3a.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.1504,
+      "MonthlyPrice": 109.792,
+      "SpotPrice": "0.0451"
+    },
+    {
+      "InstanceType": "r5.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.126,
+      "MonthlyPrice": 91.98,
+      "SpotPrice": "0.0417"
+    },
+    {
+      "InstanceType": "c6g.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 1.632,
+      "MonthlyPrice": 1191.36,
+      "SpotPrice": "0.8162"
+    },
+    {
+      "InstanceType": "c5ad.xlarge",
+      "Memory": "8 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.172,
+      "MonthlyPrice": 125.55999999999999,
+      "SpotPrice": "0.0648"
+    },
+    {
+      "InstanceType": "r5ad.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 6.288,
+      "MonthlyPrice": 4590.24,
+      "SpotPrice": "1.7100"
+    },
+    {
+      "InstanceType": "c6gn.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "EBS only",
+      "Network": "75 Gigabit",
+      "Cost": 2.0736,
+      "MonthlyPrice": 1513.7279999999998,
+      "SpotPrice": "0.8162"
+    },
+    {
+      "InstanceType": "t2.small",
+      "Memory": "2 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Low to Moderate",
+      "Cost": 0.023,
+      "MonthlyPrice": 16.79,
+      "SpotPrice": "0.0069"
+    },
+    {
+      "InstanceType": "r5a.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.226,
+      "MonthlyPrice": 164.98000000000002,
+      "SpotPrice": "0.0932"
+    },
+    {
+      "InstanceType": "g4dn.metal",
+      "Memory": "384 GiB",
+      "VCPUS": 96,
+      "Storage": "2 x 900 GB NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 7.824,
+      "MonthlyPrice": 5711.5199999999995,
+      "SpotPrice": "2.3472"
+    },
+    {
+      "InstanceType": "d3en.xlarge",
+      "Memory": "16 GiB",
+      "VCPUS": 4,
+      "Storage": "2 x 14000 HDD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.526,
+      "MonthlyPrice": 383.98,
+      "SpotPrice": "0.1578"
+    },
+    {
+      "InstanceType": "c5n.4xlarge",
+      "Memory": "42 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.864,
+      "MonthlyPrice": 630.72,
+      "SpotPrice": "0.4116"
+    },
+    {
+      "InstanceType": "h1.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "8 x 2000 HDD",
+      "Network": "25 Gigabit",
+      "Cost": 3.744,
+      "MonthlyPrice": 2733.1200000000003,
+      "SpotPrice": "1.1232"
+    },
+    {
+      "InstanceType": "h1.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "4 x 2000 HDD",
+      "Network": "10 Gigabit",
+      "Cost": 1.872,
+      "MonthlyPrice": 1366.5600000000002,
+      "SpotPrice": "0.5616"
+    },
+    {
+      "InstanceType": "z1d.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 4.464,
+      "MonthlyPrice": 3258.7200000000003,
+      "SpotPrice": "1.3392"
+    },
+    {
+      "InstanceType": "p2.xlarge",
+      "Memory": "61 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "High",
+      "Cost": 0.9,
+      "MonthlyPrice": 657,
+      "SpotPrice": "0.2700"
+    },
+    {
+      "InstanceType": "d3en.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "16 x 14000 HDD",
+      "Network": "50 Gigabit",
+      "Cost": 4.20576,
+      "MonthlyPrice": 3070.2048,
+      "SpotPrice": "1.2617"
+    },
+    {
+      "InstanceType": "m5dn.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 300 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.544,
+      "MonthlyPrice": 397.12,
+      "SpotPrice": "0.2552"
+    },
+    {
+      "InstanceType": "m6gd.medium",
+      "Memory": "4 GiB",
+      "VCPUS": 1,
+      "Storage": "1 x 59 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.0452,
+      "MonthlyPrice": 32.995999999999995,
+      "SpotPrice": "0.0179"
+    },
+    {
+      "InstanceType": "r5b.8xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 2.384,
+      "MonthlyPrice": 1740.32,
+      "SpotPrice": "1.4003"
+    },
+    {
+      "InstanceType": "c5.9xlarge",
+      "Memory": "72 GiB",
+      "VCPUS": 36,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 1.53,
+      "MonthlyPrice": 1116.9,
+      "SpotPrice": "0.6688"
+    },
+    {
+      "InstanceType": "m6gd.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 950 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.7232,
+      "MonthlyPrice": 527.9359999999999,
+      "SpotPrice": "0.2857"
+    },
+    {
+      "InstanceType": "c6g.16xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 2.176,
+      "MonthlyPrice": 1588.48,
+      "SpotPrice": "1.0882"
+    },
+    {
+      "InstanceType": "c6gn.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.0864,
+      "MonthlyPrice": 63.072,
+      "SpotPrice": "0.0340"
+    },
+    {
+      "InstanceType": "c5a.4xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 16,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.616,
+      "MonthlyPrice": 449.68,
+      "SpotPrice": "0.3710"
+    },
+    {
+      "InstanceType": "r4.xlarge",
+      "Memory": "30.5 GiB",
+      "VCPUS": 4,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.266,
+      "MonthlyPrice": 194.18,
+      "SpotPrice": "0.1218"
+    },
+    {
+      "InstanceType": "c5.large",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.085,
+      "MonthlyPrice": 62.050000000000004,
+      "SpotPrice": "0.0381"
+    },
+    {
+      "InstanceType": "c6gn.medium",
+      "Memory": "2 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.0432,
+      "MonthlyPrice": 31.536,
+      "SpotPrice": "0.0170"
+    },
+    {
+      "InstanceType": "d3en.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "24 x 14000 HDD",
+      "Network": "75 Gigabit",
+      "Cost": 6.30864,
+      "MonthlyPrice": 4605.307199999999,
+      "SpotPrice": "1.8926"
+    },
+    {
+      "InstanceType": "c5ad.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "12 Gigabit",
+      "Cost": 2.064,
+      "MonthlyPrice": 1506.72,
+      "SpotPrice": "0.9124"
+    },
+    {
+      "InstanceType": "i3en.24xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "8 x 7500 NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 10.848,
+      "MonthlyPrice": 7919.040000000001,
+      "SpotPrice": "3.2544"
+    },
+    {
+      "InstanceType": "t2.medium",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Low to Moderate",
+      "Cost": 0.0464,
+      "MonthlyPrice": 33.872,
+      "SpotPrice": "0.0139"
+    },
+    {
+      "InstanceType": "g5.48xlarge",
+      "Memory": "768 GiB",
+      "VCPUS": 192,
+      "Storage": "2 x 3800 GB NVMe SSD",
+      "Network": "100 Gigabit",
+      "Cost": 16.288,
+      "MonthlyPrice": 11890.24,
+      "SpotPrice": "4.9138"
+    },
+    {
+      "InstanceType": "d2.2xlarge",
+      "Memory": "61 GiB",
+      "VCPUS": 8,
+      "Storage": "6 x 2000 HDD",
+      "Network": "High",
+      "Cost": 1.38,
+      "MonthlyPrice": 1007.4,
+      "SpotPrice": "0.4140"
+    },
+    {
+      "InstanceType": "t4g.micro",
+      "Memory": "1 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0084,
+      "MonthlyPrice": 6.132,
+      "SpotPrice": "0.0025"
+    },
+    {
+      "InstanceType": "r5.16xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 4.032,
+      "MonthlyPrice": 2943.36,
+      "SpotPrice": "1.1870"
+    },
+    {
+      "InstanceType": "m5ad.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "10 Gigabit",
+      "Cost": 2.472,
+      "MonthlyPrice": 1804.56,
+      "SpotPrice": "0.8162"
+    },
+    {
+      "InstanceType": "r5d.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 75 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.144,
+      "MonthlyPrice": 105.11999999999999,
+      "SpotPrice": "0.0356"
+    },
+    {
+      "InstanceType": "m5d.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "4 x 600 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 3.616,
+      "MonthlyPrice": 2639.6800000000003,
+      "SpotPrice": "1.1857"
+    },
+    {
+      "InstanceType": "c5ad.16xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1200 NVMe SSD",
+      "Network": "20 Gigabit",
+      "Cost": 2.752,
+      "MonthlyPrice": 2008.9599999999998,
+      "SpotPrice": "1.2158"
+    },
+    {
+      "InstanceType": "d2.xlarge",
+      "Memory": "30.5 GiB",
+      "VCPUS": 4,
+      "Storage": "3 x 2000 HDD",
+      "Network": "Moderate",
+      "Cost": 0.69,
+      "MonthlyPrice": 503.7,
+      "SpotPrice": "0.2070"
+    },
+    {
+      "InstanceType": "m6i.32xlarge",
+      "Memory": "512 GiB",
+      "VCPUS": 128,
+      "Storage": "EBS only",
+      "Network": "50000 Megabit",
+      "Cost": 6.144,
+      "MonthlyPrice": 4485.12,
+      "SpotPrice": "2.5845"
+    },
+    {
+      "InstanceType": "t4g.medium",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0336,
+      "MonthlyPrice": 24.528,
+      "SpotPrice": "0.0103"
+    },
+    {
+      "InstanceType": "m5.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.384,
+      "MonthlyPrice": 280.32,
+      "SpotPrice": "0.1429"
+    },
+    {
+      "InstanceType": "m6gd.metal",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.8928,
+      "MonthlyPrice": 2111.7439999999997,
+      "SpotPrice": "1.1426"
+    },
+    {
+      "InstanceType": "z1d.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.372,
+      "MonthlyPrice": 271.56,
+      "SpotPrice": "0.1116"
+    },
+    {
+      "InstanceType": "r5dn.xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 150 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.334,
+      "MonthlyPrice": 243.82000000000002,
+      "SpotPrice": "0.0783"
+    },
+    {
+      "InstanceType": "m5dn.12xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 GB NVMe SSD",
+      "Network": "50 Gigabit",
+      "Cost": 3.264,
+      "MonthlyPrice": 2382.72,
+      "SpotPrice": "0.9334"
+    },
+    {
+      "InstanceType": "r5b.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.149,
+      "MonthlyPrice": 108.77,
+      "SpotPrice": "0.0356"
+    },
+    {
+      "InstanceType": "c5a.8xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "10 Gigabit",
+      "Cost": 1.232,
+      "MonthlyPrice": 899.36,
+      "SpotPrice": "0.6016"
+    },
+    {
+      "InstanceType": "i3en.2xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 8,
+      "Storage": "2 x 2500 NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.904,
+      "MonthlyPrice": 659.9200000000001,
+      "SpotPrice": "0.3088"
+    },
+    {
+      "InstanceType": "r5a.large",
+      "Memory": "16 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.113,
+      "MonthlyPrice": 82.49000000000001,
+      "SpotPrice": "0.0386"
+    },
+    {
+      "InstanceType": "c6gn.8xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 32,
+      "Storage": "EBS only",
+      "Network": "50 Gigabit",
+      "Cost": 1.3824,
+      "MonthlyPrice": 1009.152,
+      "SpotPrice": "0.5441"
+    },
+    {
+      "InstanceType": "g4ad.8xlarge",
+      "Memory": "128 GiB",
+      "VCPUS": 32,
+      "Storage": "1200 GB NVMe SSD",
+      "Network": "15 Gigabit",
+      "Cost": 1.734,
+      "MonthlyPrice": 1265.82,
+      "SpotPrice": "0.5202"
+    },
+    {
+      "InstanceType": "m4.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "EBS only",
+      "Network": "High",
+      "Cost": 0.4,
+      "MonthlyPrice": 292,
+      "SpotPrice": "0.1948"
+    },
+    {
+      "InstanceType": "r5dn.12xlarge",
+      "Memory": "384 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 GB NVMe SSD",
+      "Network": "50 Gigabit",
+      "Cost": 4.008,
+      "MonthlyPrice": 2925.84,
+      "SpotPrice": "1.4459"
+    },
+    {
+      "InstanceType": "t3.medium",
+      "Memory": "4 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0416,
+      "MonthlyPrice": 30.368,
+      "SpotPrice": "0.0125"
+    },
+    {
+      "InstanceType": "t3.small",
+      "Memory": "2 GiB",
+      "VCPUS": 2,
+      "Storage": "EBS only",
+      "Network": "Up to 5 Gigabit",
+      "Cost": 0.0208,
+      "MonthlyPrice": 15.184,
+      "SpotPrice": "0.0062"
+    },
+    {
+      "InstanceType": "r5.metal",
+      "Memory": "768 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "25 Gigabit",
+      "Cost": 6.048,
+      "MonthlyPrice": 4415.04,
+      "SpotPrice": "1.7100"
+    },
+    {
+      "InstanceType": "c5a.24xlarge",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "EBS only",
+      "Network": "20 Gigabit",
+      "Cost": 3.696,
+      "MonthlyPrice": 2698.08,
+      "SpotPrice": "1.5546"
+    },
+    {
+      "InstanceType": "i3.xlarge",
+      "Memory": "30.5 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 950 NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.312,
+      "MonthlyPrice": 227.76,
+      "SpotPrice": "0.1169"
+    },
+    {
+      "InstanceType": "u-6tb1.112xlarge",
+      "Memory": "6144 GiB",
+      "VCPUS": 448,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 54.6,
+      "MonthlyPrice": 39858,
+      "SpotPrice": "NA"
+    },
+    {
+      "InstanceType": "m5a.16xlarge",
+      "Memory": "256 GiB",
+      "VCPUS": 64,
+      "Storage": "EBS only",
+      "Network": "12 Gigabit",
+      "Cost": 2.752,
+      "MonthlyPrice": 2008.9599999999998,
+      "SpotPrice": "1.0887"
+    },
+    {
+      "InstanceType": "c5d.12xlarge",
+      "Memory": "96 GiB",
+      "VCPUS": 48,
+      "Storage": "2 x 900 NVMe SSD",
+      "Network": "12 Gigabit",
+      "Cost": 2.304,
+      "MonthlyPrice": 1681.9199999999998,
+      "SpotPrice": "0.9282"
+    },
+    {
+      "InstanceType": "c6gd.metal",
+      "Memory": "128 GiB",
+      "VCPUS": 64,
+      "Storage": "2 x 1900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 2.4576,
+      "MonthlyPrice": 1794.0479999999998,
+      "SpotPrice": "1.0882"
+    },
+    {
+      "InstanceType": "g4ad.4xlarge",
+      "Memory": "64 GiB",
+      "VCPUS": 16,
+      "Storage": "600 GB NVMe SSD",
+      "Network": "Up to 10 Gigabit",
+      "Cost": 0.867,
+      "MonthlyPrice": 632.91,
+      "SpotPrice": "0.3101"
+    },
+    {
+      "InstanceType": "u-12tb1.112xlarge",
+      "Memory": "12288 GiB",
+      "VCPUS": 448,
+      "Storage": "EBS only",
+      "Network": "100 Gigabit",
+      "Cost": 109.2,
+      "MonthlyPrice": 79716,
+      "SpotPrice": "NA"
+    },
+    {
+      "InstanceType": "c5d.metal",
+      "Memory": "192 GiB",
+      "VCPUS": 96,
+      "Storage": "4 x 900 NVMe SSD",
+      "Network": "25 Gigabit",
+      "Cost": 4.608,
+      "MonthlyPrice": 3363.8399999999997,
+      "SpotPrice": "1.6891"
+    },
+    {
+      "InstanceType": "g4dn.2xlarge",
+      "Memory": "32 GiB",
+      "VCPUS": 8,
+      "Storage": "225 GB NVMe SSD",
+      "Network": "Up to 25 Gigabit",
+      "Cost": 0.752,
+      "MonthlyPrice": 548.96,
+      "SpotPrice": "0.2256"
+    },
+    {
+      "InstanceType": "t1.micro",
+      "Memory": "0.613 GiB",
+      "VCPUS": 1,
+      "Storage": "EBS only",
+      "Network": "Very Low",
+      "Cost": 0.02,
+      "MonthlyPrice": 14.6,
+      "SpotPrice": "0.0022"
+    },
+    {
+      "InstanceType": "i2.4xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 16,
+      "Storage": "4 x 800 SSD",
+      "Network": "High",
+      "Cost": 3.41,
+      "MonthlyPrice": 2489.3,
+      "SpotPrice": "1.0230"
+    },
+    {
+      "InstanceType": "m3.2xlarge",
+      "Memory": "30 GiB",
+      "VCPUS": 8,
+      "Storage": "2 x 80 SSD",
+      "Network": "High",
+      "Cost": 0.532,
+      "MonthlyPrice": 388.36,
+      "SpotPrice": "0.1815"
+    },
+    {
+      "InstanceType": "c3.xlarge",
+      "Memory": "7.5 GiB",
+      "VCPUS": 4,
+      "Storage": "2 x 40 SSD",
+      "Network": "Moderate",
+      "Cost": 0.21,
+      "MonthlyPrice": 153.29999999999998,
+      "SpotPrice": "0.0748"
+    },
+    {
+      "InstanceType": "m1.large",
+      "Memory": "7.5 GiB",
+      "VCPUS": 2,
+      "Storage": "2 x 420 SSD",
+      "Network": "Moderate",
+      "Cost": 0.175,
+      "MonthlyPrice": 127.74999999999999,
+      "SpotPrice": "0.0223"
+    },
+    {
+      "InstanceType": "m1.xlarge",
+      "Memory": "15 GiB",
+      "VCPUS": 4,
+      "Storage": "4 x 420 SSD",
+      "Network": "High",
+      "Cost": 0.35,
+      "MonthlyPrice": 255.49999999999997,
+      "SpotPrice": "0.0410"
+    },
+    {
+      "InstanceType": "c1.xlarge",
+      "Memory": "7 GiB",
+      "VCPUS": 8,
+      "Storage": "4 x 420 SSD",
+      "Network": "High",
+      "Cost": 0.52,
+      "MonthlyPrice": 379.6,
+      "SpotPrice": "0.0520"
+    },
+    {
+      "InstanceType": "g2.2xlarge",
+      "Memory": "15 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 60 SSD",
+      "Network": "Moderate",
+      "Cost": 0.65,
+      "MonthlyPrice": 474.5,
+      "SpotPrice": "0.1950"
+    },
+    {
+      "InstanceType": "c3.2xlarge",
+      "Memory": "15 GiB",
+      "VCPUS": 8,
+      "Storage": "2 x 80 SSD",
+      "Network": "High",
+      "Cost": 0.42,
+      "MonthlyPrice": 306.59999999999997,
+      "SpotPrice": "0.1422"
+    },
+    {
+      "InstanceType": "g2.8xlarge",
+      "Memory": "60 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 120 SSD",
+      "Network": "High",
+      "Cost": 2.6,
+      "MonthlyPrice": 1898,
+      "SpotPrice": "0.7800"
+    },
+    {
+      "InstanceType": "m2.xlarge",
+      "Memory": "17.1 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 420 SSD",
+      "Network": "Moderate",
+      "Cost": 0.245,
+      "MonthlyPrice": 178.85,
+      "SpotPrice": "0.0245"
+    },
+    {
+      "InstanceType": "m3.xlarge",
+      "Memory": "15 GiB",
+      "VCPUS": 4,
+      "Storage": "2 x 40 SSD",
+      "Network": "High",
+      "Cost": 0.266,
+      "MonthlyPrice": 194.18,
+      "SpotPrice": "0.0630"
+    },
+    {
+      "InstanceType": "c3.8xlarge",
+      "Memory": "60 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 320 SSD",
+      "Network": "10 Gigabit",
+      "Cost": 1.68,
+      "MonthlyPrice": 1226.3999999999999,
+      "SpotPrice": "0.5772"
+    },
+    {
+      "InstanceType": "m1.medium",
+      "Memory": "3.75 GiB",
+      "VCPUS": 1,
+      "Storage": "1 x 410 SSD",
+      "Network": "Moderate",
+      "Cost": 0.087,
+      "MonthlyPrice": 63.51,
+      "SpotPrice": "0.0091"
+    },
+    {
+      "InstanceType": "cc2.8xlarge",
+      "Memory": "60.5 GiB",
+      "VCPUS": 32,
+      "Storage": "4 x 840 SSD",
+      "Network": "10 Gigabit",
+      "Cost": 2,
+      "MonthlyPrice": 1460,
+      "SpotPrice": "NA"
+    },
+    {
+      "InstanceType": "m2.2xlarge",
+      "Memory": "34.2 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 850 SSD",
+      "Network": "Moderate",
+      "Cost": 0.49,
+      "MonthlyPrice": 357.7,
+      "SpotPrice": "0.0490"
+    },
+    {
+      "InstanceType": "m1.small",
+      "Memory": "1.7 GiB",
+      "VCPUS": 1,
+      "Storage": "1 x 160 SSD",
+      "Network": "Low",
+      "Cost": 0.044,
+      "MonthlyPrice": 32.12,
+      "SpotPrice": "0.0044"
+    },
+    {
+      "InstanceType": "m2.4xlarge",
+      "Memory": "68.4 GiB",
+      "VCPUS": 8,
+      "Storage": "2 x 840 SSD",
+      "Network": "High",
+      "Cost": 0.98,
+      "MonthlyPrice": 715.4,
+      "SpotPrice": "0.0980"
+    },
+    {
+      "InstanceType": "i2.2xlarge",
+      "Memory": "61 GiB",
+      "VCPUS": 8,
+      "Storage": "2 x 800 SSD",
+      "Network": "High",
+      "Cost": 1.705,
+      "MonthlyPrice": 1244.65,
+      "SpotPrice": "0.5115"
+    },
+    {
+      "InstanceType": "r3.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 320 SSD",
+      "Network": "10 Gigabit",
+      "Cost": 2.66,
+      "MonthlyPrice": 1941.8000000000002,
+      "SpotPrice": "0.5961"
+    },
+    {
+      "InstanceType": "m3.medium",
+      "Memory": "3.75 GiB",
+      "VCPUS": 1,
+      "Storage": "1 x 4 SSD",
+      "Network": "Moderate",
+      "Cost": 0.067,
+      "MonthlyPrice": 48.910000000000004,
+      "SpotPrice": "0.0161"
+    },
+    {
+      "InstanceType": "c3.large",
+      "Memory": "3.75 GiB",
+      "VCPUS": 2,
+      "Storage": "2 x 16 SSD",
+      "Network": "Moderate",
+      "Cost": 0.105,
+      "MonthlyPrice": 76.64999999999999,
+      "SpotPrice": "0.0294"
+    },
+    {
+      "InstanceType": "c1.medium",
+      "Memory": "1.7 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 350 SSD",
+      "Network": "Moderate",
+      "Cost": 0.13,
+      "MonthlyPrice": 94.9,
+      "SpotPrice": "0.0130"
+    },
+    {
+      "InstanceType": "r3.large",
+      "Memory": "15.25 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 32 SSD",
+      "Network": "Moderate",
+      "Cost": 0.166,
+      "MonthlyPrice": 121.18,
+      "SpotPrice": "0.0584"
+    },
+    {
+      "InstanceType": "r3.2xlarge",
+      "Memory": "61 GiB",
+      "VCPUS": 8,
+      "Storage": "1 x 160 SSD",
+      "Network": "High",
+      "Cost": 0.665,
+      "MonthlyPrice": 485.45000000000005,
+      "SpotPrice": "0.1999"
+    },
+    {
+      "InstanceType": "i2.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 32,
+      "Storage": "8 x 800 SSD",
+      "Network": "10 Gigabit",
+      "Cost": 6.82,
+      "MonthlyPrice": 4978.6,
+      "SpotPrice": "2.0460"
+    },
+    {
+      "InstanceType": "r3.4xlarge",
+      "Memory": "122 GiB",
+      "VCPUS": 16,
+      "Storage": "1 x 320 SSD",
+      "Network": "High",
+      "Cost": 1.33,
+      "MonthlyPrice": 970.9000000000001,
+      "SpotPrice": "0.3286"
+    },
+    {
+      "InstanceType": "m3.large",
+      "Memory": "7.5 GiB",
+      "VCPUS": 2,
+      "Storage": "1 x 32 SSD",
+      "Network": "Moderate",
+      "Cost": 0.133,
+      "MonthlyPrice": 97.09,
+      "SpotPrice": "0.0308"
+    },
+    {
+      "InstanceType": "cr1.8xlarge",
+      "Memory": "244 GiB",
+      "VCPUS": 32,
+      "Storage": "2 x 120 SSD",
+      "Network": "10 Gigabit",
+      "Cost": 3.5,
+      "MonthlyPrice": 2555,
+      "SpotPrice": "NA"
+    },
+    {
+      "InstanceType": "r3.xlarge",
+      "Memory": "30.5 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 80 SSD",
+      "Network": "Moderate",
+      "Cost": 0.333,
+      "MonthlyPrice": 243.09,
+      "SpotPrice": "0.0792"
+    },
+    {
+      "InstanceType": "c3.4xlarge",
+      "Memory": "30 GiB",
+      "VCPUS": 16,
+      "Storage": "2 x 160 SSD",
+      "Network": "High",
+      "Cost": 0.84,
+      "MonthlyPrice": 613.1999999999999,
+      "SpotPrice": "0.3218"
+    },
+    {
+      "InstanceType": "i2.xlarge",
+      "Memory": "30.5 GiB",
+      "VCPUS": 4,
+      "Storage": "1 x 800 SSD",
+      "Network": "Moderate",
+      "Cost": 0.853,
+      "MonthlyPrice": 622.6899999999999,
+      "SpotPrice": "0.2559"
+    },
+    {
+      "InstanceType": "hs1.8xlarge",
+      "Memory": "117 GiB",
+      "VCPUS": 16,
+      "Storage": "24 x 2000 HDD",
+      "Network": "10 Gigabit",
+      "Cost": 4.6,
+      "MonthlyPrice": 3357.9999999999995,
+      "SpotPrice": "NA"
+    }
+  ]
+}

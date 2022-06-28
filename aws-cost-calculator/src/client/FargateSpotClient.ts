@@ -1,5 +1,6 @@
 import fargateFallback from "../fallback/fargateSpot.json"
 import {api} from "./TypedFetch";
+import {paths} from "./urls";
 
 const vCPUHourUnit = "vCPU-Hours"
 const gbHourUnit = "GB-Hours"
@@ -37,7 +38,7 @@ export type FargateSpotRegionalPricing = {
 }
 
 async function downloadFargateSpotPrice(): Promise<AWSFargatePriceResponse> {
-    return await api.get(`https://dftu77xade0tc.cloudfront.net/fargate-spot-prices.json?timestamp=${new Date().getTime()}`, {
+    return await api.get(`${paths.fargateSpotUrl}?timestamp=${new Date().getTime()}`, {
         mode: "no-cors"
     })
 }
