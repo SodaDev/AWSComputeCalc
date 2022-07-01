@@ -48,11 +48,11 @@ type FargatePriceDimension = {
 }
 
 export type FargatePricing = {
-    x86: FargatePricingComponents
-    arm: FargatePricingComponents
+    x86: FargateComputePricing
+    arm: FargateComputePricing
 }
 
-export type FargatePricingComponents = {
+export type FargateComputePricing = {
     GBHour?: string
     vCPUHour?: string
 }

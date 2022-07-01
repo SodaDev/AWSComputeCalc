@@ -13,6 +13,7 @@ import {getLambdaPrice} from "./client/LambdaClient";
 import {getFargateSpotPrice} from "./client/FargateSpotClient";
 import {getFargatePrice} from "./client/FargateClient";
 import {getEc2Price} from "./client/Ec2Client";
+import FargateParameters from "./components/FargateParameters";
 
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
@@ -48,6 +49,7 @@ function App() {
             <Grid container spacing={2} style={{height: "100vh"}}>
                 <Grid item xs={12}>
                     <LambdaParameters/>
+                    <FargateParameters/>
                 </Grid>
                 <Grid item xs={12} style={{height: "100%"}}>
                     <PriceChart/>

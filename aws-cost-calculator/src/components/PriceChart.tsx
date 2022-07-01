@@ -5,7 +5,7 @@ import {generateSeries} from "../logic/SeriesCalculator";
 
 function PriceChart() {
     const {state, dispatch} = React.useContext(AppContext);
-    const chartData = generateSeries(state.lambdaRegionalPricing, state.lambdaParams)
+    const chartData = generateSeries(state)
     window.dispatchEvent(new Event('resize'));
     return (
         <ResponsiveLine

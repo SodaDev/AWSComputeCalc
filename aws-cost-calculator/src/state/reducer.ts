@@ -5,6 +5,10 @@ const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
 const rpmToMonthly = (i: number): number => Math.round(rpmToDaily(i) * 30)
 
 export function reducer(state: State, action: Action): State {
+    console.info({
+        action,
+        state
+    })
     switch(action.type) {
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
             return {
@@ -51,6 +55,22 @@ export function reducer(state: State, action: Action): State {
                     ...state.lambdaParams,
                     lambdaSize: action.amount
                 },
+            }
+        case "FARGATE_SET_SIZE":
+            return {
+                ...state,
+                fargateParams: {
+                    ...state.fargateParams,
+                    fargateConfig: action.config,
+                }
+            }
+        case "FARGATE_SET_TASKS":
+            return {
+                ...state,
+                fargateParams: {
+                    ...state.fargateParams,
+                    numberOfTasks: action.amount,
+                }
             }
         case "LAMBDA_SET_PRICING":
             return {

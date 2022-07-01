@@ -74,7 +74,7 @@ export default function LambdaParameters() {
                 />
                 <TextField
                     select
-                    label="Please select your currency"
+                    label="Lambda size"
                     value={state.lambdaParams.lambdaSize}
                     onChange={event => dispatch({
                         type: "LAMBDA_SET_SIZE",
