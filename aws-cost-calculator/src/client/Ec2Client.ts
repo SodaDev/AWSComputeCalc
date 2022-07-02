@@ -2,7 +2,7 @@ import {api} from "./TypedFetch";
 import {paths} from "./urls";
 import ec2Fallback from "../fallback/ec2.json"
 
-export type EC2Price = {
+export type EC2InstanceTypePricing = {
     InstanceType: string;
     Memory: string;
     VCPUS: number;
@@ -14,11 +14,11 @@ export type EC2Price = {
 }
 
 export type EC2ShopPricing = {
-    Prices: EC2Price[];
+    Prices: EC2InstanceTypePricing[];
 }
 
 export type EC2InstancePricing = {
-    instancePrices: Record<string, EC2Price>
+    instancePrices: Record<string, EC2InstanceTypePricing>
 }
 
 async function downloadEc2Price(): Promise<EC2ShopPricing> {
@@ -31,8 +31,8 @@ async function downloadEc2Price(): Promise<EC2ShopPricing> {
     })
 }
 
-function groupByInstanceType(response: EC2ShopPricing): Record<string, EC2Price> {
-    const perInstanceType: Record<string, EC2Price> = {}
+function groupByInstanceType(response: EC2ShopPricing): Record<string, EC2InstanceTypePricing> {
+    const perInstanceType: Record<string, EC2InstanceTypePricing> = {}
     for (let price of response.Prices) {
         perInstanceType[price.InstanceType] =  price
     }

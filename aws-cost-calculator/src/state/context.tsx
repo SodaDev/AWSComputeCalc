@@ -17,16 +17,22 @@ const initialState: State = {
         monthlyReq: 2000 * 60 * 24 * 30,
         lambdaSize: 128
     },
+    lambdaPricing: lambdaFallback,
+    lambdaRegionalPricing: lambdaFallback.regionPrices[defaultRegion],
+
     fargateParams: {
         fargateConfig: new FargateConfig(2, 4),
         numberOfTasks: 2
     },
-    lambdaPricing: lambdaFallback,
-    lambdaRegionalPricing: lambdaFallback.regionPrices[defaultRegion],
     fargateSpotPricing: getFargateSpotFallback(),
     fargateSpotRegionalPricing: getFargateSpotFallback().regionPrices[defaultRegion],
     fargatePricing: fargateFallback,
     fargateRegionalPricing: fargateFallback.regionPrices[defaultRegion],
+
+    ec2Params: {
+        numberOfInstances: 2,
+        instanceType: getEc2Fallback().instancePrices["t3.medium"]
+    },
     ec2Pricing: getEc2Fallback()
 };
 

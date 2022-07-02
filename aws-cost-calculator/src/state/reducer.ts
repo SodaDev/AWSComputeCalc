@@ -90,6 +90,24 @@ export function reducer(state: State, action: Action): State {
                 fargatePricing: action.pricing,
                 fargateRegionalPricing: action.pricing.regionPrices[state.region]
             }
+        case "EC2_SET_INSTANCES": {
+            return {
+                ...state,
+                ec2Params: {
+                    ...state.ec2Params,
+                    numberOfInstances: action.amount
+                }
+            }
+        }
+        case "EC2_SET_INSTANCE_TYPE": {
+            return {
+                ...state,
+                ec2Params: {
+                    ...state.ec2Params,
+                    instanceType: action.instanceType
+                }
+            }
+        }
         case "EC2_SET_PRICING":
             return {
                 ...state,

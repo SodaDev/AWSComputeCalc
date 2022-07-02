@@ -1,7 +1,7 @@
 import {LambdaPricing, LambdaRegionalPricing} from "../client/LambdaClient";
 import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
 import {FargatePricing, FargateComputePricing, FargateRegionalPricing} from "../client/FargateClient";
-import {EC2InstancePricing} from "../client/Ec2Client";
+import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
 import {FargateConfig} from "../components/FargateParameters";
 
 type LambdaParams = {
@@ -17,16 +17,25 @@ export type FargateParams = {
     numberOfTasks: number
 }
 
+export type EC2Params = {
+    instanceType: EC2InstanceTypePricing
+    numberOfInstances: number
+}
+
 type State = {
     region: string
+
     lambdaParams: LambdaParams
-    fargateParams: FargateParams
     lambdaPricing: LambdaRegionalPricing
     lambdaRegionalPricing: LambdaPricing
+
+    fargateParams: FargateParams
     fargateSpotPricing: FargateSpotRegionalPricing
     fargateSpotRegionalPricing: FargateComputePricing
     fargatePricing: FargateRegionalPricing
     fargateRegionalPricing: FargatePricing
+
+    ec2Params: EC2Params
     ec2Pricing: EC2InstancePricing
 }
 
