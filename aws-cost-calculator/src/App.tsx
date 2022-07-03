@@ -1,5 +1,4 @@
 import React, {useEffect, useReducer} from 'react';
-import './App.css';
 import PriceChart from "./components/PriceChart";
 import Provider from './components/Provider'
 
@@ -15,6 +14,9 @@ import {getFargatePrice} from "./client/FargateClient";
 import {getEc2Price} from "./client/Ec2Client";
 import FargateParameters from "./components/FargateParameters";
 import Ec2Parameters from "./components/Ec2Parameters";
+import Box from "@mui/material/Box";
+import {ThemeProvider, Typography} from "@mui/material";
+import {theme} from "./Theme";
 
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
@@ -46,18 +48,29 @@ function App() {
     }, []);
 
     return (
-        <Provider>
-            <Grid container spacing={2} style={{height: "100vh"}}>
-                <Grid item xs={12}>
-                    <LambdaParameters/>
-                    <FargateParameters/>
-                    <Ec2Parameters/>
-                </Grid>
-                <Grid item xs={12} style={{height: "100%"}}>
-                    <PriceChart/>
-                </Grid>
-            </Grid>
-        </Provider>
+        <ThemeProvider theme={theme}>
+            <Provider>
+                <Box sx={{flexGrow: 1, height: "100vh"}}>
+                    <Typography variant="h4" component="div" align="center" color={"#18dbab"} gutterBottom>
+                        AWS Cost Estimator
+                    </Typography>
+                    <Grid container spacing={0.5}>
+                        <Grid item md={12} sm={12} xl={12} xs={12}>
+                            <LambdaParameters/>
+                        </Grid>
+                        <Grid item md={6} sm={6} xl={6} xs={12}>
+                            <FargateParameters/>
+                        </Grid>
+                        <Grid item md={6} sm={6} xl={6} xs={12}>
+                            <Ec2Parameters/>
+                        </Grid>
+                        <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "70vh"}}>
+                            <PriceChart/>
+                        </Grid>
+                    </Grid>
+                </Box>
+            </Provider>
+        </ThemeProvider>
     );
 }
 
