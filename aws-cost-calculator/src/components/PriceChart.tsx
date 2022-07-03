@@ -1,8 +1,10 @@
 import {ResponsiveLine} from '@nivo/line'
+import {Chip, TableTooltip} from '@nivo/tooltip'
 import React from "react";
 import {AppContext} from "../state/context";
 import {generateSeries} from "../logic/SeriesCalculator";
 import {chartTheme} from "../Theme";
+import {ChartTooltip} from "./ChartTooltip";
 
 const seriesColors = [
     "#b4e8db",
@@ -16,6 +18,7 @@ const seriesColors = [
 
 function PriceChart() {
     const {state, dispatch} = React.useContext(AppContext);
+
     const chartData = generateSeries(state)
     window.dispatchEvent(new Event('resize'));
     return (
@@ -24,6 +27,7 @@ function PriceChart() {
             data={chartData}
             animate={true}
             enableSlices={"x"}
+            sliceTooltip={ChartTooltip}
             margin={{top: 20, right: 20, bottom: 200, left: 60}}
             xScale={{
                 type: 'linear',
@@ -37,7 +41,7 @@ function PriceChart() {
                 reverse: false,
                 nice: true
             }}
-            xFormat= " >-0~f"
+            xFormat= " >-0~s"
             yFormat=" >-$.2f"
             axisTop={null}
             axisRight={null}
