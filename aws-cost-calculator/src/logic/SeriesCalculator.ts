@@ -41,7 +41,7 @@ function ec2SerieGenerator(ec2Params: EC2Params): SeriePointGenerator {
 }
 
 function ec2SpotSerieGenerator(ec2Params: EC2Params): SeriePointGenerator {
-    if (!ec2Params.instanceType.SpotPrice && ec2Params.instanceType.SpotPrice !== "NA") {
+    if (!ec2Params.instanceType.SpotPrice || ec2Params.instanceType.SpotPrice == "NA") {
         return undefined
     }
     return __ => calculateEc2PricePoint(ec2Params.numberOfInstances, parseFloat(ec2Params.instanceType.SpotPrice))
