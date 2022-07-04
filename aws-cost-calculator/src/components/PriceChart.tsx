@@ -1,5 +1,4 @@
 import {ResponsiveLine} from '@nivo/line'
-import {Chip, TableTooltip} from '@nivo/tooltip'
 import React from "react";
 import {AppContext} from "../state/context";
 import {generateSeries} from "../logic/SeriesCalculator";
