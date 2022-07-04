@@ -5,10 +5,6 @@ const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
 const rpmToMonthly = (i: number): number => Math.round(rpmToDaily(i) * 30)
 
 export function reducer(state: State, action: Action): State {
-    console.info({
-        action,
-        state
-    })
     switch(action.type) {
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
             return {

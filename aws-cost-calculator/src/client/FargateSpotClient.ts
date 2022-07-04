@@ -33,7 +33,7 @@ export type FargateSpotRegionalPricing = {
 }
 
 async function downloadFargateSpotPrice(): Promise<AWSFargatePriceResponse> {
-    return await api.get(`${paths.fargateSpotUrl}?timestamp=${new Date().getTime()}`, {
+    return await api.get(paths.fargateSpotUrl, {
         mode: "no-cors"
     })
 }

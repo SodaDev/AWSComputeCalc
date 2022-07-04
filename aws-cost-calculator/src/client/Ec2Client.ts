@@ -23,7 +23,6 @@ export type EC2InstancePricing = {
 
 async function downloadEc2Price(): Promise<EC2ShopPricing> {
     return await api.get(paths.ec2Url, {
-        mode: "no-cors",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"
