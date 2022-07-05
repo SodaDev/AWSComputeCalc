@@ -24,7 +24,7 @@ export default function GetInTouch() {
             <Stack direction="row" spacing={2}>
                 {
                     links.map(link =>
-                        (<Link href={link.url} color="inherit" target={"_blank"}>
+                        (<Link key={link.url} href={link.url} color="inherit" target={"_blank"}>
                             <Avatar sx={avatarStyle}>
                                 <FontAwesomeIcon icon={link.icon} size={avatarIconSize}/>
                             </Avatar>

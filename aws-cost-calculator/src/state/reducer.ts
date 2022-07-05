@@ -5,7 +5,7 @@ const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
 const rpmToMonthly = (i: number): number => Math.round(rpmToDaily(i) * 30)
 
 export function reducer(state: State, action: Action): State {
-    switch(action.type) {
+    switch (action.type) {
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
             return {
                 ...state,
@@ -39,7 +39,7 @@ export function reducer(state: State, action: Action): State {
                 ...state,
                 lambdaParams: {
                     ...state.lambdaParams,
-                    minuteReq: action.amount /30 / 60 / 24,
+                    minuteReq: action.amount / 30 / 60 / 24,
                     dailyReq: action.amount / 30,
                     monthlyReq: action.amount,
                 },
