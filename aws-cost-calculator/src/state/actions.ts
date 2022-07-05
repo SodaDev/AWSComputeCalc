@@ -2,7 +2,7 @@ import {LambdaRegionalPricing} from "../client/LambdaClient";
 import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
 import {FargateRegionalPricing} from "../client/FargateClient";
 import {EC2InstanceTypePricing, EC2InstancePricing} from "../client/Ec2Client";
-import {FargateConfig} from "../components/FargateParameters";
+import {FargateConfig} from "../components/parameters/FargateParameters";
 
 type Action =
     {type: "LAMBDA_SET_RPM", amount: number}

@@ -1,8 +1,8 @@
 import {ResponsiveLine} from '@nivo/line'
 import React from "react";
-import {AppContext} from "../state/context";
-import {generateSeries} from "../logic/SeriesCalculator";
-import {chartTheme} from "../Theme";
+import {AppContext} from "../../state/context";
+import {generateSeries} from "../../logic/SeriesCalculator";
+import {chartTheme} from "../../Theme";
 import {ChartTooltip} from "./ChartTooltip";
 
 const seriesColors = [

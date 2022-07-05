@@ -1,6 +1,6 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
-import {AppContext} from "../state/context";
+import {AppContext} from "../../state/context";
 import {MenuItem, Paper} from "@mui/material";
 
 const lambdaStep = 128

@@ -5,7 +5,7 @@ import lambdaFallback from "../fallback/lambda.json";
 import fargateFallback from "../fallback/fargate.json";
 import {getFargateSpotFallback} from "../client/FargateSpotClient";
 import {getEc2Fallback} from "../client/Ec2Client";
-import {FargateConfig} from "../components/FargateParameters";
+import {FargateConfig} from "../components/parameters/FargateParameters";
 
 const defaultRegion = "eu-west-1"
 const initialState: State = {

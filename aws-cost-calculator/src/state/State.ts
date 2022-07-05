@@ -2,7 +2,7 @@ import {LambdaPricing, LambdaRegionalPricing} from "../client/LambdaClient";
 import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
 import {FargatePricing, FargateComputePricing, FargateRegionalPricing} from "../client/FargateClient";
 import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
-import {FargateConfig} from "../components/FargateParameters";
+import {FargateConfig} from "../components/parameters/FargateParameters";
 
 type LambdaParams = {
     avgResponseTimeInMs: number
