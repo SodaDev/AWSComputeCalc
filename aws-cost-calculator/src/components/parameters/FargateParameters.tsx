@@ -3,35 +3,6 @@ import {AppContext} from "../../state/context";
 import {MenuItem, Paper} from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-export class FargateConfig {
-    vCPU: number
-    memory: number
-
-    constructor(vCPU: number, memory: number) {
-        this.vCPU = vCPU;
-        this.memory = memory;
-    }
-
-    get label(): string {
-        return `${this.vCPU}vCpu - ${this.memory} GB`;
-    }
-}
-
-const configurations: FargateConfig[] = [
-    new FargateConfig(0.25, 0.5),
-    new FargateConfig(0.25, 1),
-    new FargateConfig(0.25, 2)
-]
-    .concat(generateSetup(0.5, 1, 4))
-    .concat(generateSetup(1, 2, 8))
-    .concat(generateSetup(2, 4, 16))
-    .concat(generateSetup(4, 8, 30))
-
-function generateSetup(vCPU: number, from: number, to: number): FargateConfig[] {
-    return Array.from(Array(to - from + 1).keys())
-        .map(x => new FargateConfig(vCPU, x + from))
-}
-
 export default function FargateParameters() {
     const {state, dispatch} = React.useContext(AppContext);
 
@@ -44,6 +15,9 @@ export default function FargateParameters() {
                 type="number"
                 InputLabelProps={{
                     shrink: true,
+                }}
+                InputProps={{
+                    inputProps: {min: 0}
                 }}
                 value={state.fargateParams.numberOfTasks}
                 onChange={event => dispatch({
@@ -64,7 +38,7 @@ export default function FargateParameters() {
                 sx={{ width: '18ch' }}
                 variant="standard"
             >
-                {configurations.map((option) => (
+                {state.fargateConfigs.map((option) => (
                     <MenuItem key={option.label} value={JSON.stringify(option)}>
                         {option.label}
                     </MenuItem>

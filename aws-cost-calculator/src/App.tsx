@@ -1,11 +1,17 @@
-import React, {useEffect, useReducer} from 'react';
+import React, {Dispatch, useEffect, useReducer} from 'react';
 import PriceChart from "./components/chart/PriceChart";
 import Provider from './components/Provider'
 
 import Grid from '@mui/material/Grid';
 import LambdaParameters from "./components/parameters/LambdaParameters";
 import {State} from "./state/State";
-import {Action} from "./state/actions";
+import {
+    Action,
+    toEc2SetPricing,
+    toFargateSetPricing,
+    toFargateSpotSetPricing,
+    toLambdaSetPricing
+} from "./state/actions";
 import {reducer} from "./state/reducer";
 import {initialState} from "./state/context";
 import {getLambdaPrice} from "./client/LambdaClient";
@@ -22,30 +28,7 @@ import GetInTouch from "./components/contact/GetInTouch";
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
     useEffect(() => {
-        getEc2Price()
-            .then(response => dispatch({
-                type: "EC2_SET_PRICING",
-                pricing: response
-            }))
-            .catch(console.error)
-        getFargatePrice()
-            .then(response => dispatch({
-                type: "FARGATE_SET_PRICING",
-                pricing: response
-            }))
-            .catch(console.error)
-        getFargateSpotPrice()
-            .then(response => dispatch({
-                type: "FARGATE_SPOT_SET_PRICING",
-                pricing: response
-            }))
-            .catch(console.error)
-        getLambdaPrice()
-            .then(response => dispatch({
-                type: "LAMBDA_SET_PRICING",
-                pricing: response
-            }))
-            .catch(console.error)
+        init(dispatch);
     }, []);
 
     return (
@@ -76,6 +59,21 @@ function App() {
             </Provider>
         </ThemeProvider>
     );
+}
+
+function init(dispatch: Dispatch<Action>) {
+    getEc2Price()
+        .then(response => toEc2SetPricing(response))
+        .catch(console.error)
+    getFargatePrice()
+        .then(response => dispatch(toFargateSetPricing(response)))
+        .catch(console.error)
+    getFargateSpotPrice()
+        .then(response => dispatch(toFargateSpotSetPricing(response)))
+        .catch(console.error)
+    getLambdaPrice()
+        .then(response => dispatch(toLambdaSetPricing(response)))
+        .catch(console.error)
 }
 
 export default App;

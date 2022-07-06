@@ -3,20 +3,6 @@ import {AppContext} from "../../state/context";
 import {MenuItem, Paper} from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-export class FargateConfig {
-    vCPU: number
-    memory: number
-
-    constructor(vCPU: number, memory: number) {
-        this.vCPU = vCPU;
-        this.memory = memory;
-    }
-
-    get label(): string {
-        return `${this.vCPU}vCpu - ${this.memory} GB`;
-    }
-}
-
 export default function Ec2Parameters() {
     const {state, dispatch} = React.useContext(AppContext);
 
@@ -29,6 +15,9 @@ export default function Ec2Parameters() {
                 type="number"
                 InputLabelProps={{
                     shrink: true,
+                }}
+                InputProps={{
+                    inputProps: {min: 0}
                 }}
                 value={state.ec2Params.numberOfInstances}
                 onChange={event => dispatch({

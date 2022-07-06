@@ -1,10 +1,17 @@
 import {State} from "./State";
 import {Action} from "./actions";
+import {updateUrl} from "../logic/Url";
 
 const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
 const rpmToMonthly = (i: number): number => Math.round(rpmToDaily(i) * 30)
 
-export function reducer(state: State, action: Action): State {
+export function reducer(oldState: State, action: Action): State {
+    const newState = applyOnState(action, oldState);
+    updateUrl(newState)
+    return newState
+}
+
+function applyOnState(action: Action, state: State) {
     switch (action.type) {
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
             return {

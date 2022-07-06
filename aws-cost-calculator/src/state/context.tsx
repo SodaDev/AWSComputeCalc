@@ -5,10 +5,11 @@ import lambdaFallback from "../fallback/lambda.json";
 import fargateFallback from "../fallback/fargate.json";
 import {getFargateSpotFallback} from "../client/FargateSpotClient";
 import {getEc2Fallback} from "../client/Ec2Client";
-import {FargateConfig} from "../components/parameters/FargateParameters";
+import {buildFargateConfigs, FargateConfig} from "../logic/FargateConfig";
+import {initStateFromUrl} from "../logic/Url";
 
 const defaultRegion = "eu-west-1"
-const initialState: State = {
+const initialState: State = initStateFromUrl({
     region: defaultRegion,
     lambdaParams: {
         avgResponseTimeInMs: 100,
@@ -24,6 +25,7 @@ const initialState: State = {
         fargateConfig: new FargateConfig(2, 4),
         numberOfTasks: 2
     },
+    fargateConfigs: buildFargateConfigs(),
     fargateSpotPricing: getFargateSpotFallback(),
     fargateSpotRegionalPricing: getFargateSpotFallback().regionPrices[defaultRegion],
     fargatePricing: fargateFallback,
@@ -34,7 +36,7 @@ const initialState: State = {
         instanceType: getEc2Fallback().instancePrices["t3.medium"]
     },
     ec2Pricing: getEc2Fallback()
-};
+});
 
 const defaultDispatch: React.Dispatch<Action> = () => initialState
 const AppContext = React.createContext({

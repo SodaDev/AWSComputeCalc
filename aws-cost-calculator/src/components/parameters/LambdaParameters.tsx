@@ -21,12 +21,15 @@ export default function LambdaParameters() {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                InputProps={{
+                    inputProps: {min: 0}
+                }}
                 value={state.lambdaParams.avgResponseTimeInMs}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_AVG_RESPONSE_TIME",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '10ch' }}
+                sx={{width: '10ch'}}
                 variant="standard"
             />
             <TextField
@@ -37,7 +40,7 @@ export default function LambdaParameters() {
                     type: "LAMBDA_SET_SIZE",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '9ch' }}
+                sx={{width: '9ch'}}
                 variant="standard"
             >
                 {lambdaSizes.map((option) => (
@@ -52,12 +55,15 @@ export default function LambdaParameters() {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                InputProps={{
+                    inputProps: {min: 0}
+                }}
                 value={state.lambdaParams.minuteReq}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_RPM",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '9ch' }}
+                sx={{width: '9ch'}}
                 variant="standard"
             />
             <TextField
@@ -66,12 +72,15 @@ export default function LambdaParameters() {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                InputProps={{
+                    inputProps: {min: 0}
+                }}
                 value={state.lambdaParams.dailyReq}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_DAILY",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '12ch' }}
+                sx={{width: '12ch'}}
                 variant="standard"
             />
             <TextField
@@ -80,12 +89,15 @@ export default function LambdaParameters() {
                 InputLabelProps={{
                     shrink: true,
                 }}
+                InputProps={{
+                    inputProps: {min: 0}
+                }}
                 value={state.lambdaParams.monthlyReq}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_MONTHLY",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '12ch' }}
+                sx={{width: '12ch'}}
                 variant="standard"
             />
         </Paper>

@@ -2,7 +2,7 @@ import {LambdaPricing, LambdaRegionalPricing} from "../client/LambdaClient";
 import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
 import {FargatePricing, FargateComputePricing, FargateRegionalPricing} from "../client/FargateClient";
 import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
-import {FargateConfig} from "../components/parameters/FargateParameters";
+import {FargateConfig} from "../logic/FargateConfig";
 
 type LambdaParams = {
     avgResponseTimeInMs: number
@@ -30,6 +30,7 @@ type State = {
     lambdaRegionalPricing: LambdaPricing
 
     fargateParams: FargateParams
+    fargateConfigs: FargateConfig[]
     fargateSpotPricing: FargateSpotRegionalPricing
     fargateSpotRegionalPricing: FargateComputePricing
     fargatePricing: FargateRegionalPricing
