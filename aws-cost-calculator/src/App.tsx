@@ -24,11 +24,14 @@ import Box from "@mui/material/Box";
 import {ThemeProvider, Typography} from "@mui/material";
 import {theme} from "./Theme";
 import GetInTouch from "./components/contact/GetInTouch";
+import ReactGA from 'react-ga';
 
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
     useEffect(() => {
-        init(dispatch);
+        ReactGA.initialize('UA-233771537-1');
+        ReactGA.pageview(window.location.pathname + window.location.search);
+        initData(dispatch);
     }, []);
 
     return (
@@ -61,7 +64,7 @@ function App() {
     );
 }
 
-function init(dispatch: Dispatch<Action>) {
+function initData(dispatch: Dispatch<Action>) {
     getEc2Price()
         .then(response => toEc2SetPricing(response))
         .catch(console.error)

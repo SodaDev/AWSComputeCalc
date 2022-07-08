@@ -27,7 +27,7 @@ export default function LambdaParameters() {
                 value={state.lambdaParams.avgResponseTimeInMs}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_AVG_RESPONSE_TIME",
-                    amount: parseInt(event.target.value)
+                    amount: parseInt(event.target.value) || 0
                 })}
                 sx={{width: '10ch'}}
                 variant="standard"

@@ -1,9 +1,14 @@
 import {State} from "./State";
 import {Action} from "./actions";
 import {updateUrl} from "../logic/Url";
+import ReactGA from "react-ga";
+import {EC2InstanceTypePricing} from "../client/Ec2Client";
+import {FargateConfig} from "../logic/FargateConfig";
+import * as _ from 'lodash'
 
 const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
 const rpmToMonthly = (i: number): number => Math.round(rpmToDaily(i) * 30)
+const sendInputMetric = _.debounce(sendEvent, 1000)
 
 export function reducer(oldState: State, action: Action): State {
     const newState = applyOnState(action, oldState);
@@ -14,6 +19,7 @@ export function reducer(oldState: State, action: Action): State {
 function applyOnState(action: Action, state: State) {
     switch (action.type) {
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
+            sendInputMetric(action)
             return {
                 ...state,
                 lambdaParams: {
@@ -22,6 +28,7 @@ function applyOnState(action: Action, state: State) {
                 },
             }
         case 'LAMBDA_SET_RPM':
+            sendInputMetric(action)
             return {
                 ...state,
                 lambdaParams: {
@@ -32,6 +39,7 @@ function applyOnState(action: Action, state: State) {
                 },
             }
         case "LAMBDA_SET_DAILY":
+            sendInputMetric(action)
             return {
                 ...state,
                 lambdaParams: {
@@ -42,6 +50,7 @@ function applyOnState(action: Action, state: State) {
                 },
             }
         case "LAMBDA_SET_MONTHLY":
+            sendInputMetric(action)
             return {
                 ...state,
                 lambdaParams: {
@@ -52,6 +61,7 @@ function applyOnState(action: Action, state: State) {
                 },
             }
         case "LAMBDA_SET_SIZE":
+            sendInputMetric(action)
             return {
                 ...state,
                 lambdaParams: {
@@ -60,6 +70,7 @@ function applyOnState(action: Action, state: State) {
                 },
             }
         case "FARGATE_SET_SIZE":
+            sendFargateConfig(action)
             return {
                 ...state,
                 fargateParams: {
@@ -68,6 +79,7 @@ function applyOnState(action: Action, state: State) {
                 }
             }
         case "FARGATE_SET_TASKS":
+            sendInputMetric(action)
             return {
                 ...state,
                 fargateParams: {
@@ -94,6 +106,7 @@ function applyOnState(action: Action, state: State) {
                 fargateRegionalPricing: action.pricing.regionPrices[state.region]
             }
         case "EC2_SET_INSTANCES": {
+            sendInputMetric(action)
             return {
                 ...state,
                 ec2Params: {
@@ -103,6 +116,7 @@ function applyOnState(action: Action, state: State) {
             }
         }
         case "EC2_SET_INSTANCE_TYPE": {
+            sendEc2InstanceTypeEvent(action)
             return {
                 ...state,
                 ec2Params: {
@@ -119,4 +133,25 @@ function applyOnState(action: Action, state: State) {
         default:
             throw new Error();
     }
+}
+
+async function sendEvent(action: { type: string, amount: number }) {
+    ReactGA.event({
+        category: action.type,
+        action: action.amount.toString()
+    });
+}
+
+async function sendEc2InstanceTypeEvent(action: { type: string, instanceType: EC2InstanceTypePricing }) {
+    ReactGA.event({
+        category: action.type,
+        action: action.instanceType.InstanceType
+    });
+}
+
+async function sendFargateConfig(action: { type: string, config: FargateConfig }) {
+    ReactGA.event({
+        category: action.type,
+        action: `${action.config.vCPU}vCpu | ${action.config.memory} GB`
+    });
 }
