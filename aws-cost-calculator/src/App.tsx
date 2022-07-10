@@ -24,13 +24,11 @@ import Box from "@mui/material/Box";
 import {ThemeProvider, Typography} from "@mui/material";
 import {theme} from "./Theme";
 import GetInTouch from "./components/contact/GetInTouch";
-import ReactGA from 'react-ga';
+import CookieSnackBar from "./analytics/CookieSnackbar";
 
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
     useEffect(() => {
-        ReactGA.initialize('UA-233771537-1');
-        ReactGA.pageview(window.location.pathname + window.location.search);
         initData(dispatch);
     }, []);
 
@@ -54,9 +52,10 @@ function App() {
                         <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "70vh"}}>
                             <PriceChart/>
                         </Grid>
-                        <Grid item md={12} sm={12} xl={12} xs={12} marginTop={"5ex"}>
+                        <Grid item md={12} sm={12} xl={12} xs={12} marginTop={"5ex"} marginBottom={"1ex"}>
                             <GetInTouch/>
                         </Grid>
+                        <CookieSnackBar/>
                     </Grid>
                 </Box>
             </Provider>
