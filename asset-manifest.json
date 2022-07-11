@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/AWSComputeCalc/static/css/main.bb75058f.css",
-    "main.js": "/AWSComputeCalc/static/js/main.72ccf7d1.js",
+    "main.js": "/AWSComputeCalc/static/js/main.6750d0cf.js",
     "static/js/787.422a34a0.chunk.js": "/AWSComputeCalc/static/js/787.422a34a0.chunk.js",
     "index.html": "/AWSComputeCalc/index.html",
     "main.bb75058f.css.map": "/AWSComputeCalc/static/css/main.bb75058f.css.map",
-    "main.72ccf7d1.js.map": "/AWSComputeCalc/static/js/main.72ccf7d1.js.map",
+    "main.6750d0cf.js.map": "/AWSComputeCalc/static/js/main.6750d0cf.js.map",
     "787.422a34a0.chunk.js.map": "/AWSComputeCalc/static/js/787.422a34a0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb75058f.css",
-    "static/js/main.72ccf7d1.js"
+    "static/js/main.6750d0cf.js"
   ]
 }
