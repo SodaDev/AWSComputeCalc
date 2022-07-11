@@ -12,7 +12,7 @@ export default function CookieSnackBar() {
         }
     }, []);
 
-    const bgSytle = {background: theme.palette.background.paper}
+    const bgSytle = {background: "#232f3e"}
     return (
         <CookieConsent enableDeclineButton
                        style={bgSytle}
