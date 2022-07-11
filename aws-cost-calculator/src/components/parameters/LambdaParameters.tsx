@@ -27,7 +27,7 @@ export default function LambdaParameters() {
                 value={state.lambdaParams.avgResponseTimeInMs}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_AVG_RESPONSE_TIME",
-                    amount: parseInt(event.target.value) || 0
+                    amount: Math.max(parseInt(event.target.value) || 0, 0)
                 })}
                 sx={{width: '10ch'}}
                 variant="standard"
@@ -56,12 +56,12 @@ export default function LambdaParameters() {
                     shrink: true,
                 }}
                 InputProps={{
-                    inputProps: {min: 0}
+                    inputProps: {min: 1}
                 }}
                 value={state.lambdaParams.minuteReq}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_RPM",
-                    amount: parseInt(event.target.value)
+                    amount: Math.max(parseInt(event.target.value) || 1, 1)
                 })}
                 sx={{width: '9ch'}}
                 variant="standard"
@@ -73,12 +73,12 @@ export default function LambdaParameters() {
                     shrink: true,
                 }}
                 InputProps={{
-                    inputProps: {min: 0}
+                    inputProps: {min: 1}
                 }}
                 value={state.lambdaParams.dailyReq}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_DAILY",
-                    amount: parseInt(event.target.value)
+                    amount: Math.max(parseInt(event.target.value) || 1, 1)
                 })}
                 sx={{width: '12ch'}}
                 variant="standard"
@@ -90,12 +90,12 @@ export default function LambdaParameters() {
                     shrink: true,
                 }}
                 InputProps={{
-                    inputProps: {min: 0}
+                    inputProps: {min: 1}
                 }}
                 value={state.lambdaParams.monthlyReq}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_MONTHLY",
-                    amount: parseInt(event.target.value)
+                    amount: Math.max(parseInt(event.target.value) || 1, 1)
                 })}
                 sx={{width: '12ch'}}
                 variant="standard"

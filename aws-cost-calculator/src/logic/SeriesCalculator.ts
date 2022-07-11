@@ -1,5 +1,5 @@
 import {EC2Params, FargateParams, LambdaParams, State} from "../state/State";
-import {LambdaPriceComponents, LambdaPricing} from "../client/LambdaClient";
+import {LambdaPriceComponents} from "../client/LambdaClient";
 import {Serie} from "@nivo/line";
 import {FargateComputePricing} from "../client/FargateClient";
 
@@ -37,18 +37,21 @@ function buildSerie(xAxis: number[]): SerieGenerator {
 }
 
 function ec2SerieGenerator(ec2Params: EC2Params): SeriePointGenerator {
+    if (!ec2Params.numberOfInstances || ec2Params.numberOfInstances < 1) {
+        return undefined
+    }
     return __ => calculateEc2PricePoint(ec2Params.numberOfInstances, ec2Params.instanceType.Cost)
 }
 
 function ec2SpotSerieGenerator(ec2Params: EC2Params): SeriePointGenerator {
-    if (!ec2Params.instanceType.SpotPrice || ec2Params.instanceType.SpotPrice == "NA") {
+    if (!ec2Params.instanceType.SpotPrice || ec2Params.instanceType.SpotPrice === "NA" || !ec2Params.numberOfInstances || ec2Params.numberOfInstances < 1) {
         return undefined
     }
     return __ => calculateEc2PricePoint(ec2Params.numberOfInstances, parseFloat(ec2Params.instanceType.SpotPrice))
 }
 
 function fargateSerieGenerator(fargateParams: FargateParams, pricing: FargateComputePricing): SeriePointGenerator {
-    if (!pricing.GBHour || !pricing.vCPUHour) {
+    if (!pricing.GBHour || !pricing.vCPUHour || !fargateParams.numberOfTasks || fargateParams.numberOfTasks < 1) {
         return undefined
     }
     const gbHourPricing = parseFloat(pricing.GBHour)
