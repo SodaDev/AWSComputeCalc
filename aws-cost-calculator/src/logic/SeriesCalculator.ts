@@ -65,12 +65,12 @@ function lambdaSeriesGenerator(pricing: LambdaPriceComponents, lambdaParams: Lam
     if (!pricing.lambdaGbSecond || !pricing.requests) {
         return undefined
     }
-    const gbSecondCost = (lambdaParams.lambdaSize / 1024) * parseFloat(pricing.lambdaGbSecond || "")
-    const invocationTime = lambdaParams.avgResponseTimeInMs / 1000
-    const requestCost = gbSecondCost * invocationTime
-    const invocationCost = parseFloat(pricing.requests || "");
+    const gbSecondPrice = parseFloat(pricing.lambdaGbSecond || "0");
+    const invocationPrice = parseFloat(pricing.requests || "0")
+    const freeTierInvocations = lambdaParams.freeTier ? 1000000 : 0;
+    const freeTierGbs = lambdaParams.freeTier ? 400000 : 0;
 
-    return requests => calculateLambdaPricePoint(requests, requestCost, invocationCost)
+    return requests => calculateLambdaPricePointRaw(requests, lambdaParams, gbSecondPrice, invocationPrice, freeTierInvocations, freeTierGbs)
 }
 
 function buildXAxis(lambdaParams: LambdaParams): number[] {
@@ -78,8 +78,14 @@ function buildXAxis(lambdaParams: LambdaParams): number[] {
         .map(point => (point + 1) * lambdaParams.monthlyReq / dataPoints);
 }
 
-function calculateLambdaPricePoint(requests: number, requestCost: number, invocationCost: number): number {
-    return requests * requestCost + requests * invocationCost
+function calculateLambdaPricePointRaw(requests: number, lambdaParams: LambdaParams,
+                                      gbSecondPrice: number, invocationPrice: number,
+                                      freeTierInvocations: number, freeTierGbs: number): number {
+    const totalComputeSeconds = requests * lambdaParams.avgResponseTimeInMs / 1000;
+    const totalComputeGbs = (totalComputeSeconds * lambdaParams.lambdaSize / 1024) - freeTierGbs;
+    const computeCost = totalComputeGbs * gbSecondPrice;
+    const invocationCost = (requests - freeTierInvocations) * invocationPrice;
+    return Math.max(computeCost, 0) + Math.max(invocationCost, 0)
 }
 
 function calculateFargatePricePoint(fargateParams: FargateParams, gbPrice: number, vCPUPrice: number): number {

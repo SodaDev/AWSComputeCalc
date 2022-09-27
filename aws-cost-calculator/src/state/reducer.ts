@@ -69,6 +69,18 @@ function applyOnState(action: Action, state: State) {
                     lambdaSize: action.amount
                 },
             }
+        case "LAMBDA_SET_FREE_TIER":
+            sendInputMetric({
+                type: action.type,
+                amount: action.enabled ? 1 : 0
+            })
+            return {
+                ...state,
+                lambdaParams: {
+                    ...state.lambdaParams,
+                    freeTier: action.enabled
+                },
+            }
         case "FARGATE_SET_SIZE":
             sendFargateConfig(action)
             return {

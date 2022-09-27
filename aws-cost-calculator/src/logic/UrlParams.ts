@@ -25,6 +25,7 @@ export interface LambdaUrlParams {
     dailyReq?:            number;
     monthlyReq?:          number;
     lambdaSize?:          number;
+    freeTier?:            boolean;
 }
 
 // Converts JSON strings to/from your types
@@ -195,5 +196,6 @@ const typeMap: any = {
         { json: "dailyReq", js: "dailyReq", typ: u(undefined, 0) },
         { json: "monthlyReq", js: "monthlyReq", typ: u(undefined, 0) },
         { json: "lambdaSize", js: "lambdaSize", typ: u(undefined, 0) },
+        { json: "freeTier", js: "freeTier", typ: u(undefined, true) },
     ], false),
 };

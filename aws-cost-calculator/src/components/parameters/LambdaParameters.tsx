@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import {AppContext} from "../../state/context";
-import {MenuItem, Paper} from "@mui/material";
+import {FormControlLabel, MenuItem, Paper, Switch, Typography} from "@mui/material";
 
 const lambdaStep = 128
 const maxLambdaSize = 10240
@@ -99,6 +99,19 @@ export default function LambdaParameters() {
                 })}
                 sx={{width: '12ch'}}
                 variant="standard"
+            />
+            <FormControlLabel
+                sx={{width: '6ch'}}
+                control={<Switch
+                    color="secondary"
+                    checked={state.lambdaParams.freeTier}
+                    onChange={(_, checked) => dispatch({
+                        type: "LAMBDA_SET_FREE_TIER",
+                        enabled: checked
+                    })}
+                />}
+                label={<Typography variant="body2" color="textSecondary" sx={{ marginTop: "6px", fontSize: "13px"}}>Free tier</Typography>}
+                labelPlacement="top"
             />
         </Paper>
     );

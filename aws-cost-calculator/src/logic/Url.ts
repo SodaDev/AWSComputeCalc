@@ -26,6 +26,7 @@ export function initStateFromUrl(state: State): State {
                 monthlyReq: shareParams.lambdaParams?.monthlyReq || state.lambdaParams.monthlyReq,
                 lambdaSize: shareParams.lambdaParams?.lambdaSize || state.lambdaParams.lambdaSize,
                 avgResponseTimeInMs: shareParams.lambdaParams?.avgResponseTimeInMs || state.lambdaParams.avgResponseTimeInMs,
+                freeTier: shareParams.lambdaParams?.freeTier || state.lambdaParams.freeTier,
             },
             fargateParams: {
                 numberOfTasks: shareParams.fargateParams?.numberOfTasks || state.fargateParams.numberOfTasks,

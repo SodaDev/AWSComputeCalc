@@ -10,6 +10,7 @@ type LambdaParams = {
     dailyReq: number
     monthlyReq: number
     lambdaSize: number
+    freeTier: boolean
 }
 
 export type FargateParams = {

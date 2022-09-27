@@ -16,7 +16,8 @@ const initialState: State = initStateFromUrl({
         minuteReq: 2000,
         dailyReq: 2000 * 60 * 24,
         monthlyReq: 2000 * 60 * 24 * 30,
-        lambdaSize: 128
+        lambdaSize: 128,
+        freeTier: false
     },
     lambdaPricing: lambdaFallback,
     lambdaRegionalPricing: lambdaFallback.regionPrices[defaultRegion],

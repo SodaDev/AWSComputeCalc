@@ -11,6 +11,7 @@ type Action =
     | { type: "LAMBDA_SET_SIZE", amount: number }
     | { type: "LAMBDA_SET_AVG_RESPONSE_TIME", amount: number }
     | { type: "LAMBDA_SET_PRICING", pricing: LambdaRegionalPricing }
+    | { type: "LAMBDA_SET_FREE_TIER", enabled: boolean }
 
     | { type: "FARGATE_SET_SIZE", config: FargateConfig }
     | { type: "FARGATE_SET_TASKS", amount: number }
