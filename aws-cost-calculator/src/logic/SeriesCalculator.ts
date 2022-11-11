@@ -11,14 +11,14 @@ type SeriePointGenerator = ((a: number) => number) | undefined
 export function generateSeries(state: State): Serie[] {
     const xAxis = buildXAxis(state.lambdaParams);
     const seriesGenerator = buildSerie(xAxis)
-    return seriesGenerator( "Lambda ARM", lambdaSeriesGenerator(state.lambdaRegionalPricing.arm, state.lambdaParams))
-        .concat(seriesGenerator( "Lambda x86", lambdaSeriesGenerator(state.lambdaRegionalPricing.x86, state.lambdaParams)))
-        .concat(seriesGenerator( "Fargate spot x86", containerSerieGenerator(state.containersParams, state.fargateSpotRegionalPricing)))
+    return seriesGenerator("Lambda ARM", lambdaSeriesGenerator(state.lambdaRegionalPricing.arm, state.lambdaParams))
+        .concat(seriesGenerator("Lambda x86", lambdaSeriesGenerator(state.lambdaRegionalPricing.x86, state.lambdaParams)))
+        .concat(seriesGenerator("Fargate spot x86", containerSerieGenerator(state.containersParams, state.fargateSpotRegionalPricing)))
         .concat(seriesGenerator("Fargate x86", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing.x86)))
         .concat(seriesGenerator("Fargate arm", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing.arm)))
-        .concat(seriesGenerator("AppRunner", containerSerieGenerator(state.containersParams, state.appRunnerPricing)))
         .concat(seriesGenerator("EC2", ec2SerieGenerator(state.ec2Params)))
         .concat(seriesGenerator("EC2 spot", ec2SpotSerieGenerator(state.ec2Params)))
+        .concat(seriesGenerator("AppRunner", appRunnerSerieGenerator(state.containersParams, state.appRunnerPricing)))
 }
 
 function buildSerie(xAxis: number[]): SerieGenerator {
@@ -49,6 +49,14 @@ function ec2SpotSerieGenerator(ec2Params: EC2Params): SeriePointGenerator {
         return undefined
     }
     return __ => calculateEc2PricePoint(ec2Params.numberOfInstances, parseFloat(ec2Params.instanceType.SpotPrice))
+}
+
+function appRunnerSerieGenerator(containersParams: ContainersParams, appRunnerPricing: ContainerComputePricing) {
+    const {memory, vCPU} = containersParams.fargateConfig
+    if ((vCPU === 1 && memory >= 2 && memory <= 4) || (vCPU === 2 && memory === 4)) {
+        return containerSerieGenerator(containersParams, appRunnerPricing)
+    }
+    return undefined;
 }
 
 function containerSerieGenerator(containersParams: ContainersParams, pricing: ContainerComputePricing): SeriePointGenerator {
