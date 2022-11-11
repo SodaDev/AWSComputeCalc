@@ -30,12 +30,12 @@ export function initStateFromUrl(state: State): State {
                 freeTier: shareParams.lambdaParams?.freeTier || state.lambdaParams.freeTier,
             },
             containersParams: {
-                numberOfTasks: shareParams.fargateParams?.numberOfTasks || state.containersParams.numberOfTasks,
+                numberOfTasks: shareParams.fargateParams?.numberOfTasks !== undefined ? shareParams.fargateParams?.numberOfTasks : state.containersParams.numberOfTasks,
                 fargateConfig: fargateConfig,
                 appRunnerConfig: shareParams.fargateParams?.appRunnerConfig || state.containersParams.appRunnerConfig
             },
             ec2Params: {
-                numberOfInstances: shareParams.ec2Params?.numberOfInstances || state.ec2Params.numberOfInstances,
+                numberOfInstances: shareParams.ec2Params?.numberOfInstances !== undefined ? shareParams.ec2Params?.numberOfInstances : state.ec2Params.numberOfInstances,
                 instanceType: shareParams.ec2Params?.instanceType ? state.ec2Pricing.instancePrices[shareParams.ec2Params.instanceType] || state.ec2Params.instanceType : state.ec2Params.instanceType
             }
         };

@@ -17,7 +17,7 @@ export interface FargateUrlParams {
 
 export interface AppRunnerConfig {
     enabled:    boolean;
-    rpsPerTask: number;
+    rpmPerTask: number;
 }
 
 export interface FargateConfig {
@@ -195,7 +195,7 @@ const typeMap: any = {
     ], false),
     "AppRunnerConfig": o([
         { json: "enabled", js: "enabled", typ: u(undefined, true) },
-        { json: "rpsPerTask", js: "rpsPerTask", typ: u(undefined, 0) },
+        { json: "rpmPerTask", js: "rpmPerTask", typ: u(undefined, 0) },
     ], false),
     "FargateConfig": o([
         { json: "vCPU", js: "vCPU", typ: u(undefined, 0) },

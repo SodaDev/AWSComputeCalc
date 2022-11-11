@@ -36,7 +36,7 @@ export default function ContainerParameters() {
                     type: "CONTAINERS_SET_SIZE",
                     config: JSON.parse(event.target.value)
                 })}
-                sx={{ width: '18ch' }}
+                sx={{ width: '12ch' }}
                 variant="standard"
             >
                 {state.fargateConfigs.map((option) => (
@@ -46,7 +46,7 @@ export default function ContainerParameters() {
                 ))}
             </TextField>
             <TextField
-                label="AppRunner RPS"
+                label="AppRunner RPM / task"
                 type="number"
                 hidden={true}
                 InputLabelProps={{
@@ -55,12 +55,12 @@ export default function ContainerParameters() {
                 InputProps={{
                     inputProps: {min: 0}
                 }}
-                value={state.containersParams.appRunnerConfig?.rpsPerTask}
+                value={state.containersParams.appRunnerConfig?.rpmPerTask}
                 onChange={event => dispatch({
                     type: "CONTAINERS_SET_APP_RUNNER_RPS",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '10ch', display: !appRunnerEnabled ? 'none' : undefined }}
+                sx={{ width: '13ch', display: !appRunnerEnabled ? 'none' : undefined }}
                 variant="standard"
             />
         </Paper>

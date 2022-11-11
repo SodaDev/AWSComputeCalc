@@ -111,7 +111,7 @@ function applyOnState(action: Action, state: State): State {
                     ...state.containersParams,
                     appRunnerConfig: {
                         ...state.containersParams.appRunnerConfig,
-                        rpsPerTask: action.amount
+                        rpmPerTask: action.amount
                     }
                 }
             }

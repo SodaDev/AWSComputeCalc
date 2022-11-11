@@ -28,7 +28,7 @@ const initialState: State = initStateFromUrl({
         numberOfTasks: 2,
         appRunnerConfig: {
             enabled: true,
-            rpsPerTask: 100
+            rpmPerTask: 6000
         }
     },
     fargateConfigs: buildFargateConfigs(),

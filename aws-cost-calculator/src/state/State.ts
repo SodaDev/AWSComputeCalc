@@ -16,7 +16,7 @@ type LambdaParams = {
 
 export type AppRunnerConfig = {
     enabled: boolean
-    rpsPerTask: number
+    rpmPerTask: number
 }
 
 export type ContainersParams = {

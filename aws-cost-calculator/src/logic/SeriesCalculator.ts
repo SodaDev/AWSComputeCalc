@@ -55,11 +55,11 @@ function appRunnerSerieGenerator(containersParams: ContainersParams, pricing: Co
     if (!pricing.GBHour || !pricing.vCPUHour) {
         return undefined
     }
-    if (containersParams.appRunnerConfig?.enabled && containersParams.appRunnerConfig?.rpsPerTask) {
+    if (containersParams.appRunnerConfig?.enabled && containersParams.appRunnerConfig?.rpmPerTask) {
         const gbHourPricing = parseFloat(pricing.GBHour)
         const vCpuPricing = parseFloat(pricing.vCPUHour)
 
-        const concurrentRequests = containersParams.appRunnerConfig.rpsPerTask
+        const concurrentRequests = containersParams.appRunnerConfig.rpmPerTask / 60
 
         return requests => {
             const rps = requests / 30 / 24 / 60 / 60
