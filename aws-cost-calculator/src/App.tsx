@@ -7,6 +7,7 @@ import LambdaParameters from "./components/parameters/LambdaParameters";
 import {State} from "./state/State";
 import {
     Action,
+    toAppRunnerPricing,
     toEc2SetPricing,
     toFargateSetPricing,
     toFargateSpotSetPricing,
@@ -25,6 +26,7 @@ import {ThemeProvider, Typography} from "@mui/material";
 import {theme} from "./Theme";
 import GetInTouch from "./components/contact/GetInTouch";
 import CookieSnackBar from "./analytics/CookieSnackbar";
+import {getAppRunnerPrice} from "./client/AppRunnerClient";
 
 function App() {
     const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
@@ -75,6 +77,9 @@ function initData(dispatch: Dispatch<Action>) {
         .catch(console.error)
     getLambdaPrice()
         .then(response => dispatch(toLambdaSetPricing(response)))
+        .catch(console.error)
+    getAppRunnerPrice()
+        .then(response => dispatch(toAppRunnerPricing(response)))
         .catch(console.error)
 }
 

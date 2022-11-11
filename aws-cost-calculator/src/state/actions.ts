@@ -1,8 +1,9 @@
 import {LambdaRegionalPricing} from "../client/LambdaClient";
 import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
 import {FargateRegionalPricing} from "../client/FargateClient";
-import {EC2InstanceTypePricing, EC2InstancePricing} from "../client/Ec2Client";
+import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
+import {AppRunnerRegionalPricing} from "../client/AppRunnerClient";
 
 type Action =
     { type: "LAMBDA_SET_RPM", amount: number }
@@ -21,6 +22,8 @@ type Action =
     | { type: "EC2_SET_INSTANCES", amount: number }
     | { type: "EC2_SET_INSTANCE_TYPE", instanceType: EC2InstanceTypePricing }
     | { type: "EC2_SET_PRICING", pricing: EC2InstancePricing }
+
+    | { type: "APP_RUNNER_PRICING", pricing: AppRunnerRegionalPricing }
 
 export type {Action};
 
@@ -48,6 +51,13 @@ export function toFargateSetPricing(pricing: FargateRegionalPricing): Action {
 export function toEc2SetPricing(pricing: EC2InstancePricing): Action {
     return {
         type: "EC2_SET_PRICING",
+        pricing
+    }
+}
+
+export function toAppRunnerPricing(pricing: AppRunnerRegionalPricing): Action {
+    return {
+        type: "APP_RUNNER_PRICING",
         pricing
     }
 }

@@ -7,6 +7,7 @@ import {getFargateSpotFallback} from "../client/FargateSpotClient";
 import {getEc2Fallback} from "../client/Ec2Client";
 import {buildFargateConfigs, FargateConfig} from "../logic/FargateConfig";
 import {initStateFromUrl} from "../logic/Url";
+import {getAppRunnerFallback} from "../client/AppRunnerClient";
 
 const defaultRegion = "eu-west-1"
 const initialState: State = initStateFromUrl({
@@ -36,7 +37,10 @@ const initialState: State = initStateFromUrl({
         numberOfInstances: 2,
         instanceType: getEc2Fallback().instancePrices["t3.medium"]
     },
-    ec2Pricing: getEc2Fallback()
+    ec2Pricing: getEc2Fallback(),
+
+    appRunnerPricing: getAppRunnerFallback().regionPrices[defaultRegion],
+    appRunnerRegionalPricing: getAppRunnerFallback()
 });
 
 const defaultDispatch: React.Dispatch<Action> = () => initialState

@@ -18,6 +18,7 @@ export function generateSeries(state: State): Serie[] {
         .concat(seriesGenerator("Fargate arm", fargateSerieGenerator(state.fargateParams, state.fargateRegionalPricing.arm)))
         .concat(seriesGenerator("EC2", ec2SerieGenerator(state.ec2Params)))
         .concat(seriesGenerator("EC2 spot", ec2SpotSerieGenerator(state.ec2Params)))
+        .concat(seriesGenerator("AppRunner", fargateSerieGenerator(state.fargateParams, state.appRunnerPricing)))
 }
 
 function buildSerie(xAxis: number[]): SerieGenerator {

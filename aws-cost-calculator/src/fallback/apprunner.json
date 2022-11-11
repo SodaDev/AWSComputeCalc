@@ -1,0 +1,29 @@
+{
+  "regionPrices": {
+    "us-east-2": {
+      "GBHour": "0.0070000000",
+      "vCPUHour": "0.0640000000",
+      "ProvisionedGBHour": "0.0070000000"
+    },
+    "us-east-1": {
+      "GBHour": "0.0070000000",
+      "vCPUHour": "0.0640000000",
+      "ProvisionedGBHour": "0.0070000000"
+    },
+    "ap-northeast-1": {
+      "GBHour": "0.0088500000",
+      "vCPUHour": "0.0809000000",
+      "ProvisionedGBHour": "0.0088500000"
+    },
+    "eu-west-1": {
+      "GBHour": "0.0070000000",
+      "vCPUHour": "0.0640000000",
+      "ProvisionedGBHour": "0.0070000000"
+    },
+    "us-west-2": {
+      "GBHour": "0.0070000000",
+      "vCPUHour": "0.0640000000",
+      "ProvisionedGBHour": "0.0070000000"
+    }
+  }
+}

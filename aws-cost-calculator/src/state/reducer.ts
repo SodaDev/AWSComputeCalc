@@ -142,6 +142,12 @@ function applyOnState(action: Action, state: State) {
                 ...state,
                 ec2Pricing: action.pricing
             }
+        case "APP_RUNNER_PRICING":
+            return {
+                ...state,
+                appRunnerRegionalPricing: action.pricing,
+                appRunnerPricing: action.pricing.regionPrices[state.region]
+            }
         default:
             throw new Error();
     }
