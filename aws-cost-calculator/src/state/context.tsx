@@ -23,7 +23,7 @@ const initialState: State = initStateFromUrl({
     lambdaPricing: lambdaFallback,
     lambdaRegionalPricing: lambdaFallback.regionPrices[defaultRegion],
 
-    fargateParams: {
+    containersParams: {
         fargateConfig: new FargateConfig(2, 4),
         numberOfTasks: 2
     },

@@ -35,7 +35,7 @@ export async function getAppRunnerPrice(): Promise<AppRunnerRegionalPricing> {
 
         return buildAppRunnerPricingResponse(regionPrices)
     } catch (e) {
-        console.error(`Loading Fargate prices failed with ${e}`)
+        console.error(`Loading App Runner prices failed with ${e}`)
         return Promise.reject(e)
     }
 }

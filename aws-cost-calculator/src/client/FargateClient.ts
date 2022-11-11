@@ -10,11 +10,11 @@ const usageTypesOfInterest: Set<string> = new Set([
 ]);
 
 export type FargatePricing = {
-    x86: FargateComputePricing
-    arm: FargateComputePricing
+    x86: ContainerComputePricing
+    arm: ContainerComputePricing
 }
 
-export type FargateComputePricing = {
+export type ContainerComputePricing = {
     GBHour?: string
     vCPUHour?: string
 }

@@ -1,6 +1,6 @@
 import {LambdaPricing, LambdaRegionalPricing} from "../client/LambdaClient";
 import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
-import {FargatePricing, FargateComputePricing, FargateRegionalPricing} from "../client/FargateClient";
+import {FargatePricing, ContainerComputePricing, FargateRegionalPricing} from "../client/FargateClient";
 import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
 import {AppRunnerPricing, AppRunnerRegionalPricing} from "../client/AppRunnerClient";
@@ -14,7 +14,7 @@ type LambdaParams = {
     freeTier: boolean
 }
 
-export type FargateParams = {
+export type ContainersParams = {
     fargateConfig: FargateConfig
     numberOfTasks: number
 }
@@ -31,18 +31,17 @@ type State = {
     lambdaPricing: LambdaRegionalPricing
     lambdaRegionalPricing: LambdaPricing
 
-    fargateParams: FargateParams
+    containersParams: ContainersParams
     fargateConfigs: FargateConfig[]
     fargateSpotPricing: FargateSpotRegionalPricing
-    fargateSpotRegionalPricing: FargateComputePricing
+    fargateSpotRegionalPricing: ContainerComputePricing
     fargatePricing: FargateRegionalPricing
     fargateRegionalPricing: FargatePricing
+    appRunnerPricing: AppRunnerPricing
+    appRunnerRegionalPricing: AppRunnerRegionalPricing
 
     ec2Params: EC2Params
     ec2Pricing: EC2InstancePricing
-
-    appRunnerPricing: AppRunnerPricing
-    appRunnerRegionalPricing: AppRunnerRegionalPricing
 }
 
 export type {LambdaParams, State}

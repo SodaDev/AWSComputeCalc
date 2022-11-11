@@ -19,7 +19,7 @@ import {getLambdaPrice} from "./client/LambdaClient";
 import {getFargateSpotPrice} from "./client/FargateSpotClient";
 import {getFargatePrice} from "./client/FargateClient";
 import {getEc2Price} from "./client/Ec2Client";
-import FargateParameters from "./components/parameters/FargateParameters";
+import ContainerParameters from "./components/parameters/ContainerParameters";
 import Ec2Parameters from "./components/parameters/Ec2Parameters";
 import Box from "@mui/material/Box";
 import {ThemeProvider, Typography} from "@mui/material";
@@ -46,7 +46,7 @@ function App() {
                             <LambdaParameters/>
                         </Grid>
                         <Grid item md={6} sm={6} xl={6} xs={12}>
-                            <FargateParameters/>
+                            <ContainerParameters/>
                         </Grid>
                         <Grid item md={6} sm={6} xl={6} xs={12}>
                             <Ec2Parameters/>

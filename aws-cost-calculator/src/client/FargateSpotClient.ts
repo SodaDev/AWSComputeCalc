@@ -1,7 +1,7 @@
 import fargateFallback from "../fallback/fargateSpot.json"
 import {api} from "./TypedFetch";
 import {paths} from "./urls";
-import {FargateComputePricing} from "./FargateClient";
+import {ContainerComputePricing} from "./FargateClient";
 
 const vCPUHourUnit = "vCPU-Hours"
 const gbHourUnit = "GB-Hours"
@@ -29,7 +29,7 @@ type FargateSpotPriceDimension = {
 }
 
 export type FargateSpotRegionalPricing = {
-    regionPrices: Record<string, FargateComputePricing>
+    regionPrices: Record<string, ContainerComputePricing>
 }
 
 async function downloadFargateSpotPrice(): Promise<AWSFargatePriceResponse> {
@@ -74,7 +74,7 @@ function getPriceDimensionsByRegion(prices: AWSFargateSpotPrice[]): Map<string, 
 }
 
 function buildFargateSpotPricingResponse(regionPrices: Map<string, Map<string, FargateSpotPriceDimension>>): FargateSpotRegionalPricing {
-    const result: Record<string, FargateComputePricing> = {}
+    const result: Record<string, ContainerComputePricing> = {}
     for (let [region, dimensions] of Array.from(regionPrices)) {
         const vCpuPricing = dimensions.get(vCPUHourUnit);
         const memoryPricing = dimensions.get(gbHourUnit);

@@ -14,16 +14,17 @@ type Action =
     | { type: "LAMBDA_SET_PRICING", pricing: LambdaRegionalPricing }
     | { type: "LAMBDA_SET_FREE_TIER", enabled: boolean }
 
-    | { type: "FARGATE_SET_SIZE", config: FargateConfig }
-    | { type: "FARGATE_SET_TASKS", amount: number }
+    | { type: "CONTAINERS_SET_SIZE", config: FargateConfig }
+    | { type: "CONTAINERS_SET_TASKS", amount: number }
+
     | { type: "FARGATE_SPOT_SET_PRICING", pricing: FargateSpotRegionalPricing }
     | { type: "FARGATE_SET_PRICING", pricing: FargateRegionalPricing }
+    | { type: "APP_RUNNER_PRICING", pricing: AppRunnerRegionalPricing }
 
     | { type: "EC2_SET_INSTANCES", amount: number }
     | { type: "EC2_SET_INSTANCE_TYPE", instanceType: EC2InstanceTypePricing }
     | { type: "EC2_SET_PRICING", pricing: EC2InstancePricing }
 
-    | { type: "APP_RUNNER_PRICING", pricing: AppRunnerRegionalPricing }
 
 export type {Action};
 

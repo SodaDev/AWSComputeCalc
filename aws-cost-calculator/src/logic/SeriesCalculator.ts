@@ -1,7 +1,7 @@
-import {EC2Params, FargateParams, LambdaParams, State} from "../state/State";
+import {EC2Params, ContainersParams, LambdaParams, State} from "../state/State";
 import {LambdaPriceComponents} from "../client/LambdaClient";
 import {Serie} from "@nivo/line";
-import {FargateComputePricing} from "../client/FargateClient";
+import {ContainerComputePricing} from "../client/FargateClient";
 
 const dataPoints = 25
 
@@ -13,12 +13,12 @@ export function generateSeries(state: State): Serie[] {
     const seriesGenerator = buildSerie(xAxis)
     return seriesGenerator( "Lambda ARM", lambdaSeriesGenerator(state.lambdaRegionalPricing.arm, state.lambdaParams))
         .concat(seriesGenerator( "Lambda x86", lambdaSeriesGenerator(state.lambdaRegionalPricing.x86, state.lambdaParams)))
-        .concat(seriesGenerator( "Fargate spot x86", fargateSerieGenerator(state.fargateParams, state.fargateSpotRegionalPricing)))
-        .concat(seriesGenerator("Fargate x86", fargateSerieGenerator(state.fargateParams, state.fargateRegionalPricing.x86)))
-        .concat(seriesGenerator("Fargate arm", fargateSerieGenerator(state.fargateParams, state.fargateRegionalPricing.arm)))
+        .concat(seriesGenerator( "Fargate spot x86", containerSerieGenerator(state.containersParams, state.fargateSpotRegionalPricing)))
+        .concat(seriesGenerator("Fargate x86", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing.x86)))
+        .concat(seriesGenerator("Fargate arm", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing.arm)))
+        .concat(seriesGenerator("AppRunner", containerSerieGenerator(state.containersParams, state.appRunnerPricing)))
         .concat(seriesGenerator("EC2", ec2SerieGenerator(state.ec2Params)))
         .concat(seriesGenerator("EC2 spot", ec2SpotSerieGenerator(state.ec2Params)))
-        .concat(seriesGenerator("AppRunner", fargateSerieGenerator(state.fargateParams, state.appRunnerPricing)))
 }
 
 function buildSerie(xAxis: number[]): SerieGenerator {
@@ -51,13 +51,13 @@ function ec2SpotSerieGenerator(ec2Params: EC2Params): SeriePointGenerator {
     return __ => calculateEc2PricePoint(ec2Params.numberOfInstances, parseFloat(ec2Params.instanceType.SpotPrice))
 }
 
-function fargateSerieGenerator(fargateParams: FargateParams, pricing: FargateComputePricing): SeriePointGenerator {
-    if (!pricing.GBHour || !pricing.vCPUHour || !fargateParams.numberOfTasks || fargateParams.numberOfTasks < 1) {
+function containerSerieGenerator(containersParams: ContainersParams, pricing: ContainerComputePricing): SeriePointGenerator {
+    if (!pricing.GBHour || !pricing.vCPUHour || !containersParams.numberOfTasks || containersParams.numberOfTasks < 1) {
         return undefined
     }
     const gbHourPricing = parseFloat(pricing.GBHour)
     const vCpuPricing = parseFloat(pricing.vCPUHour)
-    const fargatePricing = calculateFargatePricePoint(fargateParams, gbHourPricing, vCpuPricing)
+    const fargatePricing = calculateFargatePricePoint(containersParams, gbHourPricing, vCpuPricing)
 
     return __ => fargatePricing
 }
@@ -89,9 +89,9 @@ function calculateLambdaPricePointRaw(requests: number, lambdaParams: LambdaPara
     return Math.max(computeCost, 0) + Math.max(invocationCost, 0)
 }
 
-function calculateFargatePricePoint(fargateParams: FargateParams, gbPrice: number, vCPUPrice: number): number {
-    const taskPricePerHour = fargateParams.fargateConfig.memory * gbPrice + fargateParams.fargateConfig.vCPU * vCPUPrice
-    return fargateParams.numberOfTasks * taskPricePerHour * 24 * 30;
+function calculateFargatePricePoint(containersParams: ContainersParams, gbPrice: number, vCPUPrice: number): number {
+    const taskPricePerHour = containersParams.fargateConfig.memory * gbPrice + containersParams.fargateConfig.vCPU * vCPUPrice
+    return containersParams.numberOfTasks * taskPricePerHour * 24 * 30;
 }
 
 function calculateEc2PricePoint(numberOfInstances: number, hourCost: number): number {

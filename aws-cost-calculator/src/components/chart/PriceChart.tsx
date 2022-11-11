@@ -11,9 +11,9 @@ const seriesColors = [
     "#ff9900",
     "#f1e15b",
     "#f47560",
-    "#e8c1a1",
+    "#8053ab",
     "#7e582e",
-    "#CC0F0F7F"
+    "#e8c1a1"
 ]
 
 function PriceChart() {

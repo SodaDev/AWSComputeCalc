@@ -28,8 +28,8 @@ export function initStateFromUrl(state: State): State {
                 avgResponseTimeInMs: shareParams.lambdaParams?.avgResponseTimeInMs || state.lambdaParams.avgResponseTimeInMs,
                 freeTier: shareParams.lambdaParams?.freeTier || state.lambdaParams.freeTier,
             },
-            fargateParams: {
-                numberOfTasks: shareParams.fargateParams?.numberOfTasks || state.fargateParams.numberOfTasks,
+            containersParams: {
+                numberOfTasks: shareParams.fargateParams?.numberOfTasks || state.containersParams.numberOfTasks,
                 fargateConfig: getFargateConfig(state, shareParams.fargateParams || {})
             },
             ec2Params: {
@@ -46,7 +46,7 @@ export function initStateFromUrl(state: State): State {
 function stateToUrlParam(state: State): URLParams {
     return {
         lambdaParams: state.lambdaParams,
-        fargateParams: state.fargateParams,
+        fargateParams: state.containersParams,
         ec2Params: {
             instanceType: state.ec2Params.instanceType.InstanceType,
             numberOfInstances: state.ec2Params.numberOfInstances
@@ -61,5 +61,5 @@ function getFargateConfig(state: State, fargateParams: FargateUrlParams) {
             return fargateConfig
         }
     }
-    return state.fargateParams.fargateConfig;
+    return state.containersParams.fargateConfig;
 }

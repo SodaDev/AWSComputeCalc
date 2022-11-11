@@ -81,21 +81,21 @@ function applyOnState(action: Action, state: State) {
                     freeTier: action.enabled
                 },
             }
-        case "FARGATE_SET_SIZE":
+        case "CONTAINERS_SET_SIZE":
             sendFargateConfig(action)
             return {
                 ...state,
-                fargateParams: {
-                    ...state.fargateParams,
+                containersParams: {
+                    ...state.containersParams,
                     fargateConfig: action.config,
                 }
             }
-        case "FARGATE_SET_TASKS":
+        case "CONTAINERS_SET_TASKS":
             sendInputMetric(action)
             return {
                 ...state,
-                fargateParams: {
-                    ...state.fargateParams,
+                containersParams: {
+                    ...state.containersParams,
                     numberOfTasks: action.amount,
                 }
             }

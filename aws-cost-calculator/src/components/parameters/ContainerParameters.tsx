@@ -3,7 +3,7 @@ import {AppContext} from "../../state/context";
 import {MenuItem, Paper} from "@mui/material";
 import TextField from "@mui/material/TextField";
 
-export default function FargateParameters() {
+export default function ContainerParameters() {
     const {state, dispatch} = React.useContext(AppContext);
 
     return (
@@ -19,9 +19,9 @@ export default function FargateParameters() {
                 InputProps={{
                     inputProps: {min: 0}
                 }}
-                value={state.fargateParams.numberOfTasks}
+                value={state.containersParams.numberOfTasks}
                 onChange={event => dispatch({
-                    type: "FARGATE_SET_TASKS",
+                    type: "CONTAINERS_SET_TASKS",
                     amount: parseInt(event.target.value)
                 })}
                 sx={{ width: '8ch' }}
@@ -29,10 +29,10 @@ export default function FargateParameters() {
             />
             <TextField
                 select
-                label="Fargate setup"
-                value={JSON.stringify(state.fargateParams.fargateConfig)}
+                label="Task setup"
+                value={JSON.stringify(state.containersParams.fargateConfig)}
                 onChange={event => dispatch({
-                    type: "FARGATE_SET_SIZE",
+                    type: "CONTAINERS_SET_SIZE",
                     config: JSON.parse(event.target.value)
                 })}
                 sx={{ width: '18ch' }}
