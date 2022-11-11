@@ -27,3 +27,8 @@ export function buildFargateConfigs(): FargateConfig[] {
         .concat(generateSetup(2, 4, 16))
         .concat(generateSetup(4, 8, 30))
 }
+
+export function isAppRunnerEnabled(fargateConfig: FargateConfig) {
+    const {memory, vCPU} = fargateConfig
+    return (vCPU === 1 && memory >= 2 && memory <= 4) || (vCPU === 2 && memory === 4)
+}

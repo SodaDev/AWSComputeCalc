@@ -14,9 +14,15 @@ type LambdaParams = {
     freeTier: boolean
 }
 
+export type AppRunnerConfig = {
+    enabled: boolean
+    rpsPerTask: number
+}
+
 export type ContainersParams = {
     fargateConfig: FargateConfig
     numberOfTasks: number
+    appRunnerConfig: AppRunnerConfig
 }
 
 export type EC2Params = {

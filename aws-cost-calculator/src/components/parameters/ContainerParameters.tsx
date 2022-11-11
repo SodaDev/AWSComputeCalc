@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 
 export default function ContainerParameters() {
     const {state, dispatch} = React.useContext(AppContext);
+    const appRunnerEnabled = state.containersParams.appRunnerConfig?.enabled || false
 
     return (
         <Paper variant="outlined" sx={{
@@ -44,6 +45,24 @@ export default function ContainerParameters() {
                     </MenuItem>
                 ))}
             </TextField>
+            <TextField
+                label="AppRunner RPS"
+                type="number"
+                hidden={true}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                InputProps={{
+                    inputProps: {min: 0}
+                }}
+                value={state.containersParams.appRunnerConfig?.rpsPerTask}
+                onChange={event => dispatch({
+                    type: "CONTAINERS_SET_APP_RUNNER_RPS",
+                    amount: parseInt(event.target.value)
+                })}
+                sx={{ width: '10ch', display: !appRunnerEnabled ? 'none' : undefined }}
+                variant="standard"
+            />
         </Paper>
     )
 }

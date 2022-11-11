@@ -16,6 +16,7 @@ type Action =
 
     | { type: "CONTAINERS_SET_SIZE", config: FargateConfig }
     | { type: "CONTAINERS_SET_TASKS", amount: number }
+    | { type: "CONTAINERS_SET_APP_RUNNER_RPS", amount: number }
 
     | { type: "FARGATE_SPOT_SET_PRICING", pricing: FargateSpotRegionalPricing }
     | { type: "FARGATE_SET_PRICING", pricing: FargateRegionalPricing }

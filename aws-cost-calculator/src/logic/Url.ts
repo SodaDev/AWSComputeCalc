@@ -18,6 +18,7 @@ export function initStateFromUrl(state: State): State {
         }
 
         const shareParams: URLParams = Convert.toURLParams(atob(config))
+        const fargateConfig = getFargateConfig(state, shareParams.fargateParams || {})
         return {
             ...state,
             lambdaParams: {
@@ -30,7 +31,8 @@ export function initStateFromUrl(state: State): State {
             },
             containersParams: {
                 numberOfTasks: shareParams.fargateParams?.numberOfTasks || state.containersParams.numberOfTasks,
-                fargateConfig: getFargateConfig(state, shareParams.fargateParams || {})
+                fargateConfig: fargateConfig,
+                appRunnerConfig: shareParams.fargateParams?.appRunnerConfig || state.containersParams.appRunnerConfig
             },
             ec2Params: {
                 numberOfInstances: shareParams.ec2Params?.numberOfInstances || state.ec2Params.numberOfInstances,

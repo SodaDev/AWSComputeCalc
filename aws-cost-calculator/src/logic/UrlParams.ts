@@ -12,6 +12,12 @@ export interface Ec2UrlParams {
 export interface FargateUrlParams {
     numberOfTasks?: number;
     fargateConfig?: FargateConfig;
+    appRunnerConfig?: AppRunnerConfig;
+}
+
+export interface AppRunnerConfig {
+    enabled:    boolean;
+    rpsPerTask: number;
 }
 
 export interface FargateConfig {
@@ -183,8 +189,13 @@ const typeMap: any = {
         { json: "numberOfInstances", js: "numberOfInstances", typ: u(undefined, 0) },
     ], false),
     "FargateUrlParams": o([
-        { json: "numberOfTasks", js: "numberOfTasks", typ: u(undefined, 0) },
         { json: "fargateConfig", js: "fargateConfig", typ: u(undefined, r("FargateConfig")) },
+        { json: "numberOfTasks", js: "numberOfTasks", typ: u(undefined, 0) },
+        { json: "appRunnerConfig", js: "appRunnerConfig", typ: u(undefined, r("AppRunnerConfig")) },
+    ], false),
+    "AppRunnerConfig": o([
+        { json: "enabled", js: "enabled", typ: u(undefined, true) },
+        { json: "rpsPerTask", js: "rpsPerTask", typ: u(undefined, 0) },
     ], false),
     "FargateConfig": o([
         { json: "vCPU", js: "vCPU", typ: u(undefined, 0) },

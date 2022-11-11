@@ -1,4 +1,4 @@
-import {EC2Params, ContainersParams, LambdaParams, State} from "../state/State";
+import {ContainersParams, EC2Params, LambdaParams, State} from "../state/State";
 import {LambdaPriceComponents} from "../client/LambdaClient";
 import {Serie} from "@nivo/line";
 import {ContainerComputePricing} from "../client/FargateClient";
@@ -51,10 +51,22 @@ function ec2SpotSerieGenerator(ec2Params: EC2Params): SeriePointGenerator {
     return __ => calculateEc2PricePoint(ec2Params.numberOfInstances, parseFloat(ec2Params.instanceType.SpotPrice))
 }
 
-function appRunnerSerieGenerator(containersParams: ContainersParams, appRunnerPricing: ContainerComputePricing) {
-    const {memory, vCPU} = containersParams.fargateConfig
-    if ((vCPU === 1 && memory >= 2 && memory <= 4) || (vCPU === 2 && memory === 4)) {
-        return containerSerieGenerator(containersParams, appRunnerPricing)
+function appRunnerSerieGenerator(containersParams: ContainersParams, pricing: ContainerComputePricing): SeriePointGenerator {
+    if (!pricing.GBHour || !pricing.vCPUHour) {
+        return undefined
+    }
+    if (containersParams.appRunnerConfig?.enabled && containersParams.appRunnerConfig?.rpsPerTask) {
+        const gbHourPricing = parseFloat(pricing.GBHour)
+        const vCpuPricing = parseFloat(pricing.vCPUHour)
+
+        const concurrentRequests = containersParams.appRunnerConfig.rpsPerTask
+
+        return requests => {
+            const rps = requests / 30 / 24 / 60 / 60
+            const tasks =  Math.ceil(rps / concurrentRequests)
+
+            return tasks * calculateFargatePricePoint(containersParams, gbHourPricing, vCpuPricing)
+        }
     }
     return undefined;
 }
@@ -65,13 +77,13 @@ function containerSerieGenerator(containersParams: ContainersParams, pricing: Co
     }
     const gbHourPricing = parseFloat(pricing.GBHour)
     const vCpuPricing = parseFloat(pricing.vCPUHour)
-    const fargatePricing = calculateFargatePricePoint(containersParams, gbHourPricing, vCpuPricing)
+    const fargatePricing = containersParams.numberOfTasks * calculateFargatePricePoint(containersParams, gbHourPricing, vCpuPricing)
 
     return __ => fargatePricing
 }
 
 function lambdaSeriesGenerator(pricing: LambdaPriceComponents, lambdaParams: LambdaParams): SeriePointGenerator {
-    if (!pricing.lambdaGbSecond || !pricing.requests) {
+    if (!lambdaParams.avgResponseTimeInMs || !pricing.lambdaGbSecond || !pricing.requests) {
         return undefined
     }
     const gbSecondPrice = parseFloat(pricing.lambdaGbSecond || "0");
@@ -84,7 +96,7 @@ function lambdaSeriesGenerator(pricing: LambdaPriceComponents, lambdaParams: Lam
 
 function buildXAxis(lambdaParams: LambdaParams): number[] {
     return Array.from(Array(dataPoints).keys())
-        .map(point => (point + 1) * lambdaParams.monthlyReq / dataPoints);
+        .map(point => (point + 1) * (lambdaParams.monthlyReq || 1) / dataPoints);
 }
 
 function calculateLambdaPricePointRaw(requests: number, lambdaParams: LambdaParams,
@@ -99,7 +111,7 @@ function calculateLambdaPricePointRaw(requests: number, lambdaParams: LambdaPara
 
 function calculateFargatePricePoint(containersParams: ContainersParams, gbPrice: number, vCPUPrice: number): number {
     const taskPricePerHour = containersParams.fargateConfig.memory * gbPrice + containersParams.fargateConfig.vCPU * vCPUPrice
-    return containersParams.numberOfTasks * taskPricePerHour * 24 * 30;
+    return taskPricePerHour * 24 * 30;
 }
 
 function calculateEc2PricePoint(numberOfInstances: number, hourCost: number): number {
