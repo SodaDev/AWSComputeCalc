@@ -3,7 +3,7 @@ import {Action} from "./actions";
 import {updateUrl} from "../logic/Url";
 import ReactGA from "react-ga";
 import {EC2InstanceTypePricing} from "../client/Ec2Client";
-import {FargateConfig} from "../logic/FargateConfig";
+import {FargateConfig, isAppRunnerEnabled} from "../logic/FargateConfig";
 import * as _ from 'lodash'
 
 const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
@@ -16,7 +16,7 @@ export function reducer(oldState: State, action: Action): State {
     return newState
 }
 
-function applyOnState(action: Action, state: State) {
+function applyOnState(action: Action, state: State): State {
     switch (action.type) {
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
             sendInputMetric(action)
@@ -88,6 +88,10 @@ function applyOnState(action: Action, state: State) {
                 containersParams: {
                     ...state.containersParams,
                     fargateConfig: action.config,
+                    appRunnerConfig: {
+                        ...state.containersParams.appRunnerConfig,
+                        enabled: isAppRunnerEnabled(action.config)
+                    }
                 }
             }
         case "CONTAINERS_SET_TASKS":
@@ -97,6 +101,18 @@ function applyOnState(action: Action, state: State) {
                 containersParams: {
                     ...state.containersParams,
                     numberOfTasks: action.amount,
+                }
+            }
+        case "CONTAINERS_SET_APP_RUNNER_RPS":
+            sendInputMetric(action)
+            return {
+                ...state,
+                containersParams: {
+                    ...state.containersParams,
+                    appRunnerConfig: {
+                        ...state.containersParams.appRunnerConfig,
+                        rpmPerTask: action.amount
+                    }
                 }
             }
         case "LAMBDA_SET_PRICING":

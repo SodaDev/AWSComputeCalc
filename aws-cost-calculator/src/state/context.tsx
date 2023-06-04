@@ -25,7 +25,11 @@ const initialState: State = initStateFromUrl({
 
     containersParams: {
         fargateConfig: new FargateConfig(2, 4),
-        numberOfTasks: 2
+        numberOfTasks: 2,
+        appRunnerConfig: {
+            enabled: true,
+            rpmPerTask: 6000
+        }
     },
     fargateConfigs: buildFargateConfigs(),
     fargateSpotPricing: getFargateSpotFallback(),
