@@ -1,14 +1,14 @@
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import {Cookies} from "react-cookie-consent";
 
 export function initGa() {
-    ReactGA.initialize('UA-233771537-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.initialize('G-52ZWTR68FX');
     ReactGA.set({anonymizeIp: true})
 }
 
 export function clearGa() {
     Cookies.remove("_ga");
+    Cookies.remove("_ga_52ZWTR68FX");
     Cookies.remove("_gat");
     Cookies.remove("_gid");
 }

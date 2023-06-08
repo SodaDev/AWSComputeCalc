@@ -1,7 +1,7 @@
 import {State} from "./State";
 import {Action} from "./actions";
 import {updateUrl} from "../logic/Url";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import {EC2InstanceTypePricing} from "../client/Ec2Client";
 import {FargateConfig, isAppRunnerEnabled} from "../logic/FargateConfig";
 import * as _ from 'lodash'
