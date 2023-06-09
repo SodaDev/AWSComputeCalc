@@ -58,8 +58,8 @@ function stateToUrlParam(state: State): URLParams {
 
 function getFargateConfig(state: State, fargateParams: FargateUrlParams) {
     for (let fargateConfig of state.fargateConfigs) {
-        if (fargateConfig.memory == fargateParams.fargateConfig?.memory
-            && fargateConfig.vCPU == fargateParams.fargateConfig?.vCPU) {
+        if (fargateConfig.memory === fargateParams.fargateConfig?.memory
+            && fargateConfig.vCPU === fargateParams.fargateConfig?.vCPU) {
             return fargateConfig
         }
     }
