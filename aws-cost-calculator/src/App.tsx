@@ -5,18 +5,10 @@ import Provider from './components/Provider'
 import Grid from '@mui/material/Grid';
 import LambdaParameters from "./components/parameters/LambdaParameters";
 import {State} from "./state/State";
-import {
-    Action,
-    toAppRunnerPricing,
-    toEc2SetPricing,
-    toFargateSetPricing,
-    toFargateSpotSetPricing,
-    toLambdaSetPricing
-} from "./state/actions";
+import {Action, toAppRunnerPricing, toEc2SetPricing, toFargateSetPricing, toLambdaSetPricing} from "./state/actions";
 import {reducer} from "./state/reducer";
 import {initialState} from "./state/context";
 import {getLambdaPrice} from "./client/LambdaClient";
-import {getFargateSpotPrice} from "./client/FargateSpotClient";
 import {getFargatePrice} from "./client/FargateClient";
 import {getEc2Price} from "./client/Ec2Client";
 import ContainerParameters from "./components/parameters/ContainerParameters";
@@ -71,9 +63,6 @@ function initData(dispatch: Dispatch<Action>) {
         .catch(console.error)
     getFargatePrice()
         .then(response => dispatch(toFargateSetPricing(response)))
-        .catch(console.error)
-    getFargateSpotPrice()
-        .then(response => dispatch(toFargateSpotSetPricing(response)))
         .catch(console.error)
     getLambdaPrice()
         .then(response => dispatch(toLambdaSetPricing(response)))

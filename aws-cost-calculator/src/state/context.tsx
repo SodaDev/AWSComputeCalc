@@ -3,7 +3,6 @@ import {State} from "./State";
 import {Action} from "./actions";
 import lambdaFallback from "../fallback/lambda.json";
 import fargateFallback from "../fallback/fargate.json";
-import {getFargateSpotFallback} from "../client/FargateSpotClient";
 import {getEc2Fallback} from "../client/Ec2Client";
 import {buildFargateConfigs, FargateConfig} from "../logic/FargateConfig";
 import {initStateFromUrl} from "../logic/Url";
@@ -32,14 +31,13 @@ const initialState: State = initStateFromUrl({
         }
     },
     fargateConfigs: buildFargateConfigs(),
-    fargateSpotPricing: getFargateSpotFallback(),
-    fargateSpotRegionalPricing: getFargateSpotFallback().regionPrices[defaultRegion],
     fargatePricing: fargateFallback,
     fargateRegionalPricing: fargateFallback.regionPrices[defaultRegion],
 
     ec2Params: {
         numberOfInstances: 2,
-        instanceType: getEc2Fallback().instancePrices["t3.medium"]
+        instanceType: "t3.medium",
+        instancePricing: getEc2Fallback().instancePrices["t3.medium"]
     },
     ec2Pricing: getEc2Fallback(),
 

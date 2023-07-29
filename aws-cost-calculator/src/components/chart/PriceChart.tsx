@@ -23,7 +23,7 @@ function PriceChart() {
     window.dispatchEvent(new Event('resize'));
     return (
         <ResponsiveLine
-            colors={seriesColors}
+            colors={d => d.color}
             data={chartData}
             animate={true}
             enableSlices={"x"}
@@ -67,7 +67,7 @@ function PriceChart() {
             theme={chartTheme}
             legends={[
                 {
-                    anchor: 'bottom-right',
+                    anchor: 'bottom-left',
                     direction: 'column',
                     justify: false,
                     translateX: 0,
@@ -80,6 +80,7 @@ function PriceChart() {
                     symbolSize: 12,
                     symbolShape: 'circle',
                     symbolBorderColor: 'rgba(0, 0, 0, .5)',
+                    toggleSerie: true,
                     effects: [
                         {
                             on: 'hover',

@@ -1,10 +1,10 @@
-import {State} from "./State";
+import {getInstanceType, State} from "./State";
 import {Action} from "./actions";
 import {updateUrl} from "../logic/Url";
 import ReactGA from "react-ga4";
-import {EC2InstanceTypePricing} from "../client/Ec2Client";
 import {FargateConfig, isAppRunnerEnabled} from "../logic/FargateConfig";
 import * as _ from 'lodash'
+import {EC2OSPricing} from "../client/Ec2Client";
 
 const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
 const rpmToMonthly = (i: number): number => Math.round(rpmToDaily(i) * 30)
@@ -121,12 +121,6 @@ function applyOnState(action: Action, state: State): State {
                 lambdaPricing: action.pricing,
                 lambdaRegionalPricing: action.pricing.regionPrices[state.region]
             }
-        case "FARGATE_SPOT_SET_PRICING":
-            return {
-                ...state,
-                fargateSpotPricing: action.pricing,
-                fargateSpotRegionalPricing: action.pricing.regionPrices[state.region]
-            }
         case "FARGATE_SET_PRICING":
             return {
                 ...state,
@@ -149,7 +143,8 @@ function applyOnState(action: Action, state: State): State {
                 ...state,
                 ec2Params: {
                     ...state.ec2Params,
-                    instanceType: action.instanceType
+                    instanceType: getInstanceType(action.instanceType),
+                    instancePricing: action.instanceType
                 }
             }
         }
@@ -176,10 +171,10 @@ async function sendEvent(action: { type: string, amount: number }) {
     });
 }
 
-async function sendEc2InstanceTypeEvent(action: { type: string, instanceType: EC2InstanceTypePricing }) {
+async function sendEc2InstanceTypeEvent(action: { type: string, instanceType: EC2OSPricing }) {
     ReactGA.event({
         category: action.type,
-        action: action.instanceType.InstanceType
+        action: action.instanceType.Linux?.product?.instanceType || action.instanceType.Windows?.product?.instanceType || ""
     });
 }
 

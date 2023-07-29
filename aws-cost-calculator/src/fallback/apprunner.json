@@ -5,10 +5,25 @@
       "vCPUHour": "0.0640000000",
       "ProvisionedGBHour": "0.0070000000"
     },
+    "eu-central-1": {
+      "GBHour": "0.0081760000",
+      "vCPUHour": "0.0744960000",
+      "ProvisionedGBHour": "0.0081760000"
+    },
     "us-east-1": {
       "GBHour": "0.0070000000",
       "vCPUHour": "0.0640000000",
       "ProvisionedGBHour": "0.0070000000"
+    },
+    "ap-southeast-1": {
+      "GBHour": "0.0088500000",
+      "vCPUHour": "0.0809000000",
+      "ProvisionedGBHour": "0.0088500000"
+    },
+    "ap-southeast-2": {
+      "GBHour": "0.0085120000",
+      "vCPUHour": "0.0776960000",
+      "ProvisionedGBHour": "0.0085120000"
     },
     "ap-northeast-1": {
       "GBHour": "0.0088500000",

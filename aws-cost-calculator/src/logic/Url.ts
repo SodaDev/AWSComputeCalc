@@ -19,6 +19,7 @@ export function initStateFromUrl(state: State): State {
 
         const shareParams: URLParams = Convert.toURLParams(atob(config))
         const fargateConfig = getFargateConfig(state, shareParams.fargateParams || {})
+        const instanceType = shareParams.ec2Params?.instanceType || state.ec2Params.instanceType
         return {
             ...state,
             lambdaParams: {
@@ -36,7 +37,8 @@ export function initStateFromUrl(state: State): State {
             },
             ec2Params: {
                 numberOfInstances: shareParams.ec2Params?.numberOfInstances !== undefined ? shareParams.ec2Params?.numberOfInstances : state.ec2Params.numberOfInstances,
-                instanceType: shareParams.ec2Params?.instanceType ? state.ec2Pricing.instancePrices[shareParams.ec2Params.instanceType] || state.ec2Params.instanceType : state.ec2Params.instanceType
+                instanceType: instanceType,
+                instancePricing: state.ec2Pricing.instancePrices[instanceType]
             }
         };
     } catch (e) {
@@ -50,7 +52,7 @@ function stateToUrlParam(state: State): URLParams {
         lambdaParams: state.lambdaParams,
         fargateParams: state.containersParams,
         ec2Params: {
-            instanceType: state.ec2Params.instanceType.InstanceType,
+            instanceType: state.ec2Params.instanceType,
             numberOfInstances: state.ec2Params.numberOfInstances
         }
     };

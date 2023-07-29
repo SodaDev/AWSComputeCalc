@@ -1,6 +1,6 @@
 {
   "regionPrices": {
-    "eu-west-2": {
+    "us-east-2": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
@@ -10,24 +10,7 @@
         "requests": "0.0000002000"
       }
     },
-    "eu-central-1": {
-      "x86": {
-        "lambdaGbSecond": "0.0000166667",
-        "requests": "0.0000002000"
-      },
-      "arm": {
-        "lambdaGbSecond": "0.0000133334",
-        "requests": "0.0000002000"
-      }
-    },
-    "eu-north-1": {
-      "x86": {
-        "lambdaGbSecond": "0.0000166667",
-        "requests": "0.0000002000"
-      },
-      "arm": {}
-    },
-    "ap-northeast-1": {
+    "ca-central-1": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
@@ -47,6 +30,23 @@
         "requests": "0.0000002000"
       }
     },
+    "me-central-1": {
+      "x86": {
+        "lambdaGbSecond": "0.0000206667",
+        "requests": "0.0000002500"
+      },
+      "arm": {}
+    },
+    "sa-east-1": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
     "eu-west-1": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
@@ -57,7 +57,7 @@
         "requests": "0.0000002000"
       }
     },
-    "us-east-2": {
+    "ap-northeast-1": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
@@ -72,43 +72,12 @@
         "lambdaGbSecond": "0.0000206667",
         "requests": "0.0000002500"
       },
-      "arm": {}
-    },
-    "af-south-1": {
-      "x86": {
-        "lambdaGbSecond": "0.0000221000",
-        "requests": "0.0000002700"
-      },
-      "arm": {}
-    },
-    "ap-south-1": {
-      "x86": {
-        "lambdaGbSecond": "0.0000166667",
-        "requests": "0.0000002000"
-      },
       "arm": {
-        "lambdaGbSecond": "0.0000133334",
-        "requests": "0.0000002000"
+        "lambdaGbSecond": "0.0000165334",
+        "requests": "0.0000002500"
       }
     },
-    "sa-east-1": {
-      "x86": {
-        "lambdaGbSecond": "0.0000166667",
-        "requests": "0.0000002000"
-      },
-      "arm": {}
-    },
-    "ap-southeast-2": {
-      "x86": {
-        "lambdaGbSecond": "0.0000166667",
-        "requests": "0.0000002000"
-      },
-      "arm": {
-        "lambdaGbSecond": "0.0000133334",
-        "requests": "0.0000002000"
-      }
-    },
-    "ap-southeast-1": {
+    "eu-west-2": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
@@ -119,6 +88,46 @@
       }
     },
     "ap-northeast-2": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
+    "eu-west-3": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
+    "ap-northeast-3": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
+    "eu-north-1": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
+    "us-gov-east-1": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
@@ -142,45 +151,57 @@
         "requests": "0.0000002000"
       }
     },
-    "ap-southeast-3": {
-      "x86": {
-        "lambdaGbSecond": "0.0000166667",
-        "requests": "0.0000002000"
-      },
-      "arm": {}
-    },
     "us-west-1": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
       },
-      "arm": {}
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
     },
-    "eu-west-3": {
+    "ap-southeast-4": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
       },
       "arm": {}
     },
-    "ap-northeast-3": {
+    "af-south-1": {
       "x86": {
-        "lambdaGbSecond": "0.0000166667",
-        "requests": "0.0000002000"
+        "lambdaGbSecond": "0.0000221000",
+        "requests": "0.0000002700"
       },
-      "arm": {}
+      "arm": {
+        "lambdaGbSecond": "0.0000176800",
+        "requests": "0.0000002700"
+      }
     },
-    "ca-central-1": {
+    "ap-southeast-1": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
       },
-      "arm": {}
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
     },
     "ap-east-1": {
       "x86": {
         "lambdaGbSecond": "0.0000229200",
         "requests": "0.0000002800"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000183000",
+        "requests": "0.0000002800"
+      }
+    },
+    "eu-south-2": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
       },
       "arm": {}
     },
@@ -189,14 +210,64 @@
         "lambdaGbSecond": "0.0000195172",
         "requests": "0.0000002300"
       },
+      "arm": {
+        "lambdaGbSecond": "0.0000156138",
+        "requests": "0.0000002300"
+      }
+    },
+    "ap-southeast-3": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
+    "ap-southeast-2": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
+    "eu-central-1": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
+    },
+    "eu-central-2": {
+      "x86": {
+        "lambdaGbSecond": "0.0000183334",
+        "requests": "0.0000002200"
+      },
       "arm": {}
     },
-    "us-gov-east-1": {
+    "ap-south-2": {
       "x86": {
         "lambdaGbSecond": "0.0000166667",
         "requests": "0.0000002000"
       },
       "arm": {}
+    },
+    "ap-south-1": {
+      "x86": {
+        "lambdaGbSecond": "0.0000166667",
+        "requests": "0.0000002000"
+      },
+      "arm": {
+        "lambdaGbSecond": "0.0000133334",
+        "requests": "0.0000002000"
+      }
     }
   }
 }

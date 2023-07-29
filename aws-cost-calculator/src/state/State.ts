@@ -1,7 +1,6 @@
 import {LambdaPricing, LambdaRegionalPricing} from "../client/LambdaClient";
-import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
-import {FargatePricing, ContainerComputePricing, FargateRegionalPricing} from "../client/FargateClient";
-import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
+import {FargatePricing, FargateRegionalPricing} from "../client/FargateClient";
+import {EC2InstancePricing, EC2OSPricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
 import {AppRunnerPricing, AppRunnerRegionalPricing} from "../client/AppRunnerClient";
 
@@ -26,8 +25,13 @@ export type ContainersParams = {
 }
 
 export type EC2Params = {
-    instanceType: EC2InstanceTypePricing
-    numberOfInstances: number
+    instanceType: string;
+    instancePricing: EC2OSPricing;
+    numberOfInstances: number;
+}
+
+export function getInstanceType(input: EC2OSPricing): string {
+    return input.Linux?.product?.instanceType || input.Windows?.product?.instanceType || ""
 }
 
 type State = {
@@ -39,8 +43,6 @@ type State = {
 
     containersParams: ContainersParams
     fargateConfigs: FargateConfig[]
-    fargateSpotPricing: FargateSpotRegionalPricing
-    fargateSpotRegionalPricing: ContainerComputePricing
     fargatePricing: FargateRegionalPricing
     fargateRegionalPricing: FargatePricing
     appRunnerPricing: AppRunnerPricing

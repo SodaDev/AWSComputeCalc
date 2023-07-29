@@ -2,6 +2,7 @@ import * as React from "react";
 import {AppContext} from "../../state/context";
 import {MenuItem, Paper} from "@mui/material";
 import TextField from "@mui/material/TextField";
+import _ from "lodash";
 
 export default function Ec2Parameters() {
     const {state, dispatch} = React.useContext(AppContext);
@@ -30,7 +31,7 @@ export default function Ec2Parameters() {
             <TextField
                 select
                 label="Instance type"
-                value={JSON.stringify(state.ec2Params.instanceType)}
+                value={JSON.stringify(state.ec2Params.instancePricing)}
                 onChange={event => dispatch({
                     type: "EC2_SET_INSTANCE_TYPE",
                     instanceType: JSON.parse(event.target.value)
@@ -39,13 +40,13 @@ export default function Ec2Parameters() {
                 variant="standard"
             >
                 {
-                    Object.values(state.ec2Pricing.instancePrices)
-                        .sort((a, b) => a.InstanceType.localeCompare(b.InstanceType))
-                        .map((option) => (
-                            <MenuItem key={option.InstanceType} value={JSON.stringify(option)}>
-                                {option.InstanceType}
+                    _.sortBy(Object.entries(state.ec2Pricing.instancePrices), x => x[0])
+                        .map(([instanceType, instance]) => (
+                            <MenuItem key={instanceType} value={JSON.stringify(instance)}>
+                                {instanceType}
                             </MenuItem>
-                        ))}
+                        ))
+                }
             </TextField>
         </Paper>
     )
