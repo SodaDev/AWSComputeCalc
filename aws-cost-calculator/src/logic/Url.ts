@@ -36,8 +36,7 @@ export function initStateFromUrl(state: State): State {
             },
             ec2Params: {
                 numberOfInstances: shareParams.ec2Params?.numberOfInstances !== undefined ? shareParams.ec2Params?.numberOfInstances : state.ec2Params.numberOfInstances,
-                instanceType: instanceType,
-                instancePricing: state.ec2Pricing.instancePrices[instanceType]
+                instanceType: instanceType
             }
         };
     } catch (e) {

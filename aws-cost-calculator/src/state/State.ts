@@ -30,7 +30,6 @@ export type ContainersParams = {
 
 export type EC2Params = {
     instanceType: string;
-    instancePricing: EC2OSPricing;
     numberOfInstances: number;
 }
 
@@ -42,19 +41,19 @@ type State = {
     region: string
 
     lambdaParams: LambdaParams
-    lambdaPricing: LambdaRegionalPricing
-    lambdaRegionalPricing: LambdaPricing
+    lambdaPricing?: LambdaRegionalPricing
+    lambdaRegionalPricing?: LambdaPricing
     lambdaIntervals: LambdaInterval[]
 
     containersParams: ContainersParams
     fargateConfigs: FargateConfig[]
-    fargatePricing: FargateRegionalPricing
-    fargateRegionalPricing: FargatePricing
-    appRunnerPricing: AppRunnerPricing
-    appRunnerRegionalPricing: AppRunnerRegionalPricing
+    fargatePricing?: FargateRegionalPricing
+    fargateRegionalPricing?: FargatePricing
+    appRunnerPricing?: AppRunnerRegionalPricing
+    appRunnerRegionalPricing?: AppRunnerPricing
 
     ec2Params: EC2Params
-    ec2Pricing: EC2InstancePricing
+    ec2Pricing?: EC2InstancePricing
 }
 
 export type {LambdaParams, State}

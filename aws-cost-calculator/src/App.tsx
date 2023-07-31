@@ -1,16 +1,9 @@
-import React, {Dispatch, useEffect, useReducer} from 'react';
+import React from 'react';
 import PriceChart from "./components/chart/PriceChart";
 import Provider from './components/Provider'
 
 import Grid from '@mui/material/Grid';
 import LambdaParameters from "./components/parameters/LambdaParameters";
-import {State} from "./state/State";
-import {Action, toAppRunnerPricing, toEc2SetPricing, toFargateSetPricing, toLambdaSetPricing} from "./state/actions";
-import {reducer} from "./state/reducer";
-import {initialState} from "./state/context";
-import {getLambdaPrice} from "./client/LambdaClient";
-import {getFargatePrice} from "./client/FargateClient";
-import {getEc2Price} from "./client/Ec2Client";
 import ContainerParameters from "./components/parameters/ContainerParameters";
 import Ec2Parameters from "./components/parameters/Ec2Parameters";
 import Box from "@mui/material/Box";
@@ -18,14 +11,9 @@ import {ThemeProvider, Typography} from "@mui/material";
 import {theme} from "./Theme";
 import GetInTouch from "./components/contact/GetInTouch";
 import CookieSnackBar from "./analytics/CookieSnackbar";
-import {getAppRunnerPrice} from "./client/AppRunnerClient";
+import RegionParameters from "./components/parameters/RegionParameters";
 
 function App() {
-    const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
-    useEffect(() => {
-        initData(dispatch);
-    }, []);
-
     return (
         <ThemeProvider theme={theme}>
             <Provider>
@@ -34,8 +22,11 @@ function App() {
                         AWS Cost Estimator
                     </Typography>
                     <Grid container spacing={0.5}>
-                        <Grid item md={12} sm={12} xl={12} xs={12}>
+                        <Grid item md={8} sm={8} xl={8} xs={8}>
                             <LambdaParameters/>
+                        </Grid>
+                        <Grid item md={4} sm={4} xl={4} xs={4}>
+                            <RegionParameters/>
                         </Grid>
                         <Grid item md={6} sm={6} xl={6} xs={12}>
                             <ContainerParameters/>
@@ -55,21 +46,6 @@ function App() {
             </Provider>
         </ThemeProvider>
     );
-}
-
-function initData(dispatch: Dispatch<Action>) {
-    getEc2Price()
-        .then(response => dispatch(toEc2SetPricing(response)))
-        .catch(console.error)
-    getFargatePrice()
-        .then(response => dispatch(toFargateSetPricing(response)))
-        .catch(console.error)
-    getLambdaPrice()
-        .then(response => dispatch(toLambdaSetPricing(response)))
-        .catch(console.error)
-    getAppRunnerPrice()
-        .then(response => dispatch(toAppRunnerPricing(response)))
-        .catch(console.error)
 }
 
 export default App;

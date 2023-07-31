@@ -31,18 +31,19 @@ export default function Ec2Parameters() {
             <TextField
                 select
                 label="Instance type"
-                value={JSON.stringify(state.ec2Params.instancePricing)}
+                value={state.ec2Params.instanceType}
                 onChange={event => dispatch({
                     type: "EC2_SET_INSTANCE_TYPE",
-                    instanceType: JSON.parse(event.target.value)
+                    instanceType: state.ec2Pricing?.instancePrices[event.target.value]
                 })}
                 sx={{ width: '15ch' }}
                 variant="standard"
             >
                 {
-                    _.sortBy(Object.entries(state.ec2Pricing.instancePrices), x => x[0])
-                        .map(([instanceType, instance]) => (
-                            <MenuItem key={instanceType} value={JSON.stringify(instance)}>
+                    _.keys(state.ec2Pricing?.instancePrices || {})
+                        .sort()
+                        .map(instanceType => (
+                            <MenuItem key={instanceType} value={instanceType}>
                                 {instanceType}
                             </MenuItem>
                         ))

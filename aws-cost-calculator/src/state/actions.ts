@@ -6,7 +6,9 @@ import {AppRunnerRegionalPricing} from "../client/AppRunnerClient";
 import {LambdaInterval} from "./State";
 
 type Action =
-    { type: "LAMBDA_SET_REQUESTS", amount: number }
+    { type: "SET_REGION", region: string }
+
+    | { type: "LAMBDA_SET_REQUESTS", amount: number }
     | { type: "LAMBDA_SET_INTERVAL", interval: LambdaInterval }
     | { type: "LAMBDA_SET_SIZE", amount: number }
     | { type: "LAMBDA_SET_AVG_RESPONSE_TIME", amount: number }
@@ -21,7 +23,7 @@ type Action =
     | { type: "APP_RUNNER_PRICING", pricing: AppRunnerRegionalPricing }
 
     | { type: "EC2_SET_INSTANCES", amount: number }
-    | { type: "EC2_SET_INSTANCE_TYPE", instanceType: EC2OSPricing }
+    | { type: "EC2_SET_INSTANCE_TYPE", instanceType: EC2OSPricing | undefined }
     | { type: "EC2_SET_PRICING", pricing: EC2InstancePricing }
 
 

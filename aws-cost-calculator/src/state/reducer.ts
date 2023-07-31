@@ -17,6 +17,15 @@ export function reducer(oldState: State, action: Action): State {
 function applyOnState(action: Action, state: State): State {
     console.log(action, state)
     switch (action.type) {
+        case 'SET_REGION':
+            sendRegionEvent(action)
+            return {
+                ...state,
+                region: action.region,
+                lambdaRegionalPricing: state.lambdaPricing?.regionPrices[action.region],
+                fargateRegionalPricing: state.fargatePricing?.regionPrices[action.region],
+                appRunnerRegionalPricing: state.appRunnerPricing?.regionPrices[action.region]
+            }
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
             sendInputMetric(action)
             return {
@@ -122,13 +131,15 @@ function applyOnState(action: Action, state: State): State {
             }
         }
         case "EC2_SET_INSTANCE_TYPE": {
+            if (!action.instanceType) {
+                return state
+            }
             sendEc2InstanceTypeEvent(action)
             return {
                 ...state,
                 ec2Params: {
                     ...state.ec2Params,
-                    instanceType: getInstanceType(action.instanceType),
-                    instancePricing: action.instanceType
+                    instanceType: getInstanceType(action.instanceType)
                 }
             }
         }
@@ -140,8 +151,8 @@ function applyOnState(action: Action, state: State): State {
         case "APP_RUNNER_PRICING":
             return {
                 ...state,
-                appRunnerRegionalPricing: action.pricing,
-                appRunnerPricing: action.pricing.regionPrices[state.region]
+                appRunnerPricing: action.pricing,
+                appRunnerRegionalPricing: action.pricing.regionPrices[state.region]
             }
         default:
             throw new Error();
@@ -162,7 +173,17 @@ async function sendIntervalEvent(action: { type: string, interval: LambdaInterva
     });
 }
 
-async function sendEc2InstanceTypeEvent(action: { type: string, instanceType: EC2OSPricing }) {
+async function sendRegionEvent(action: { type: string, region: string }) {
+    ReactGA.event({
+        category: action.type,
+        action: action.region
+    });
+}
+
+async function sendEc2InstanceTypeEvent(action: { type: string, instanceType: EC2OSPricing | undefined }) {
+    if (!action.instanceType) {
+        return
+    }
     ReactGA.event({
         category: action.type,
         action: action.instanceType.Linux?.product?.instanceType || action.instanceType.Windows?.product?.instanceType || ""

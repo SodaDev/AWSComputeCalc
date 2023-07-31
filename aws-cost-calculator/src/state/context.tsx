@@ -62,13 +62,12 @@ const initialState: State = initStateFromUrl({
 
     ec2Params: {
         numberOfInstances: 2,
-        instanceType: "t3.medium",
-        instancePricing: getEc2Fallback().instancePrices["t3.medium"]
+        instanceType: "t3.medium"
     },
     ec2Pricing: getEc2Fallback(),
 
-    appRunnerPricing: getAppRunnerFallback().regionPrices[defaultRegion],
-    appRunnerRegionalPricing: getAppRunnerFallback()
+    appRunnerRegionalPricing: getAppRunnerFallback().regionPrices[defaultRegion],
+    appRunnerPricing: getAppRunnerFallback()
 });
 
 const defaultDispatch: React.Dispatch<Action> = () => initialState

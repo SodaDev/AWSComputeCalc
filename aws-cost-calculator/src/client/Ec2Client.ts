@@ -39,8 +39,8 @@ export type EC2InstancePricing = {
     instancePrices: Record<string, EC2OSPricing>
 }
 
-async function downloadEc2Price(): Promise<EC2InstancePricing> {
-    const ec2Pricing: EC2PricingResponse = await api.get(paths.ec2Url);
+async function downloadEc2Price(region: string): Promise<EC2InstancePricing> {
+    const ec2Pricing: EC2PricingResponse = await api.get(`${paths.ec2Url}/${region}`);
     return {
         instancePrices: ec2Pricing.pricing
     }
@@ -52,6 +52,6 @@ export function getEc2Fallback(): EC2InstancePricing {
     }
 }
 
-export async function getEc2Price(): Promise<EC2InstancePricing> {
-    return await downloadEc2Price()
+export async function getEc2Price(region: string): Promise<EC2InstancePricing> {
+    return await downloadEc2Price(region)
 }
