@@ -6,8 +6,6 @@ import {FargateConfig, isAppRunnerEnabled} from "../logic/FargateConfig";
 import * as _ from 'lodash'
 import {EC2OSPricing} from "../client/Ec2Client";
 
-const rpmToDaily = (i: number): number => Math.round(i * 60 * 24)
-const rpmToMonthly = (i: number): number => Math.round(rpmToDaily(i) * 30)
 const sendInputMetric = _.debounce(sendEvent, 1000)
 
 export function reducer(oldState: State, action: Action): State {
@@ -17,6 +15,7 @@ export function reducer(oldState: State, action: Action): State {
 }
 
 function applyOnState(action: Action, state: State): State {
+    console.log(action, state)
     switch (action.type) {
         case 'LAMBDA_SET_AVG_RESPONSE_TIME':
             sendInputMetric(action)

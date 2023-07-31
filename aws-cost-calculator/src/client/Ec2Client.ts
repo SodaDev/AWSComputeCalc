@@ -2,6 +2,11 @@ import {api} from "./TypedFetch";
 import {paths} from "./urls";
 import ec2Fallback from "../fallback/ec2.json"
 
+export type EC2PricingResponse = {
+    pricing: Record<string, EC2OSPricing>
+    updated: string
+}
+
 export type EC2OSPricing = {
     Windows?: OSPricing;
     Linux?:   OSPricing;
@@ -35,14 +40,15 @@ export type EC2InstancePricing = {
 }
 
 async function downloadEc2Price(): Promise<EC2InstancePricing> {
+    const ec2Pricing: EC2PricingResponse = await api.get(paths.ec2Url);
     return {
-        instancePrices: await api.get(paths.ec2Url)
+        instancePrices: ec2Pricing.pricing
     }
 }
 
 export function getEc2Fallback(): EC2InstancePricing {
     return {
-        instancePrices: ec2Fallback
+        instancePrices: ec2Fallback.pricing
     }
 }
 

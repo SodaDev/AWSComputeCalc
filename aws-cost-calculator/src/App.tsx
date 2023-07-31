@@ -59,7 +59,7 @@ function App() {
 
 function initData(dispatch: Dispatch<Action>) {
     getEc2Price()
-        .then(response => toEc2SetPricing(response))
+        .then(response => dispatch(toEc2SetPricing(response)))
         .catch(console.error)
     getFargatePrice()
         .then(response => dispatch(toFargateSetPricing(response)))
