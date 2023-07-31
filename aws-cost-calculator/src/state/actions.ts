@@ -3,11 +3,11 @@ import {FargateRegionalPricing} from "../client/FargateClient";
 import {EC2InstancePricing, EC2OSPricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
 import {AppRunnerRegionalPricing} from "../client/AppRunnerClient";
+import {LambdaInterval} from "./State";
 
 type Action =
-    { type: "LAMBDA_SET_RPM", amount: number }
-    | { type: "LAMBDA_SET_DAILY", amount: number }
-    | { type: "LAMBDA_SET_MONTHLY", amount: number }
+    { type: "LAMBDA_SET_REQUESTS", amount: number }
+    | { type: "LAMBDA_SET_INTERVAL", interval: LambdaInterval }
     | { type: "LAMBDA_SET_SIZE", amount: number }
     | { type: "LAMBDA_SET_AVG_RESPONSE_TIME", amount: number }
     | { type: "LAMBDA_SET_PRICING", pricing: LambdaRegionalPricing }

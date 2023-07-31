@@ -23,9 +23,8 @@ export function initStateFromUrl(state: State): State {
         return {
             ...state,
             lambdaParams: {
-                minuteReq: shareParams.lambdaParams?.minuteReq || state.lambdaParams.minuteReq,
-                dailyReq: shareParams.lambdaParams?.dailyReq || state.lambdaParams.dailyReq,
-                monthlyReq: shareParams.lambdaParams?.monthlyReq || state.lambdaParams.monthlyReq,
+                requests: shareParams.lambdaParams?.requests || state.lambdaParams.requests,
+                interval: state.lambdaIntervals.find(x => x.label === shareParams.lambdaParams?.interval) || state.lambdaParams.interval,
                 lambdaSize: shareParams.lambdaParams?.lambdaSize || state.lambdaParams.lambdaSize,
                 avgResponseTimeInMs: shareParams.lambdaParams?.avgResponseTimeInMs || state.lambdaParams.avgResponseTimeInMs,
                 freeTier: shareParams.lambdaParams?.freeTier || state.lambdaParams.freeTier,
@@ -49,7 +48,13 @@ export function initStateFromUrl(state: State): State {
 
 function stateToUrlParam(state: State): URLParams {
     return {
-        lambdaParams: state.lambdaParams,
+        lambdaParams: {
+            avgResponseTimeInMs: state.lambdaParams.avgResponseTimeInMs,
+            requests: state.lambdaParams.requests,
+            interval: state.lambdaParams.interval.label,
+            lambdaSize: state.lambdaParams.lambdaSize,
+            freeTier: state.lambdaParams.freeTier
+        },
         fargateParams: state.containersParams,
         ec2Params: {
             instanceType: state.ec2Params.instanceType,

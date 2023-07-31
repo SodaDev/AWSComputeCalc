@@ -4,12 +4,16 @@ import {EC2InstancePricing, EC2OSPricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
 import {AppRunnerPricing, AppRunnerRegionalPricing} from "../client/AppRunnerClient";
 
+export type LambdaInterval = {
+    label: string
+    multiplier: number
+}
+
 type LambdaParams = {
     avgResponseTimeInMs: number
-    minuteReq: number
-    dailyReq: number
-    monthlyReq: number
     lambdaSize: number
+    requests: number
+    interval: LambdaInterval
     freeTier: boolean
 }
 
@@ -40,6 +44,7 @@ type State = {
     lambdaParams: LambdaParams
     lambdaPricing: LambdaRegionalPricing
     lambdaRegionalPricing: LambdaPricing
+    lambdaIntervals: LambdaInterval[]
 
     containersParams: ContainersParams
     fargateConfigs: FargateConfig[]

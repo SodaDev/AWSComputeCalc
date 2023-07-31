@@ -10,7 +10,7 @@ type SerieGenerator = (name: string, serieColor: string, generator: SeriePointGe
 type SeriePointGenerator = ((a: number) => number) | undefined
 
 export function generateSeries(state: State): Serie[] {
-    const xAxis = buildXAxis(state.lambdaParams);
+    const xAxis = buildXAxis(state.lambdaParams.requests * state.lambdaParams.interval.multiplier);
     const seriesGenerator = buildSerie(xAxis)
     const series =
         seriesGenerator("Lambda ARM", "#b4e8db", lambdaSeriesGenerator(state.lambdaRegionalPricing.arm, state.lambdaParams))
@@ -89,7 +89,7 @@ function containerSerieGenerator(containersParams: ContainersParams, pricing: Co
 }
 
 function lambdaSeriesGenerator(pricing: LambdaPriceComponents, lambdaParams: LambdaParams): SeriePointGenerator {
-    if (!lambdaParams.avgResponseTimeInMs || !pricing.lambdaGbSecond || !pricing.requests || !lambdaParams.monthlyReq) {
+    if (!lambdaParams.avgResponseTimeInMs || !pricing.lambdaGbSecond || !pricing.requests || !lambdaParams.requests) {
         return undefined
     }
     const gbSecondPrice = parseFloat(pricing.lambdaGbSecond || "0");
@@ -100,9 +100,9 @@ function lambdaSeriesGenerator(pricing: LambdaPriceComponents, lambdaParams: Lam
     return requests => calculateLambdaPricePointRaw(requests, lambdaParams, gbSecondPrice, invocationPrice, freeTierInvocations, freeTierGbs)
 }
 
-function buildXAxis(lambdaParams: LambdaParams): number[] {
+function buildXAxis(requests: number): number[] {
     return Array.from(Array(dataPoints).keys())
-        .map(point => (point + 1) * (lambdaParams.monthlyReq || 1) / dataPoints);
+        .map(point => (point + 1) * (requests || 1) / dataPoints);
 }
 
 function calculateLambdaPricePointRaw(requests: number, lambdaParams: LambdaParams,

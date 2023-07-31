@@ -1,4 +1,4 @@
-import {getInstanceType, State} from "./State";
+import {getInstanceType, LambdaInterval, State} from "./State";
 import {Action} from "./actions";
 import {updateUrl} from "../logic/Url";
 import ReactGA from "react-ga4";
@@ -27,37 +27,22 @@ function applyOnState(action: Action, state: State): State {
                     avgResponseTimeInMs: Math.min(action.amount, 900000)
                 },
             }
-        case 'LAMBDA_SET_RPM':
+        case "LAMBDA_SET_REQUESTS":
             sendInputMetric(action)
             return {
                 ...state,
                 lambdaParams: {
                     ...state.lambdaParams,
-                    minuteReq: action.amount,
-                    dailyReq: rpmToDaily(action.amount),
-                    monthlyReq: rpmToMonthly(action.amount)
+                    requests: action.amount
                 },
             }
-        case "LAMBDA_SET_DAILY":
-            sendInputMetric(action)
+        case "LAMBDA_SET_INTERVAL":
+            sendIntervalEvent(action)
             return {
                 ...state,
                 lambdaParams: {
                     ...state.lambdaParams,
-                    minuteReq: action.amount / 60 / 24,
-                    dailyReq: action.amount,
-                    monthlyReq: action.amount * 30,
-                },
-            }
-        case "LAMBDA_SET_MONTHLY":
-            sendInputMetric(action)
-            return {
-                ...state,
-                lambdaParams: {
-                    ...state.lambdaParams,
-                    minuteReq: action.amount / 30 / 60 / 24,
-                    dailyReq: action.amount / 30,
-                    monthlyReq: action.amount,
+                    interval: action.interval || state.lambdaParams.interval
                 },
             }
         case "LAMBDA_SET_SIZE":
@@ -168,6 +153,13 @@ async function sendEvent(action: { type: string, amount: number }) {
     ReactGA.event({
         category: action.type,
         action: action.amount.toString()
+    });
+}
+
+async function sendIntervalEvent(action: { type: string, interval: LambdaInterval }) {
+    ReactGA.event({
+        category: action.type,
+        action: `${action.interval.label} | ${action.interval.multiplier}`
     });
 }
 

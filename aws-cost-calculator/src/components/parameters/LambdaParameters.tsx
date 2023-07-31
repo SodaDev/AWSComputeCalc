@@ -50,7 +50,7 @@ export default function LambdaParameters() {
                 ))}
             </TextField>
             <TextField
-                label="Req / min"
+                label="Requests"
                 type="number"
                 InputLabelProps={{
                     shrink: true,
@@ -58,48 +58,31 @@ export default function LambdaParameters() {
                 InputProps={{
                     inputProps: {min: 1}
                 }}
-                value={state.lambdaParams.minuteReq}
+                value={state.lambdaParams.requests}
                 onChange={event => dispatch({
-                    type: "LAMBDA_SET_RPM",
+                    type: "LAMBDA_SET_REQUESTS",
                     amount: Math.max(parseInt(event.target.value), 0)
                 })}
                 sx={{width: '9ch'}}
                 variant="standard"
             />
             <TextField
-                label="Req / day"
-                type="number"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                InputProps={{
-                    inputProps: {min: 1}
-                }}
-                value={state.lambdaParams.dailyReq}
+                select
+                label="Interval"
+                value={JSON.stringify(state.lambdaParams.interval)}
                 onChange={event => dispatch({
-                    type: "LAMBDA_SET_DAILY",
-                    amount: Math.max(parseInt(event.target.value) || 1, 1)
+                    type: "LAMBDA_SET_INTERVAL",
+                    interval: JSON.parse(event.target.value)
                 })}
-                sx={{width: '12ch'}}
+                sx={{width: '9ch'}}
                 variant="standard"
-            />
-            <TextField
-                label="Req / month"
-                type="number"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                InputProps={{
-                    inputProps: {min: 1}
-                }}
-                value={state.lambdaParams.monthlyReq}
-                onChange={event => dispatch({
-                    type: "LAMBDA_SET_MONTHLY",
-                    amount: Math.max(parseInt(event.target.value) || 1, 1)
-                })}
-                sx={{width: '12ch'}}
-                variant="standard"
-            />
+            >
+                {state.lambdaIntervals.map((option) => (
+                    <MenuItem key={option.label} value={JSON.stringify(option)}>
+                        {option.label}
+                    </MenuItem>
+                ))}
+            </TextField>
             <FormControlLabel
                 sx={{width: '6ch'}}
                 control={<Switch

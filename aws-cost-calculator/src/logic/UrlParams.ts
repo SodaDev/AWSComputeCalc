@@ -27,9 +27,8 @@ export interface FargateConfig {
 
 export interface LambdaUrlParams {
     avgResponseTimeInMs?: number;
-    minuteReq?:           number;
-    dailyReq?:            number;
-    monthlyReq?:          number;
+    requests?:            number;
+    interval?:            string;
     lambdaSize?:          number;
     freeTier?:            boolean;
 }
@@ -203,9 +202,8 @@ const typeMap: any = {
     ], false),
     "LambdaUrlParams": o([
         { json: "avgResponseTimeInMs", js: "avgResponseTimeInMs", typ: u(undefined, 0) },
-        { json: "minuteReq", js: "minuteReq", typ: u(undefined, 0) },
-        { json: "dailyReq", js: "dailyReq", typ: u(undefined, 0) },
-        { json: "monthlyReq", js: "monthlyReq", typ: u(undefined, 0) },
+        { json: "requests", js: "requests", typ: u(undefined, 0) },
+        { json: "interval", js: "interval", typ: u(undefined, "") },
         { json: "lambdaSize", js: "lambdaSize", typ: u(undefined, 0) },
         { json: "freeTier", js: "freeTier", typ: u(undefined, true) },
     ], false),
