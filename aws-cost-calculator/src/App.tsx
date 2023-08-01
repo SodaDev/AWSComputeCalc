@@ -11,7 +11,7 @@ import {ThemeProvider, Typography} from "@mui/material";
 import {theme} from "./Theme";
 import GetInTouch from "./components/contact/GetInTouch";
 import CookieSnackBar from "./analytics/CookieSnackbar";
-import RegionParameters from "./components/parameters/RegionParameters";
+import BuyMeACoffee from "./components/contact/BuyMeACoffee";
 
 function App() {
     return (
@@ -22,11 +22,8 @@ function App() {
                         AWS Cost Estimator
                     </Typography>
                     <Grid container spacing={0.5}>
-                        <Grid item md={8} sm={8} xl={8} xs={8}>
+                        <Grid item md={12} sm={12} xl={12} xs={12}>
                             <LambdaParameters/>
-                        </Grid>
-                        <Grid item md={4} sm={4} xl={4} xs={4}>
-                            <RegionParameters/>
                         </Grid>
                         <Grid item md={6} sm={6} xl={6} xs={12}>
                             <ContainerParameters/>
@@ -34,11 +31,12 @@ function App() {
                         <Grid item md={6} sm={6} xl={6} xs={12}>
                             <Ec2Parameters/>
                         </Grid>
-                        <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "70vh"}}>
+                        <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "78vh", minHeight: "600px"}}>
                             <PriceChart/>
                         </Grid>
-                        <Grid item md={12} sm={12} xl={12} xs={12} marginTop={"5ex"} marginBottom={"1ex"}>
+                        <Grid item md={12} sm={12} xl={12} xs={12} marginTop={"1ex"} marginBottom={"1ex"}>
                             <GetInTouch/>
+                            <BuyMeACoffee/>
                         </Grid>
                         <CookieSnackBar/>
                     </Grid>

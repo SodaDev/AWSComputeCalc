@@ -15,7 +15,6 @@ export function reducer(oldState: State, action: Action): State {
 }
 
 function applyOnState(action: Action, state: State): State {
-    console.log(action, state)
     switch (action.type) {
         case 'SET_REGION':
             sendRegionEvent(action)

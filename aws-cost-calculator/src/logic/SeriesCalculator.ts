@@ -16,8 +16,8 @@ export function generateSeries(state: State): Serie[] {
     const series =
         seriesGenerator("Lambda ARM", "#b4e8db", lambdaSeriesGenerator(state.lambdaRegionalPricing?.arm, state.lambdaParams))
         .concat(seriesGenerator("Lambda x86", "#18dbab", lambdaSeriesGenerator(state.lambdaRegionalPricing?.x86, state.lambdaParams)))
-        .concat(seriesGenerator("Fargate spot x86", "#005F73", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing?.spot)))
-        .concat(seriesGenerator("Fargate spot windows", "#E9D8A6", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing?.windows)))
+        .concat(seriesGenerator("Fargate x86 spot", "#005F73", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing?.spot)))
+        .concat(seriesGenerator("Fargate windows", "#E9D8A6", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing?.windows)))
         .concat(seriesGenerator("Fargate x86", "#EE9B00", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing?.x86)))
         .concat(seriesGenerator("Fargate arm", "#9B2226", containerSerieGenerator(state.containersParams, state.fargateRegionalPricing?.arm)))
         .concat(seriesGenerator("EC2 Linux On-Demand", "#f47560", ec2SerieGenerator(state.ec2Params, () => ec2Pricing?.Linux?.onDemandPricing)))
