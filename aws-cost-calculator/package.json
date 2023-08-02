@@ -30,7 +30,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "aws s3 sync build s3://aws-geek-eu-west-1/estimator",
+    "deploy": "aws s3 sync build s3://aws-geek-eu-west-1 --exclude '*data/*'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
