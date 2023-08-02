@@ -13,5 +13,6 @@ body {
 }
 
 .bmc-logo {
-    max-width: 20vw;
+    max-width: 150px;
+    width: 20vw;
 }
