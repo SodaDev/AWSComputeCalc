@@ -1,16 +1,19 @@
 import {LambdaPricing, LambdaRegionalPricing} from "../client/LambdaClient";
-import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
-import {FargatePricing, ContainerComputePricing, FargateRegionalPricing} from "../client/FargateClient";
-import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
+import {FargatePricing, FargateRegionalPricing} from "../client/FargateClient";
+import {EC2InstancePricing, EC2OSPricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
 import {AppRunnerPricing, AppRunnerRegionalPricing} from "../client/AppRunnerClient";
 
+export type LambdaInterval = {
+    label: string
+    multiplier: number
+}
+
 type LambdaParams = {
     avgResponseTimeInMs: number
-    minuteReq: number
-    dailyReq: number
-    monthlyReq: number
     lambdaSize: number
+    requests: number
+    interval: LambdaInterval
     freeTier: boolean
 }
 
@@ -26,28 +29,31 @@ export type ContainersParams = {
 }
 
 export type EC2Params = {
-    instanceType: EC2InstanceTypePricing
-    numberOfInstances: number
+    instanceType: string;
+    numberOfInstances: number;
+}
+
+export function getInstanceType(input: EC2OSPricing): string {
+    return input.Linux?.product?.instanceType || input.Windows?.product?.instanceType || ""
 }
 
 type State = {
     region: string
 
     lambdaParams: LambdaParams
-    lambdaPricing: LambdaRegionalPricing
-    lambdaRegionalPricing: LambdaPricing
+    lambdaPricing?: LambdaRegionalPricing
+    lambdaRegionalPricing?: LambdaPricing
+    lambdaIntervals: LambdaInterval[]
 
     containersParams: ContainersParams
     fargateConfigs: FargateConfig[]
-    fargateSpotPricing: FargateSpotRegionalPricing
-    fargateSpotRegionalPricing: ContainerComputePricing
-    fargatePricing: FargateRegionalPricing
-    fargateRegionalPricing: FargatePricing
-    appRunnerPricing: AppRunnerPricing
-    appRunnerRegionalPricing: AppRunnerRegionalPricing
+    fargatePricing?: FargateRegionalPricing
+    fargateRegionalPricing?: FargatePricing
+    appRunnerPricing?: AppRunnerRegionalPricing
+    appRunnerRegionalPricing?: AppRunnerPricing
 
     ec2Params: EC2Params
-    ec2Pricing: EC2InstancePricing
+    ec2Pricing?: EC2InstancePricing
 }
 
 export type {LambdaParams, State}

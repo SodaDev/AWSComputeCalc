@@ -1,24 +1,9 @@
-import React, {Dispatch, useEffect, useReducer} from 'react';
+import React from 'react';
 import PriceChart from "./components/chart/PriceChart";
 import Provider from './components/Provider'
 
 import Grid from '@mui/material/Grid';
 import LambdaParameters from "./components/parameters/LambdaParameters";
-import {State} from "./state/State";
-import {
-    Action,
-    toAppRunnerPricing,
-    toEc2SetPricing,
-    toFargateSetPricing,
-    toFargateSpotSetPricing,
-    toLambdaSetPricing
-} from "./state/actions";
-import {reducer} from "./state/reducer";
-import {initialState} from "./state/context";
-import {getLambdaPrice} from "./client/LambdaClient";
-import {getFargateSpotPrice} from "./client/FargateSpotClient";
-import {getFargatePrice} from "./client/FargateClient";
-import {getEc2Price} from "./client/Ec2Client";
 import ContainerParameters from "./components/parameters/ContainerParameters";
 import Ec2Parameters from "./components/parameters/Ec2Parameters";
 import Box from "@mui/material/Box";
@@ -26,14 +11,9 @@ import {ThemeProvider, Typography} from "@mui/material";
 import {theme} from "./Theme";
 import GetInTouch from "./components/contact/GetInTouch";
 import CookieSnackBar from "./analytics/CookieSnackbar";
-import {getAppRunnerPrice} from "./client/AppRunnerClient";
+import BuyMeACoffee from "./components/contact/BuyMeACoffee";
 
 function App() {
-    const [state, dispatch] = useReducer<React.Reducer<State, Action>>(reducer, initialState)
-    useEffect(() => {
-        initData(dispatch);
-    }, []);
-
     return (
         <ThemeProvider theme={theme}>
             <Provider>
@@ -51,11 +31,12 @@ function App() {
                         <Grid item md={6} sm={6} xl={6} xs={12}>
                             <Ec2Parameters/>
                         </Grid>
-                        <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "70vh"}}>
+                        <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "78vh", minHeight: "600px"}}>
                             <PriceChart/>
                         </Grid>
-                        <Grid item md={12} sm={12} xl={12} xs={12} marginTop={"5ex"} marginBottom={"1ex"}>
+                        <Grid item md={12} sm={12} xl={12} xs={12} marginTop={"1ex"} marginBottom={"1ex"}>
                             <GetInTouch/>
+                            <BuyMeACoffee/>
                         </Grid>
                         <CookieSnackBar/>
                     </Grid>
@@ -63,24 +44,6 @@ function App() {
             </Provider>
         </ThemeProvider>
     );
-}
-
-function initData(dispatch: Dispatch<Action>) {
-    getEc2Price()
-        .then(response => toEc2SetPricing(response))
-        .catch(console.error)
-    getFargatePrice()
-        .then(response => dispatch(toFargateSetPricing(response)))
-        .catch(console.error)
-    getFargateSpotPrice()
-        .then(response => dispatch(toFargateSpotSetPricing(response)))
-        .catch(console.error)
-    getLambdaPrice()
-        .then(response => dispatch(toLambdaSetPricing(response)))
-        .catch(console.error)
-    getAppRunnerPrice()
-        .then(response => dispatch(toAppRunnerPricing(response)))
-        .catch(console.error)
 }
 
 export default App;

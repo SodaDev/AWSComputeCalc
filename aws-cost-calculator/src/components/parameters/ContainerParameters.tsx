@@ -25,7 +25,7 @@ export default function ContainerParameters() {
                     type: "CONTAINERS_SET_TASKS",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '8ch' }}
+                sx={{ width: '7ch' }}
                 variant="standard"
             />
             <TextField
@@ -46,7 +46,7 @@ export default function ContainerParameters() {
                 ))}
             </TextField>
             <TextField
-                label="AppRunner RPM / task"
+                label="AppRunner RPM/task"
                 type="number"
                 hidden={true}
                 InputLabelProps={{
@@ -60,7 +60,7 @@ export default function ContainerParameters() {
                     type: "CONTAINERS_SET_APP_RUNNER_RPS",
                     amount: parseInt(event.target.value)
                 })}
-                sx={{ width: '13ch', display: !appRunnerEnabled ? 'none' : undefined }}
+                sx={{ width: '12ch', display: !appRunnerEnabled ? 'none' : undefined }}
                 variant="standard"
             />
         </Paper>

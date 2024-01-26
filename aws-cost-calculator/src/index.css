@@ -6,3 +6,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #131a22;
 }
+
+.bmc-container {
+    float: right;
+    /*display: block;*/
+}
+
+.bmc-logo {
+    max-width: 150px;
+    width: 20vw;
+}

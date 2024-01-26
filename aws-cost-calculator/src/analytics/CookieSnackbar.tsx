@@ -1,7 +1,6 @@
 import CookieConsent, {getCookieConsentValue} from "react-cookie-consent";
 import React, {useEffect} from "react";
 import {clearGa, initGa} from "./GA";
-import {theme} from "../Theme";
 import {Button} from "@mui/material";
 
 export default function CookieSnackBar() {

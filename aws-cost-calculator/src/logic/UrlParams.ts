@@ -27,9 +27,8 @@ export interface FargateConfig {
 
 export interface LambdaUrlParams {
     avgResponseTimeInMs?: number;
-    minuteReq?:           number;
-    dailyReq?:            number;
-    monthlyReq?:          number;
+    requests?:            number;
+    interval?:            string;
     lambdaSize?:          number;
     freeTier?:            boolean;
 }
@@ -158,20 +157,12 @@ function uncast<T>(val: T, typ: any): any {
     return transform(val, typ, jsToJSONProps);
 }
 
-function a(typ: any) {
-    return { arrayItems: typ };
-}
-
 function u(...typs: any[]) {
     return { unionMembers: typs };
 }
 
 function o(props: any[], additional: any) {
     return { props, additional };
-}
-
-function m(additional: any) {
-    return { props: [], additional };
 }
 
 function r(name: string) {
@@ -203,9 +194,8 @@ const typeMap: any = {
     ], false),
     "LambdaUrlParams": o([
         { json: "avgResponseTimeInMs", js: "avgResponseTimeInMs", typ: u(undefined, 0) },
-        { json: "minuteReq", js: "minuteReq", typ: u(undefined, 0) },
-        { json: "dailyReq", js: "dailyReq", typ: u(undefined, 0) },
-        { json: "monthlyReq", js: "monthlyReq", typ: u(undefined, 0) },
+        { json: "requests", js: "requests", typ: u(undefined, 0) },
+        { json: "interval", js: "interval", typ: u(undefined, "") },
         { json: "lambdaSize", js: "lambdaSize", typ: u(undefined, 0) },
         { json: "freeTier", js: "freeTier", typ: u(undefined, true) },
     ], false),

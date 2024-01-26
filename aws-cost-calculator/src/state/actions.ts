@@ -1,14 +1,15 @@
 import {LambdaRegionalPricing} from "../client/LambdaClient";
-import {FargateSpotRegionalPricing} from "../client/FargateSpotClient";
 import {FargateRegionalPricing} from "../client/FargateClient";
-import {EC2InstancePricing, EC2InstanceTypePricing} from "../client/Ec2Client";
+import {EC2InstancePricing, EC2OSPricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
 import {AppRunnerRegionalPricing} from "../client/AppRunnerClient";
+import {LambdaInterval} from "./State";
 
 type Action =
-    { type: "LAMBDA_SET_RPM", amount: number }
-    | { type: "LAMBDA_SET_DAILY", amount: number }
-    | { type: "LAMBDA_SET_MONTHLY", amount: number }
+    { type: "SET_REGION", region: string }
+
+    | { type: "LAMBDA_SET_REQUESTS", amount: number }
+    | { type: "LAMBDA_SET_INTERVAL", interval: LambdaInterval }
     | { type: "LAMBDA_SET_SIZE", amount: number }
     | { type: "LAMBDA_SET_AVG_RESPONSE_TIME", amount: number }
     | { type: "LAMBDA_SET_PRICING", pricing: LambdaRegionalPricing }
@@ -18,12 +19,11 @@ type Action =
     | { type: "CONTAINERS_SET_TASKS", amount: number }
     | { type: "CONTAINERS_SET_APP_RUNNER_RPS", amount: number }
 
-    | { type: "FARGATE_SPOT_SET_PRICING", pricing: FargateSpotRegionalPricing }
     | { type: "FARGATE_SET_PRICING", pricing: FargateRegionalPricing }
     | { type: "APP_RUNNER_PRICING", pricing: AppRunnerRegionalPricing }
 
     | { type: "EC2_SET_INSTANCES", amount: number }
-    | { type: "EC2_SET_INSTANCE_TYPE", instanceType: EC2InstanceTypePricing }
+    | { type: "EC2_SET_INSTANCE_TYPE", instanceType: EC2OSPricing | undefined }
     | { type: "EC2_SET_PRICING", pricing: EC2InstancePricing }
 
 
@@ -32,13 +32,6 @@ export type {Action};
 export function toLambdaSetPricing(pricing: LambdaRegionalPricing): Action {
     return {
         type: "LAMBDA_SET_PRICING",
-        pricing
-    }
-}
-
-export function toFargateSpotSetPricing(pricing: FargateSpotRegionalPricing): Action {
-    return {
-        type: "FARGATE_SPOT_SET_PRICING",
         pricing
     }
 }

@@ -5,17 +5,6 @@ import {generateSeries} from "../../logic/SeriesCalculator";
 import {chartTheme} from "../../Theme";
 import {ChartTooltip} from "./ChartTooltip";
 
-const seriesColors = [
-    "#b4e8db",
-    "#18dbab",
-    "#ff9900",
-    "#f1e15b",
-    "#f47560",
-    "#e8c1a1",
-    "#7e582e",
-    "#8053ab"
-]
-
 function PriceChart() {
     const {state, dispatch} = React.useContext(AppContext);
 
@@ -23,12 +12,12 @@ function PriceChart() {
     window.dispatchEvent(new Event('resize'));
     return (
         <ResponsiveLine
-            colors={seriesColors}
+            colors={d => d.color}
             data={chartData}
             animate={true}
             enableSlices={"x"}
             sliceTooltip={ChartTooltip}
-            margin={{top: 20, right: 20, bottom: 200, left: 60}}
+            margin={{top: 20, right: 20, bottom: 280, left: 60}}
             xScale={{
                 type: 'linear',
                 nice: true
@@ -67,19 +56,20 @@ function PriceChart() {
             theme={chartTheme}
             legends={[
                 {
-                    anchor: 'bottom-right',
+                    anchor: 'bottom-left',
                     direction: 'column',
                     justify: false,
                     translateX: 0,
-                    translateY: 200,
+                    translateY: 280,
                     itemsSpacing: 0,
                     itemDirection: 'left-to-right',
                     itemWidth: 100,
-                    itemHeight: 20,
-                    itemOpacity: 0.75,
+                    itemHeight: 16,
+                    itemOpacity: 0.85,
                     symbolSize: 12,
                     symbolShape: 'circle',
                     symbolBorderColor: 'rgba(0, 0, 0, .5)',
+                    toggleSerie: true,
                     effects: [
                         {
                             on: 'hover',
