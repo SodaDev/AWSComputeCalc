@@ -6,7 +6,7 @@ import {FormControlLabel, MenuItem, Paper, Switch, Typography} from "@mui/materi
 const lambdaStep = 128
 const maxLambdaSize = 10240
 const lambdaSizes = Array.from(Array(maxLambdaSize / lambdaStep).keys())
-    .map(x => x * 128)
+    .map(x => (x+1) * 128)
 
 export default function LambdaParameters() {
     const {state, dispatch} = React.useContext(AppContext);
@@ -27,7 +27,7 @@ export default function LambdaParameters() {
                 value={state.lambdaParams.avgResponseTimeInMs}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_AVG_RESPONSE_TIME",
-                    amount: Math.max(parseInt(event.target.value) || 0, 0)
+                    amount: Math.max(parseInt(event.target.value), 0)
                 })}
                 sx={{width: '10ch'}}
                 variant="standard"
@@ -61,7 +61,7 @@ export default function LambdaParameters() {
                 value={state.lambdaParams.minuteReq}
                 onChange={event => dispatch({
                     type: "LAMBDA_SET_RPM",
-                    amount: Math.max(parseInt(event.target.value) || 1, 1)
+                    amount: Math.max(parseInt(event.target.value), 0)
                 })}
                 sx={{width: '9ch'}}
                 variant="standard"

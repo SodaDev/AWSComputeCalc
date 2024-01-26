@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 
 export default function ContainerParameters() {
     const {state, dispatch} = React.useContext(AppContext);
+    const appRunnerEnabled = state.containersParams.appRunnerConfig?.enabled || false
 
     return (
         <Paper variant="outlined" sx={{
@@ -35,7 +36,7 @@ export default function ContainerParameters() {
                     type: "CONTAINERS_SET_SIZE",
                     config: JSON.parse(event.target.value)
                 })}
-                sx={{ width: '18ch' }}
+                sx={{ width: '12ch' }}
                 variant="standard"
             >
                 {state.fargateConfigs.map((option) => (
@@ -44,6 +45,24 @@ export default function ContainerParameters() {
                     </MenuItem>
                 ))}
             </TextField>
+            <TextField
+                label="AppRunner RPM / task"
+                type="number"
+                hidden={true}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                InputProps={{
+                    inputProps: {min: 0}
+                }}
+                value={state.containersParams.appRunnerConfig?.rpmPerTask}
+                onChange={event => dispatch({
+                    type: "CONTAINERS_SET_APP_RUNNER_RPS",
+                    amount: parseInt(event.target.value)
+                })}
+                sx={{ width: '13ch', display: !appRunnerEnabled ? 'none' : undefined }}
+                variant="standard"
+            />
         </Paper>
     )
 }
