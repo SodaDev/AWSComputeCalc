@@ -24,7 +24,7 @@ export function initStateFromUrl(state: State): State {
             ...state,
             lambdaParams: {
                 requests: shareParams.lambdaParams?.requests || state.lambdaParams.requests,
-                interval: state.lambdaIntervals.find(x => x.label === shareParams.lambdaParams?.interval) || state.lambdaParams.interval,
+                interval: state.intervals.find(x => x.label === shareParams.lambdaParams?.interval) || state.lambdaParams.interval,
                 lambdaSize: shareParams.lambdaParams?.lambdaSize || state.lambdaParams.lambdaSize,
                 avgResponseTimeInMs: shareParams.lambdaParams?.avgResponseTimeInMs || state.lambdaParams.avgResponseTimeInMs,
                 freeTier: shareParams.lambdaParams?.freeTier || state.lambdaParams.freeTier,
@@ -37,6 +37,13 @@ export function initStateFromUrl(state: State): State {
             ec2Params: {
                 numberOfInstances: shareParams.ec2Params?.numberOfInstances !== undefined ? shareParams.ec2Params?.numberOfInstances : state.ec2Params.numberOfInstances,
                 instanceType: instanceType
+            },
+            eventsParams: {
+                interval: state.intervals.find(x => x.label === shareParams.eventsParams?.interval) || state.eventsParams.interval,
+                events: shareParams.eventsParams?.events !== undefined ? shareParams.eventsParams?.events: state.eventsParams.events,
+                consumers: shareParams.eventsParams?.consumers !== undefined ? shareParams.eventsParams?.consumers: state.eventsParams.consumers,
+                avgPayloadSize: shareParams.eventsParams?.avgPayloadSize !== undefined ? shareParams.eventsParams?.avgPayloadSize: state.eventsParams.avgPayloadSize,
+                shards: shareParams.eventsParams?.shards !== undefined ? shareParams.eventsParams?.shards: state.eventsParams.shards,
             }
         };
     } catch (e) {
@@ -58,6 +65,13 @@ function stateToUrlParam(state: State): URLParams {
         ec2Params: {
             instanceType: state.ec2Params.instanceType,
             numberOfInstances: state.ec2Params.numberOfInstances
+        },
+        eventsParams: {
+            interval: state.eventsParams.interval.label,
+            events: state.eventsParams.events,
+            consumers: state.eventsParams.consumers,
+            avgPayloadSize: state.eventsParams.avgPayloadSize,
+            shards: state.eventsParams.shards,
         }
     };
 }

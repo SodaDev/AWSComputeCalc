@@ -1,4 +1,4 @@
-import {getInstanceType, LambdaInterval, State} from "./State";
+import {getInstanceType, Interval, State} from "./State";
 import {Action} from "./actions";
 import {updateUrl} from "../logic/Url";
 import ReactGA from "react-ga4";
@@ -185,6 +185,14 @@ function applyOnState(action: Action, state: State): State {
                     events: action.amount
                 }
             }
+        case "EVENTS_SET_INTERVAL":
+            return {
+                ...state,
+                eventsParams: {
+                    ...state.eventsParams,
+                    interval: action.interval
+                }
+            }
         default:
             throw new Error();
     }
@@ -197,7 +205,7 @@ async function sendEvent(action: { type: string, amount: number }) {
     });
 }
 
-async function sendIntervalEvent(action: { type: string, interval: LambdaInterval }) {
+async function sendIntervalEvent(action: { type: string, interval: Interval }) {
     ReactGA.event({
         category: action.type,
         action: `${action.interval.label} | ${action.interval.multiplier}`

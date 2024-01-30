@@ -1,11 +1,12 @@
 export interface URLParams {
-    lambdaParams?:  LambdaUrlParams;
+    lambdaParams?: LambdaUrlParams;
     fargateParams?: FargateUrlParams;
-    ec2Params?:     Ec2UrlParams;
+    ec2Params?: Ec2UrlParams;
+    eventsParams?: EventsUrlParams;
 }
 
 export interface Ec2UrlParams {
-    instanceType?:      string;
+    instanceType?: string;
     numberOfInstances?: number;
 }
 
@@ -16,21 +17,29 @@ export interface FargateUrlParams {
 }
 
 export interface AppRunnerConfig {
-    enabled:    boolean;
+    enabled: boolean;
     rpmPerTask: number;
 }
 
 export interface FargateConfig {
-    vCPU?:   number;
+    vCPU?: number;
     memory?: number;
 }
 
 export interface LambdaUrlParams {
     avgResponseTimeInMs?: number;
-    requests?:            number;
-    interval?:            string;
-    lambdaSize?:          number;
-    freeTier?:            boolean;
+    requests?: number;
+    interval?: string;
+    lambdaSize?: number;
+    freeTier?: boolean;
+}
+
+export interface EventsUrlParams {
+    events?: number;
+    interval?: string;
+    consumers?: number;
+    avgPayloadSize?: number
+    shards?: number
 }
 
 // Converts JSON strings to/from your types
@@ -49,13 +58,13 @@ function invalidValue(typ: any, val: any, key: any = ''): never {
     if (key) {
         throw Error(`Invalid value for key "${key}". Expected type ${JSON.stringify(typ)} but got ${JSON.stringify(val)}`);
     }
-    throw Error(`Invalid value ${JSON.stringify(val)} for type ${JSON.stringify(typ)}`, );
+    throw Error(`Invalid value ${JSON.stringify(val)} for type ${JSON.stringify(typ)}`,);
 }
 
 function jsonToJSProps(typ: any): any {
     if (typ.jsonToJS === undefined) {
         const map: any = {};
-        typ.props.forEach((p: any) => map[p.json] = { key: p.js, typ: p.typ });
+        typ.props.forEach((p: any) => map[p.json] = {key: p.js, typ: p.typ});
         typ.jsonToJS = map;
     }
     return typ.jsonToJS;
@@ -64,7 +73,7 @@ function jsonToJSProps(typ: any): any {
 function jsToJSONProps(typ: any): any {
     if (typ.jsToJSON === undefined) {
         const map: any = {};
-        typ.props.forEach((p: any) => map[p.js] = { key: p.json, typ: p.typ });
+        typ.props.forEach((p: any) => map[p.js] = {key: p.json, typ: p.typ});
         typ.jsToJSON = map;
     }
     return typ.jsToJSON;
@@ -140,9 +149,9 @@ function transform(val: any, typ: any, getProps: any, key: any = ''): any {
     if (Array.isArray(typ)) return transformEnum(typ, val);
     if (typeof typ === "object") {
         return typ.hasOwnProperty("unionMembers") ? transformUnion(typ.unionMembers, val)
-            : typ.hasOwnProperty("arrayItems")    ? transformArray(typ.arrayItems, val)
-            : typ.hasOwnProperty("props")         ? transformObject(getProps(typ), typ.additional, val)
-            : invalidValue(typ, val);
+            : typ.hasOwnProperty("arrayItems") ? transformArray(typ.arrayItems, val)
+                : typ.hasOwnProperty("props") ? transformObject(getProps(typ), typ.additional, val)
+                    : invalidValue(typ, val);
     }
     // Numbers can be parsed by Date but shouldn't be.
     if (typ === Date && typeof val !== "number") return transformDate(val);
@@ -158,45 +167,53 @@ function uncast<T>(val: T, typ: any): any {
 }
 
 function u(...typs: any[]) {
-    return { unionMembers: typs };
+    return {unionMembers: typs};
 }
 
 function o(props: any[], additional: any) {
-    return { props, additional };
+    return {props, additional};
 }
 
 function r(name: string) {
-    return { ref: name };
+    return {ref: name};
 }
 
 const typeMap: any = {
     "URLParams": o([
-        { json: "lambdaParams", js: "lambdaParams", typ: u(undefined, r("LambdaUrlParams")) },
-        { json: "fargateParams", js: "fargateParams", typ: u(undefined, r("FargateUrlParams")) },
-        { json: "ec2Params", js: "ec2Params", typ: u(undefined, r("Ec2UrlParams")) },
+        {json: "lambdaParams", js: "lambdaParams", typ: u(undefined, r("LambdaUrlParams"))},
+        {json: "fargateParams", js: "fargateParams", typ: u(undefined, r("FargateUrlParams"))},
+        {json: "ec2Params", js: "ec2Params", typ: u(undefined, r("Ec2UrlParams"))},
+        {json: "eventsParams", js: "eventsParams", typ: u(undefined, r("EventsUrlParams"))},
     ], false),
     "Ec2UrlParams": o([
-        { json: "instanceType", js: "instanceType", typ: u(undefined, "") },
-        { json: "numberOfInstances", js: "numberOfInstances", typ: u(undefined, 0) },
+        {json: "instanceType", js: "instanceType", typ: u(undefined, "")},
+        {json: "numberOfInstances", js: "numberOfInstances", typ: u(undefined, 0)},
     ], false),
     "FargateUrlParams": o([
-        { json: "fargateConfig", js: "fargateConfig", typ: u(undefined, r("FargateConfig")) },
-        { json: "numberOfTasks", js: "numberOfTasks", typ: u(undefined, 0) },
-        { json: "appRunnerConfig", js: "appRunnerConfig", typ: u(undefined, r("AppRunnerConfig")) },
+        {json: "fargateConfig", js: "fargateConfig", typ: u(undefined, r("FargateConfig"))},
+        {json: "numberOfTasks", js: "numberOfTasks", typ: u(undefined, 0)},
+        {json: "appRunnerConfig", js: "appRunnerConfig", typ: u(undefined, r("AppRunnerConfig"))},
     ], false),
     "AppRunnerConfig": o([
-        { json: "enabled", js: "enabled", typ: u(undefined, true) },
-        { json: "rpmPerTask", js: "rpmPerTask", typ: u(undefined, 0) },
+        {json: "enabled", js: "enabled", typ: u(undefined, true)},
+        {json: "rpmPerTask", js: "rpmPerTask", typ: u(undefined, 0)},
     ], false),
     "FargateConfig": o([
-        { json: "vCPU", js: "vCPU", typ: u(undefined, 0) },
-        { json: "memory", js: "memory", typ: u(undefined, 0) },
+        {json: "vCPU", js: "vCPU", typ: u(undefined, 0)},
+        {json: "memory", js: "memory", typ: u(undefined, 0)},
     ], false),
     "LambdaUrlParams": o([
-        { json: "avgResponseTimeInMs", js: "avgResponseTimeInMs", typ: u(undefined, 0) },
-        { json: "requests", js: "requests", typ: u(undefined, 0) },
-        { json: "interval", js: "interval", typ: u(undefined, "") },
-        { json: "lambdaSize", js: "lambdaSize", typ: u(undefined, 0) },
-        { json: "freeTier", js: "freeTier", typ: u(undefined, true) },
+        {json: "avgResponseTimeInMs", js: "avgResponseTimeInMs", typ: u(undefined, 0)},
+        {json: "requests", js: "requests", typ: u(undefined, 0)},
+        {json: "interval", js: "interval", typ: u(undefined, "")},
+        {json: "lambdaSize", js: "lambdaSize", typ: u(undefined, 0)},
+        {json: "freeTier", js: "freeTier", typ: u(undefined, true)},
+    ], false),
+    "EventsUrlParams": o([
+        {json: "avgPayloadSize", js: "avgPayloadSize", typ: u(undefined, 0)},
+        {json: "events", js: "events", typ: u(undefined, 0)},
+        {json: "interval", js: "interval", typ: u(undefined, "")},
+        {json: "consumers", js: "consumers", typ: u(undefined, 0)},
+        {json: "shards", js: "shards", typ: u(undefined, 0)},
     ], false),
 };

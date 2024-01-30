@@ -80,7 +80,7 @@ export default function LambdaParameters() {
                 sx={{width: '9ch'}}
                 variant="standard"
             >
-                {state.lambdaIntervals.map((option) => (
+                {state.intervals.map((option) => (
                     <MenuItem key={option.label} value={JSON.stringify(option)}>
                         {option.label}
                     </MenuItem>

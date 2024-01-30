@@ -1,5 +1,5 @@
 import React from "react";
-import {LambdaInterval, State} from "./State";
+import {Interval, State} from "./State";
 import {Action} from "./actions";
 import lambdaFallback from "../fallback/lambda.json";
 import fargateFallback from "../fallback/fargate.json";
@@ -10,7 +10,7 @@ import {getAppRunnerFallback} from "../client/AppRunnerClient";
 
 const defaultRegion = "eu-west-1"
 
-const buildLambdaIntervals = () : LambdaInterval[] => {
+const buildIntervals = () : Interval[] => {
     return [
         {
             label: "second",
@@ -40,11 +40,11 @@ const initialState: State = initStateFromUrl({
     lambdaParams: {
         avgResponseTimeInMs: 100,
         requests: 2000,
-        interval: buildLambdaIntervals()[1],
+        interval: buildIntervals()[1],
         lambdaSize: 128,
         freeTier: false
     },
-    lambdaIntervals: buildLambdaIntervals(),
+    intervals: buildIntervals(),
     lambdaPricing: lambdaFallback,
     lambdaRegionalPricing: lambdaFallback.regionPrices[defaultRegion],
 
@@ -70,10 +70,11 @@ const initialState: State = initStateFromUrl({
     appRunnerPricing: getAppRunnerFallback(),
 
     eventsParams: {
-        avgPayloadSize: 1000,
+        interval: buildIntervals()[2],
+        avgPayloadSize: 5000,
         consumers: 1,
-        events: 10e9,
-        shards: 1
+        events: 5e6,
+        shards: 3
     }
 });
 

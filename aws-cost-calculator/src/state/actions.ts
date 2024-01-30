@@ -3,13 +3,13 @@ import {FargateRegionalPricing} from "../client/FargateClient";
 import {EC2InstancePricing, EC2OSPricing} from "../client/Ec2Client";
 import {FargateConfig} from "../logic/FargateConfig";
 import {AppRunnerRegionalPricing} from "../client/AppRunnerClient";
-import {LambdaInterval} from "./State";
+import {Interval} from "./State";
 
 type Action =
     { type: "SET_REGION", region: string }
 
     | { type: "LAMBDA_SET_REQUESTS", amount: number }
-    | { type: "LAMBDA_SET_INTERVAL", interval: LambdaInterval }
+    | { type: "LAMBDA_SET_INTERVAL", interval: Interval }
     | { type: "LAMBDA_SET_SIZE", amount: number }
     | { type: "LAMBDA_SET_AVG_RESPONSE_TIME", amount: number }
     | { type: "LAMBDA_SET_PRICING", pricing: LambdaRegionalPricing }
@@ -30,6 +30,7 @@ type Action =
     | { type: "EVENTS_SET_AVG_PAYLOAD_SIZE", amount: number }
     | { type: "EVENTS_SET_SHARDS", amount: number }
     | { type: "EVENTS_SET_EVENTS", amount: number }
+    | { type: "EVENTS_SET_INTERVAL", interval: Interval }
 
 
 export type {Action};
