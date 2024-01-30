@@ -26,6 +26,11 @@ type Action =
     | { type: "EC2_SET_INSTANCE_TYPE", instanceType: EC2OSPricing | undefined }
     | { type: "EC2_SET_PRICING", pricing: EC2InstancePricing }
 
+    | { type: "EVENTS_SET_CONSUMERS", amount: number }
+    | { type: "EVENTS_SET_AVG_PAYLOAD_SIZE", amount: number }
+    | { type: "EVENTS_SET_SHARDS", amount: number }
+    | { type: "EVENTS_SET_EVENTS", amount: number }
+
 
 export type {Action};
 

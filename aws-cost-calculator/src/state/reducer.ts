@@ -153,6 +153,38 @@ function applyOnState(action: Action, state: State): State {
                 appRunnerPricing: action.pricing,
                 appRunnerRegionalPricing: action.pricing.regionPrices[state.region]
             }
+        case "EVENTS_SET_CONSUMERS":
+            return {
+                ...state,
+                eventsParams: {
+                    ...state.eventsParams,
+                    consumers: action.amount
+                }
+            }
+        case "EVENTS_SET_SHARDS":
+            return {
+                ...state,
+                eventsParams: {
+                    ...state.eventsParams,
+                    shards: action.amount
+                }
+            }
+        case "EVENTS_SET_AVG_PAYLOAD_SIZE":
+            return {
+                ...state,
+                eventsParams: {
+                    ...state.eventsParams,
+                    avgPayloadSize: action.amount
+                }
+            }
+        case "EVENTS_SET_EVENTS":
+            return {
+                ...state,
+                eventsParams: {
+                    ...state.eventsParams,
+                    events: action.amount
+                }
+            }
         default:
             throw new Error();
     }

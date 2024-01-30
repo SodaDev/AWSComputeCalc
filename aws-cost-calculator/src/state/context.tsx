@@ -67,7 +67,14 @@ const initialState: State = initStateFromUrl({
     ec2Pricing: getEc2Fallback(),
 
     appRunnerRegionalPricing: getAppRunnerFallback().regionPrices[defaultRegion],
-    appRunnerPricing: getAppRunnerFallback()
+    appRunnerPricing: getAppRunnerFallback(),
+
+    eventsParams: {
+        avgPayloadSize: 1000,
+        consumers: 1,
+        events: 10e9,
+        shards: 1
+    }
 });
 
 const defaultDispatch: React.Dispatch<Action> = () => initialState

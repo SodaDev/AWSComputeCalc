@@ -4,6 +4,7 @@ import ContainerParameters from "./components/parameters/ContainerParameters";
 import Ec2Parameters from "./components/parameters/Ec2Parameters";
 import PriceChart from "./components/chart/PriceChart";
 import React from "react";
+import {generateSeries} from "./logic/SeriesCalculator";
 
 function ComputeApp() {
     return (
@@ -18,7 +19,7 @@ function ComputeApp() {
                 <Ec2Parameters/>
             </Grid>
             <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "78vh", minHeight: "600px"}}>
-                <PriceChart/>
+                <PriceChart seriesGenerator={generateSeries}/>
             </Grid>
         </Grid>
     );

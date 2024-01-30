@@ -1,14 +1,14 @@
-import {ResponsiveLine} from '@nivo/line'
+import {ResponsiveLine, Serie} from '@nivo/line'
 import React from "react";
 import {AppContext} from "../../state/context";
-import {generateSeries} from "../../logic/SeriesCalculator";
 import {chartTheme} from "../../Theme";
 import {ChartTooltip} from "./ChartTooltip";
+import {State} from "../../state/State";
 
-function PriceChart() {
+function PriceChart(props: {seriesGenerator: (state: State) => Serie[]}) {
     const {state, dispatch} = React.useContext(AppContext);
 
-    const chartData = generateSeries(state)
+    const chartData = props.seriesGenerator(state)
     window.dispatchEvent(new Event('resize'));
     return (
         <ResponsiveLine

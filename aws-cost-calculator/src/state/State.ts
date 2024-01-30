@@ -33,6 +33,13 @@ export type EC2Params = {
     numberOfInstances: number;
 }
 
+type EventsParams = {
+    events: number
+    consumers: number
+    avgPayloadSize: number
+    shards: number
+}
+
 export function getInstanceType(input: EC2OSPricing): string {
     return input.Linux?.product?.instanceType || input.Windows?.product?.instanceType || ""
 }
@@ -54,6 +61,8 @@ type State = {
 
     ec2Params: EC2Params
     ec2Pricing?: EC2InstancePricing
+
+    eventsParams: EventsParams
 }
 
-export type {LambdaParams, State}
+export type {LambdaParams, EventsParams, State}
