@@ -95,6 +95,20 @@ export default function EventsParameters() {
                 sx={{width: '9ch'}}
                 variant="standard"
             />
+            <TextField
+                label="Suggested Shards"
+                type="number"
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                InputProps={{
+                    inputProps: {min: 1}
+                }}
+                value={state.eventsParams.suggestedShards}
+                sx={{width: '10ch'}}
+                variant="standard"
+                disabled={true}
+            />
         </Paper>
     );
 }

@@ -39,6 +39,7 @@ type EventsParams = {
     consumers: number
     avgPayloadSize: number
     shards: number
+    suggestedShards?: number
 }
 
 export function getInstanceType(input: EC2OSPricing): string {

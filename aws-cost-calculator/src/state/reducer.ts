@@ -158,7 +158,8 @@ function applyOnState(action: Action, state: State): State {
                 ...state,
                 eventsParams: {
                     ...state.eventsParams,
-                    consumers: action.amount
+                    consumers: action.amount,
+                    suggestedShards: calculateShards(state.eventsParams.events,  state.eventsParams.avgPayloadSize,  state.eventsParams.interval, state.intervals[0], action.amount)
                 }
             }
         case "EVENTS_SET_SHARDS":
@@ -174,7 +175,8 @@ function applyOnState(action: Action, state: State): State {
                 ...state,
                 eventsParams: {
                     ...state.eventsParams,
-                    avgPayloadSize: action.amount
+                    avgPayloadSize: action.amount,
+                    suggestedShards: calculateShards(state.eventsParams.events,  action.amount,  state.eventsParams.interval, state.intervals[0], state.eventsParams.consumers)
                 }
             }
         case "EVENTS_SET_EVENTS":
@@ -182,7 +184,8 @@ function applyOnState(action: Action, state: State): State {
                 ...state,
                 eventsParams: {
                     ...state.eventsParams,
-                    events: action.amount
+                    events: action.amount,
+                    suggestedShards: calculateShards(action.amount,  state.eventsParams.avgPayloadSize,  state.eventsParams.interval, state.intervals[0], state.eventsParams.consumers)
                 }
             }
         case "EVENTS_SET_INTERVAL":
@@ -190,12 +193,20 @@ function applyOnState(action: Action, state: State): State {
                 ...state,
                 eventsParams: {
                     ...state.eventsParams,
-                    interval: action.interval
+                    interval: action.interval,
+                    suggestedShards: calculateShards(state.eventsParams.events,  state.eventsParams.avgPayloadSize,  action.interval, state.intervals[0], state.eventsParams.consumers)
                 }
             }
         default:
             throw new Error();
     }
+}
+
+function calculateShards(events: number, avgPayloadSize: number, interval: Interval, secondsInterval: Interval, consumers: number): number {
+    const perSecondMultiplier = interval.multiplier / secondsInterval.multiplier;
+    const writeShards = Math.ceil(events * perSecondMultiplier * (avgPayloadSize / 1e6));
+    const readShards = Math.ceil(events * perSecondMultiplier * (avgPayloadSize / 1e6) * consumers / 2);
+    return Math.max(writeShards, readShards)
 }
 
 async function sendEvent(action: { type: string, amount: number }) {
