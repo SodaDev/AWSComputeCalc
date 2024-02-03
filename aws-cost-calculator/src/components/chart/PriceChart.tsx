@@ -5,10 +5,11 @@ import {chartTheme} from "../../Theme";
 import {ChartTooltip} from "./ChartTooltip";
 import {State} from "../../state/State";
 
-function PriceChart(props: {seriesGenerator: (state: State) => Serie[]}) {
+function PriceChart(props: {seriesGenerator: (state: State) => Serie[], legendYOffset?: number}) {
     const {state, dispatch} = React.useContext(AppContext);
 
     const chartData = props.seriesGenerator(state)
+    const legendYOffset = props.legendYOffset ? props.legendYOffset : 280
     window.dispatchEvent(new Event('resize'));
     return (
         <ResponsiveLine
@@ -17,7 +18,7 @@ function PriceChart(props: {seriesGenerator: (state: State) => Serie[]}) {
             animate={true}
             enableSlices={"x"}
             sliceTooltip={ChartTooltip}
-            margin={{top: 20, right: 20, bottom: 280, left: 60}}
+            margin={{top: 20, right: 20, bottom: legendYOffset, left: 60}}
             xScale={{
                 type: 'linear',
                 nice: true
@@ -60,7 +61,7 @@ function PriceChart(props: {seriesGenerator: (state: State) => Serie[]}) {
                     direction: 'column',
                     justify: false,
                     translateX: 0,
-                    translateY: 280,
+                    translateY: legendYOffset,
                     itemsSpacing: 0,
                     itemDirection: 'left-to-right',
                     itemWidth: 100,

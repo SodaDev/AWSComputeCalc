@@ -11,7 +11,7 @@ function EventsApp() {
                 <EventsParameters/>
             </Grid>
             <Grid item md={12} sm={12} xl={12} xs={12} style={{height: "78vh", minHeight: "600px"}}>
-                <PriceChart seriesGenerator={generateSeries}/>
+                <PriceChart seriesGenerator={generateSeries} legendYOffset={160}/>
             </Grid>
         </Grid>
     );

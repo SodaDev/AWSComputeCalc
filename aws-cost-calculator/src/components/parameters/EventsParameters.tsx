@@ -105,7 +105,7 @@ export default function EventsParameters() {
                     inputProps: {min: 1}
                 }}
                 value={state.eventsParams.suggestedShards}
-                sx={{width: '10ch'}}
+                sx={{width: '12ch'}}
                 variant="standard"
                 disabled={true}
             />
