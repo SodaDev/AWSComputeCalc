@@ -27,6 +27,8 @@ interface SqsRate {
 }
 
 const sqs = {
+    maxBatchSize: 256000,
+    maxBatchMessages: 10,
     operationUnitChunk: 64000,
     rates: [
         {from: 0, to: 1e6, price: 0},
@@ -61,7 +63,9 @@ export function generateSeries(state: State): Serie[] {
             .concat(seriesGenerator("Kinesis Provisioned", "#E9D8A6", provisionedPriceCalculator(eventsParams, 0, 0)))
             .concat(seriesGenerator("Kinesis Provisioned: Enhanced Fan-out", "#EE9B00", provisionedPriceCalculator(eventsParams, kinesisProvisioned.enhancedRetrievalGbRate, kinesisProvisioned.enhancedShardHourFee)))
             .concat(seriesGenerator("SQS", "#DA627D", sqsPriceCalculator(eventsParams, sqs.rates)))
+            .concat(seriesGenerator("SQS Batch", "#853da3", sqsBatchPriceCalculator(eventsParams, sqs.rates)))
             .concat(seriesGenerator("SQS FIFO", "#9B2226", sqsPriceCalculator(eventsParams, sqs.fifoRates)))
+            .concat(seriesGenerator("SQS Batch FIFO", "#550880", sqsBatchPriceCalculator(eventsParams, sqs.fifoRates)))
 
     return _.sortBy(series, x => x.id).reverse()
 }
@@ -107,12 +111,53 @@ function provisionedPriceCalculator(eventParams: EventsParams, gbRetrievalFee: n
 }
 
 function sqsPriceCalculator(eventsParams: EventsParams, rates: SqsRate[]): SeriePointGenerator {
+    const requestsPerEvent = Math.ceil(eventsParams.avgPayloadSize / sqs.operationUnitChunk)
     return eventsSent => {
-        const requestsPerEvent = Math.ceil(eventsParams.avgPayloadSize / sqs.operationUnitChunk)
         const longPollingEvents = 60 * 24 * 30 * 3
-        // Events for sent, receive and delete
+        // Events for send, receive and delete
         const requestsInLifeCycle = 3
         const totalEvents = (eventsSent * requestsInLifeCycle + longPollingEvents) * Math.max(eventsParams.consumers, 1) * requestsPerEvent
+
+        const applicableRates = rates.filter(x => x.from <= totalEvents)
+        const requestsCost = _.reduce(applicableRates, (acc, rate) => {
+            let rangeEvents = 0
+            if (totalEvents < rate.from) {
+                rangeEvents = 0
+            } else if (totalEvents >= rate.to) {
+                rangeEvents = rate.to - rate.from
+            } else {
+                rangeEvents = totalEvents - rate.from
+            }
+
+            return acc + rangeEvents * rate.price / 1000000
+        }, 0)
+
+        const totalTransferGB = totalEvents * eventsParams.avgPayloadSize / 10e9
+        const transferCost = _.reduce(sqs.transferRates, (acc, rate) => {
+            let rangeTransfer = 0
+            if (totalTransferGB < rate.from) {
+                rangeTransfer = 0
+            } else if (totalTransferGB >= rate.to) {
+                rangeTransfer = rate.to - rate.from
+            } else {
+                rangeTransfer = totalTransferGB - rate.from
+            }
+
+            return acc + rangeTransfer * rate.pricePerGB
+        }, 0)
+
+        return requestsCost + transferCost
+    }
+}
+
+function sqsBatchPriceCalculator(eventsParams: EventsParams, rates: SqsRate[]): SeriePointGenerator {
+    const eventsPerBatch = Math.min(Math.max(Math.floor(sqs.maxBatchSize / eventsParams.avgPayloadSize), 1), sqs.maxBatchMessages)
+    const requestsPerEvent = Math.ceil(eventsPerBatch * eventsParams.avgPayloadSize / sqs.operationUnitChunk)
+    return eventsSent => {
+        const longPollingEvents = 60 * 24 * 30 * 3
+        // Events for send, receive and delete
+        const requestsInLifeCycle = 3
+        const totalEvents = (eventsSent/eventsPerBatch * requestsInLifeCycle + longPollingEvents) * Math.max(eventsParams.consumers, 1) * requestsPerEvent
 
         const applicableRates = rates.filter(x => x.from <= totalEvents)
         const requestsCost = _.reduce(applicableRates, (acc, rate) => {
