@@ -74,7 +74,8 @@ const initialState: State = initStateFromUrl({
         avgPayloadSize: 5000,
         consumers: 1,
         events: 5e6,
-        shards: 7
+        shards: 7,
+        suggestedShards: 7
     }
 });
 

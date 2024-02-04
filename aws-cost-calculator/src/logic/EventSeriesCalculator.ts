@@ -110,7 +110,9 @@ function sqsPriceCalculator(eventsParams: EventsParams, rates: SqsRate[]): Serie
     return eventsSent => {
         const requestsPerEvent = Math.ceil(eventsParams.avgPayloadSize / sqs.operationUnitChunk)
         const longPollingEvents = 60 * 24 * 30 * 3
-        const totalEvents = (eventsSent + longPollingEvents) * Math.max(eventsParams.consumers, 1) * requestsPerEvent
+        // Events for sent, receive and delete
+        const requestsInLifeCycle = 3
+        const totalEvents = (eventsSent * requestsInLifeCycle + longPollingEvents) * Math.max(eventsParams.consumers, 1) * requestsPerEvent
 
         const applicableRates = rates.filter(x => x.from <= totalEvents)
         const requestsCost = _.reduce(applicableRates, (acc, rate) => {
