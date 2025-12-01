@@ -29,7 +29,7 @@ export function generateSeries(state: State): Serie[] {
         .concat(seriesGenerator("EC2 Windows Reserved 1-year", "#99582A", ec2SerieGenerator(state.ec2Params, () => ec2Pricing?.Windows?.reservedPricing?.standard?.["1yr"])))
         .concat(seriesGenerator("EC2 Windows Reserved 3-year", "#BB9457", ec2SerieGenerator(state.ec2Params, () => ec2Pricing?.Windows?.reservedPricing?.standard?.["3yr"])))
         .concat(seriesGenerator("AppRunner", "#8053ab", appRunnerSerieGenerator(state.containersParams, state.appRunnerRegionalPricing)))
-        .concat(seriesGenerator("Lambda  Managed [On-Demand]", "rgba(143,41,120,0.99)", lambdaManagedInstancesGenerator(state.ec2Params, state.lambdaParams, () => ec2Pricing?.Linux?.onDemandPricing)))
+        .concat(seriesGenerator("Lambda  Managed [On-Demand]", "rgba(207,62,174,0.99)", lambdaManagedInstancesGenerator(state.ec2Params, state.lambdaParams, () => ec2Pricing?.Linux?.onDemandPricing)))
         .concat(seriesGenerator("Lambda  Managed [Reserved 1-year]", "rgba(195,56,156,0.61)", lambdaManagedInstancesGenerator(state.ec2Params, state.lambdaParams, () => ec2Pricing?.Linux?.reservedPricing?.standard?.["1yr"])))
         .concat(seriesGenerator("Lambda  Managed [Reserved 3-year]", "rgba(209,5,250,0.99)", lambdaManagedInstancesGenerator(state.ec2Params, state.lambdaParams, () => ec2Pricing?.Linux?.reservedPricing?.standard?.["3yr"])))
 
