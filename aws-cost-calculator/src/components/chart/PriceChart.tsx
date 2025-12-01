@@ -5,11 +5,12 @@ import {chartTheme} from "../../Theme";
 import {ChartTooltip} from "./ChartTooltip";
 import {State} from "../../state/State";
 
-function PriceChart(props: {seriesGenerator: (state: State) => Serie[], legendYOffset?: number}) {
+function PriceChart(props: {seriesGenerator: (state: State) => Serie[], seriesFilter?: (s: Serie) => boolean, legendYOffset?: number}) {
     const {state, dispatch} = React.useContext(AppContext);
 
     const chartData = props.seriesGenerator(state)
-    const legendYOffset = props.legendYOffset ? props.legendYOffset : 280
+        .filter((props.seriesFilter || ((_: Serie) => true)));
+    const legendYOffset = props.legendYOffset ? props.legendYOffset : 320
     window.dispatchEvent(new Event('resize'));
     return (
         <ResponsiveLine

@@ -29,6 +29,9 @@ export function generateSeries(state: State): Serie[] {
         .concat(seriesGenerator("EC2 Windows Reserved 1-year", "#99582A", ec2SerieGenerator(state.ec2Params, () => ec2Pricing?.Windows?.reservedPricing?.standard?.["1yr"])))
         .concat(seriesGenerator("EC2 Windows Reserved 3-year", "#BB9457", ec2SerieGenerator(state.ec2Params, () => ec2Pricing?.Windows?.reservedPricing?.standard?.["3yr"])))
         .concat(seriesGenerator("AppRunner", "#8053ab", appRunnerSerieGenerator(state.containersParams, state.appRunnerRegionalPricing)))
+        .concat(seriesGenerator("Lambda  Managed [On-Demand]", "rgba(143,41,120,0.99)", lambdaManagedInstancesGenerator(state.ec2Params, state.lambdaParams, () => ec2Pricing?.Linux?.onDemandPricing)))
+        .concat(seriesGenerator("Lambda  Managed [Reserved 1-year]", "rgba(195,56,156,0.61)", lambdaManagedInstancesGenerator(state.ec2Params, state.lambdaParams, () => ec2Pricing?.Linux?.reservedPricing?.standard?.["1yr"])))
+        .concat(seriesGenerator("Lambda  Managed [Reserved 3-year]", "rgba(209,5,250,0.99)", lambdaManagedInstancesGenerator(state.ec2Params, state.lambdaParams, () => ec2Pricing?.Linux?.reservedPricing?.standard?.["3yr"])))
 
     return _.sortBy(series, x => x.id).reverse()
 }
@@ -99,6 +102,19 @@ function lambdaSeriesGenerator(pricing: LambdaPriceComponents | undefined, lambd
     const freeTierGbs = lambdaParams.freeTier ? 400000 : 0;
 
     return requests => calculateLambdaPricePointRaw(requests, lambdaParams, gbSecondPrice, invocationPrice, freeTierInvocations, freeTierGbs)
+}
+
+function lambdaManagedInstancesGenerator(ec2Params: EC2Params, lambdaParams: LambdaParams, extractor: () => string | undefined): SeriePointGenerator {
+    const cost = extractor()
+    if (!ec2Params.numberOfInstances || ec2Params.numberOfInstances < 1 || cost === undefined || !lambdaParams.requests) {
+        return undefined
+    }
+    return requests => {
+        const ec2Cost = calculateEc2PricePoint(ec2Params.numberOfInstances, Number(cost))
+        const invocationCost = Math.floor(requests / 1e6) * 0.2
+        const managementFee = ec2Cost * 0.15
+        return ec2Cost + invocationCost + managementFee
+    }
 }
 
 function buildXAxis(requests: number): number[] {

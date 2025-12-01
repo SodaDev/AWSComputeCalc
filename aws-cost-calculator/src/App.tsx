@@ -11,6 +11,7 @@ import BuyMeACoffee from "./components/contact/BuyMeACoffee";
 import {Route, Routes} from "react-router-dom";
 import ComputeApp from "./ComputeApp";
 import EventsApp from "./EventsApp";
+import ManagedLambdaApp from "./ManagedLambdaApp";
 
 function App() {
     return (
@@ -24,10 +25,13 @@ function App() {
                         <Routes>
                             <Route path="/" element={<ComputeApp />}/>
                             <Route path="/events" element={<EventsApp />}/>
+                            <Route path="/lambda" element={<ManagedLambdaApp />}/>
                             <Route path="*" element={<ComputeApp />} />
                         </Routes>
-                        <Grid item md={12} sm={12} xl={12} xs={12} marginTop={"1ex"} marginBottom={"1ex"}>
+                        <Grid item md={8} sm={8} xl={8} xs={8} marginTop={"1ex"} marginBottom={"1ex"}>
                             <GetInTouch/>
+                        </Grid>
+                        <Grid item md={4} sm={4} xl={4} xs={4} marginTop={"1ex"} marginBottom={"1ex"}>
                             <BuyMeACoffee/>
                         </Grid>
                         <CookieSnackBar/>
