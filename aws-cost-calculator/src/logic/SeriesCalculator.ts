@@ -10,7 +10,7 @@ type SerieGenerator = (name: string, serieColor: string, generator: SeriePointGe
 type SeriePointGenerator = ((a: number) => number) | undefined
 
 export function generateSeries(state: State): Serie[] {
-    const xAxis = buildXAxis(state.lambdaParams.requests * state.lambdaParams.interval.multiplier);
+    const xAxis = [0].concat(buildXAxis(state.lambdaParams.requests * state.lambdaParams.interval.multiplier));
     const seriesGenerator = buildSerie(xAxis)
     const ec2Pricing = state.ec2Pricing?.instancePrices[state.ec2Params.instanceType]
     const series =
